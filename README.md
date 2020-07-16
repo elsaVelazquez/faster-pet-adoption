@@ -2,7 +2,8 @@
 
 Data science application: analysis of the online presentation factors that influence how fast a pet gets adopted from a rescue shelter.
 
-![alt text](/blob/master/src/readme/imgs/5810891.jpg) “The greatness of a nation and its moral progress can be judged by the way its animals are treated.”
+[![](images/button.png)](https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/5810891.jpg)
+“The greatness of a nation and its moral progress can be judged by the way its animals are treated.”
 
 ― Mahatma Gandhi")
 
