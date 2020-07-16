@@ -22,7 +22,14 @@ In the following image, it is clear to see the image classification categories, 
 
 It is also evident in our JSON files that we are able to determine an animal's length of stay.
 
-
+The length of stay is the key feature in this analysis, barring potential bias given the age of the animal.  The suspected age of the animal is also a included in the data set.  It is accounted for by grouping using age categories, as deemed necessary.  
 
 We can use the IDs given by PetFinder as unique identifiers in the data set to track the animals.  As is seen in this JSON file, the URL is associated with said pet ID. 
+
+Aside from image classification, the dataset also contains descriptions of the animals, which can be analyzed using bag of words or other NLP methods.  
+
+The minimum deliverable product for Capstone 1 will be a dataset of images downloaded using RESTful API calls.  The src folder contains the stub used to generate the images.  
+
+Web scraping will be necessary to determine if an animal is already adopted.  The web scraping will be done only if the API owners, who grant public access to their API, do not track arrival vs. adoption dates.  When a pet is adpoted, their JSON no longer displays the term "status":"adoptable," and instead their page provides a list of other animals that are up for adoption.  
+I am passionate about this project because I am a disabled veteran, and my dog saved my life.  Surely more dogs can do more, for more vetearns, and we can continue to be proud and grateful to this great nation!
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%2012.16.47%20AM.png" width=600 align=right>
