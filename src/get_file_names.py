@@ -1,7 +1,14 @@
 import os
 '''
     For the given path, get the List of all files in the directory tree 
+    Use this to mash all json files together in command line using jq
 '''
+
+
+# dirName = '../data/json_dump';
+
+
+
 def getListOfFiles(dirName):
     # create a list of file and sub directories 
     # names in the given directory 
@@ -19,7 +26,7 @@ def getListOfFiles(dirName):
     print(allFiles)                
     return allFiles        
     
-dirName = '../data/api_dumps';
+# dirName = '../data/json_dump';
     
 
  

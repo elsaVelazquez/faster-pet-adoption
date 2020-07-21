@@ -1,3 +1,5 @@
+#### . original schema
+
 root
  |-- _links: struct (nullable = true)
  |    |-- organization: struct (nullable = true)

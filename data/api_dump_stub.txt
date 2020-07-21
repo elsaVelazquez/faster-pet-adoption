@@ -1,0 +1,62 @@
+
+
+curl -d "grant_type=client_credentials&client_id={CLIENT-ID}&client_secret={CLIENT-SECRET}" https://api.petfinder.com/v2/oauth2/token
+
+
+
+
+## note this token has expired and is for demo purposes only
+{"token_type":"Bearer","expires_in":3600,"access_token":"yJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6ImNiNTg2NjhlMzM2MjMwNWY1NmZkYTNhYzZlZjcwOTI5YzQzODg3NGUxMDQ1ZDZjOGIxODJhYjljY2FkOGNjOTY3ZTk0NmQxMjI1ZDRlOTc0IiwiaWF0IjoxNTk0ODg3NDU1LCJuYmYiOjE1OTQ4ODc0NTUsImV4cCI6MTU5NDg5MTA1NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.gZ_1wwq0Ttvx8I3GYKBjXDJnA7aiPpHv2SrSalYyzZ8ZuzqXMKcUxp7KsjWZptotsFEOD0ULZ71MZCDR996ztNQ960SuFbBT_4-W7_8j_d3l5kydRChSbupO_63wkyCkz3Qfp-so-irREBdcSlRYCrwQndorUlJfZj_soaesGvn4Jul5Wq-UXqXq3ng4Igyz8a1Tvu_KWNQU_iLMV_Bf9xQvdW3yJspKWyP-ayOGpywFqP-vU5OypzppAjYf1Yja5xdzTTaqJbTkWaQH4oIjEWYh0ydp8pHoDE75YijGsr2URy4zRFx5g6lXb4FRYIVb6VmpYjuvccuQ3C-NM7IQJw"}
+
+
+https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/48504302/1/?bust=1594870600
+
+
+curl -O  'test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6ImY4YWRiNWYzMzg5MmY1MDI4MmQwMmI5ZDhmZDY2YTg2YmNmMDhlNmQ4MTg4NjQ2ZDE5NjA0ZWFkN2FlMjBhZDgxYjE5MDE5NTlmOWMxYzA3IiwiaWF0IjoxNTk1MzQxMDM2LCJuYmYiOjE1OTUzNDEwMzYsImV4cCI6MTU5NTM0NDYzNiwic3ViIjoiIiwic2NvcGVzIjpbXX0.YF0m5aYjUgtxi4clt3wi9WSjoXOEr6ZJFCxYd_rur7zP-uclx-i-xngISJrPUf1wy2az57JkpMoXkxPaEupdPbNQ9P8p7l8OZnB5uzX_ZHV8ozsT0bLLugolYHKmUWhR8THa6yvk2mXwAwRc2T8O9ilJxsKoV5Zc95LrP_lnvUmSTZc_NCgrnFEy9KwX69VPZLwqrEJD_XAQ1X1ljo0l6B4a_o80Lmfp7fFkm5wOVCizPQMtD2c7C5dLRa3UGuIr2rD37zUG4fUhN1KhNF-avr43hWbC05pe9pRJK5KLvtckZqVFN-DOy9ZZzZ8wJ3lRsem3ymJ3MsXvKG2su7PG7A"  https://api.petfinder.com/v2/animals?type=dog&page=5
+
+
+{
+    "type": {
+        "name": "Dog",
+        "coats": [
+            "Hairless",
+            "Short",
+            "Medium",
+            "Long",
+            "Wire",
+            "Curly"
+        ],
+        "colors": [
+            "Apricot / Beige",
+            "Bicolor",
+            "Black",
+            "Brindle",
+            "Brown / Chocolate",
+            "Golden",
+            "Gray / Blue / Silver",
+            "Harlequin",
+            "Merle (Blue)",
+            "Merle (Red)",
+            "Red / Chestnut / Orange",
+            "Sable",
+            "Tricolor (Brown, Black, & White)",
+            "White / Cream",
+            "Yellow / Tan / Blond / Fawn"
+        ],
+        "genders": [],
+            "published_at": "2020-07-20T14:49:09+0000",
+        "_links": {
+            "self": {
+                "href": "/v2/types/dog"
+            },
+            "breeds": {
+                "href": "/v2/types/dog/breeds"
+            }
+        },
+        "tags": []
+        ,
+        "photos":[]
+        ,
+        "status": []
+    }
+}

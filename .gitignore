@@ -1,6 +1,4 @@
-.json
-.JSON
+*.json
+*.JSON
 .vscode/
 settings.json
-imports/lib/
-.json
