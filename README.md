@@ -54,3 +54,6 @@ The data is gathered using a curl command in the command terminal, using an API 
 >my dog saved my life.  
 >Surely more dogs can do more, for more vetearns and more people in general, and 
 >we can continue to be proud and grateful to this great nation!
+
+## State of the Union
+https://trello.com/b/o8vNQDDg/faster-dog-adoptions
