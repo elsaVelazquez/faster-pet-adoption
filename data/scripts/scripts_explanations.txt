@@ -1,0 +1,15 @@
+bash script to drop 2 parts of the incoming API called JSON string
+
+{"animals":[
+    
+],"pagination":{"count_per_page":20,"total_count":60125,"current_page":1,"total_pages":3007,"_links":{"next":{"href":"\/v2\/animals?type=dog\u0026page=2"}}}
+
+
+to reduce data structure to dictionary of dictionaries
+
+
+
+sed -i 's/old-text/new-text/g' input.txt
+
+
+sed -i 's/{"animals":[/ /g' api_dump_2020-06.json
