@@ -2,9 +2,9 @@
 
 Are there *really* more male dogs in animal rescue shelters than female dogs?
 
-# Data science application: 
-## Ho : ### There are 50% male dogs in shelters.  
-## Ha : ### It is not the case that there are 50% male dogs in shelters.  
+## Data science application: 
+### Ho : There are 50% male dogs in shelters.  
+### Ha : It is not the case that there are 50% male dogs in shelters.  
 
 ## Statistic:  
 A normal distribution, 2-tail test.  
