@@ -6,10 +6,10 @@ Are there *really* more male dogs in animal rescue shelters than female dogs?
 ### Ho : There are 50% male dogs in shelters.  
 ### Ha : It is not the case that there are 50% male dogs in shelters.  
 
-## Statistic:  
-A normal distribution, 2-tail test.  
+## Statistic:  A normal distribution, 2-tail test.  
 
-
+## Conclusion:
+If p < alpha, we fail to reject the null hypothesis and determine there are not 50% male dogs in shelters, and our sample does not come from a noraml distribution.  
 
 
 Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
