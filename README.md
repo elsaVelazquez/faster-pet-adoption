@@ -3,7 +3,7 @@
 ### Data science application: analysis of the online presentation factors that influence how fast a pet gets adopted from a rescue shelter.
 
 
-| ![](src/readme/imgs/5810891.jpg) | ![](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | ![](src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg) width=300 align=right> |
+| ![](src/readme/imgs/5810891.jpg) | ![](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | ![](src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg) |
 |-|-|-|
 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
