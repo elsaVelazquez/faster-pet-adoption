@@ -1,6 +1,18 @@
-# Faster Pet Adoption
+# Dogs In Shelters
 
-# Data science application: Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
+Are there *really* more male dogs in animal rescue shelters than female dogs?
+
+# Data science application: 
+## Ho : ### There are 50% male dogs in shelters.  
+## Ha : ### It is not the case that there are 50% male dogs in shelters.  
+
+## Statistic:  
+A normal distribution, 2-tail test.  
+
+
+
+
+Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
 
 | ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
 |-|-|-|
