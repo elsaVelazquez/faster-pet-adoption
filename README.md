@@ -9,6 +9,8 @@ Are there *really* more male dogs in animal rescue shelters than female dogs?
 ### Statistic:  A normal distribution, 2-tail test, 
 <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>
 
+|Though we see that there are, by the numbers, more male than female dogs, we want to ascertain there is a statistically significant difference in male vs female dog populations in animal rescue shelters. | ![raw counts of male vs female dogs](src/readme/raw_counts.png)|
+
 
 #### Conclusion:
 If p < alpha, we fail to reject the null hypothesis and determine there are not 50% male dogs in shelters, and our sample does not come from a noraml distribution.  
