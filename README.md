@@ -21,7 +21,7 @@ If p < alpha, we fail to reject the null hypothesis and determine there are not 
 
 
 ## Web Scraping for Data Collection
-The data was collected using OS-level Curl command line prompts, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
+The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py>OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
 
 
 
