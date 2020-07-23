@@ -1,16 +1,16 @@
 # Dogs In Shelters
-### Are there *really* more male dogs in animal rescue shelters than female dogs?
+### Are there *really* more female dogs in animal rescue shelters than male dogs?
 
 | ![raw counts of male vs female dogs](src/readme/raw_counts.png)|<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%202.47.09%20AM.png" width=300 align=right>|
 |-|-|
 
 ## Data science application: Hypothesis Testing--> 
-### Ho : There are 50% male dogs in shelters.  
-### Ha : It is not the case that there are 50% male dogs in shelters.  
+### Ho : There are 50% female dogs in shelters.  
+### Ha : It is not the case that there are 50% female dogs in shelters.  
 
 ### Statistic:  A normal distribution, 2-tail test using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>.
 
-We see that there are, by the numbers, more male than female dogs, but our goal is to ascertain whethere there is a statistically significant difference in male vs female dog populations in animal rescue shelters. 
+#### Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
 
 
 
