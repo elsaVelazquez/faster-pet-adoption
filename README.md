@@ -1,9 +1,22 @@
-# Faster Pet Adoption
+# Dogs In Shelters
 
-### Data science application: analysis of the online presentation factors that influence how fast a pet gets adopted from a rescue shelter.
+Are there *really* more male dogs in animal rescue shelters than female dogs?
+
+## Data science application: 
+### Ho : There are 50% male dogs in shelters.  
+### Ha : It is not the case that there are 50% male dogs in shelters.  
+
+### Statistic:  A normal distribution, 2-tail test, 
+<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>
 
 
-| ![](src/readme/imgs/5810891.jpg) | ![](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg" width=300 align=right> |
+#### Conclusion:
+If p < alpha, we fail to reject the null hypothesis and determine there are not 50% male dogs in shelters, and our sample does not come from a noraml distribution.  
+
+
+Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
+
+| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
 |-|-|-|
 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
@@ -54,3 +67,6 @@ The data is gathered using a curl command in the command terminal, using an API 
 >my dog saved my life.  
 >Surely more dogs can do more, for more vetearns and more people in general, and 
 >we can continue to be proud and grateful to this great nation!
+
+## State of the Union
+https://trello.com/b/o8vNQDDg/faster-dog-adoptions
