@@ -112,7 +112,7 @@ if __name__ == '__main__':
     text_nnl = remove_newline(text)
     
     cleaned_text = keep_double_quotes(text_nnl)
-    print(cleaned_text)
+    # print(cleaned_text)
     # words = split_text_into_words(text_nnl)
     # words_nsw = remove_stopwords(words, stopwords)
     # words_cleaned = replace_words(words_nsw, names, replace)

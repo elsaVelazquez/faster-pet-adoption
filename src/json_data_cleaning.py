@@ -12,10 +12,11 @@ mash_jsons_together = getListOfFiles(dirName)
 
 clean_mashed_json_str = create_cleaned_textline_from_words(mash_jsons_together) # list_to_one_string(mash_jsons_together)
 
-# clean_mashed_json_str
+clean_mashed_json_str
 
 
 cmd_line_string = 'jq -s . ' + clean_mashed_json_str + '> big_json.json'
+# cmd_line_string = 'jq -s . ' + '../data/json_dump/output_1.json' + '> big_json.json'
 os.system(cmd_line_string)
 #remove external dictionary key "animal" to pump into pyspark pipeline more easily
 #commmand line prompt to print out one giant json file with all data
