@@ -1,6 +1,7 @@
 # Dogs In Shelters
 
-Are there *really* more male dogs in animal rescue shelters than female dogs?
+|Are there *really* more male dogs in animal rescue shelters than female dogs?|https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%202.47.09%20AM.png width=300 align=right|
+|-|-|
 
 ## Data science application: 
 ### Ho : There are 50% male dogs in shelters.  
@@ -9,7 +10,8 @@ Are there *really* more male dogs in animal rescue shelters than female dogs?
 ### Statistic:  A normal distribution, 2-tail test, 
 <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>
 
-|Though we see that there are, by the numbers, more male than female dogs, we want to ascertain there is a statistically significant difference in male vs female dog populations in animal rescue shelters. | ![raw counts of male vs female dogs](src/readme/raw_counts.png)|
+We see that there are, by the numbers, more male than female dogs, but our goal is to ascertain whethere there is a statistically significant difference in male vs female dog populations in animal rescue shelters. 
+![raw counts of male vs female dogs](src/readme/raw_counts.png)
 
 
 #### Conclusion:
@@ -18,14 +20,13 @@ If p < alpha, we fail to reject the null hypothesis and determine there are not 
 
 Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
 
-| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
-|-|-|-|
+
 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
 
 #### Is an animal's online presence a predictor of its adoptability? 
 
-## IMG Classification - ML
+## Next phase --> IMG Classification Using ML <a href="https://scikit-learn.org/stable/datasets/index.html>Scikit-Learn</a>
 By classifying animal shelter data using image processing and tracing an animal's dates of arrival and departure from a shelter, it can be decided if we should fail to reject the null hypothesis and determine that pets are too adorable to be left, no matter how they pose for the cameera.  
 In the following image, it is clear to see the image classification categories, as pets are either:
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Standing
@@ -65,10 +66,12 @@ The data is gathered using a curl command in the command terminal, using an API 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%204.41.03%20AM.png" width=600 align=center>
 
 ## My Motivation
+| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
+|-|-|-|
 >I am passionate about this project because I am a disabled veteran, and 
 >my dog saved my life.  
 >Surely more dogs can do more, for more vetearns and more people in general, and 
 >we can continue to be proud and grateful to this great nation!
 
-## State of the Union
-https://trello.com/b/o8vNQDDg/faster-dog-adoptions
+## Latest Project Updates
+Please find the latest updates on the project <a href="https://trello.com/b/o8vNQDDg/faster-dog-adoptions">Trello</a> board. 
