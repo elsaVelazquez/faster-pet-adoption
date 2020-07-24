@@ -14,7 +14,8 @@ The goal is to determine if there is a statistically significant difference betw
 
 <br />
 
-Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
+### Conclusion: 
+Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
 
 <br />
 
@@ -22,12 +23,13 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 
 
-
+<br />
 
 ### Is this the case for *all* subrgroups of dogs?
-|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=right>| There are more male adult dogs in shelters.|
+|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/by_age_and_gender.png" width=600 align=right> | <img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=center>| 
 |-|-|
 
+### There are more male adult dogs in shelters.
 <br />
 
 # Revisit Data Science Application
@@ -74,7 +76,7 @@ The feature selection process involves best methods to classify imgs with male d
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Laying
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Clothed
 
-
+<br /> <br />
 ## Future Work
 <br />
 Through this dataset, it is possible to determine when and where there will be an influx of male dogs to which rescue shelters, and those shelters can then be informed of the conclusions of this investigation to help them best present the male dogs to help balance the ratio of adult males in animal rescue shelters.   
