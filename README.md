@@ -7,17 +7,14 @@
 ### Ho : There are 50% female dogs in shelters.  
 ### Ha : It is not the case that there are 50% female dogs in shelters.  
 
-### Statistic:  A normal distribution, 2-tail test using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>.
+#### Statistic:  A binomial test using stats.binom.
 
-#### Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
+Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
 
-
-
-#### Conclusion:
-Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
+Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
 
 ### Is this the case for *all* subrgroups of dogs?
-|![raw counts of male vs female dogs](src/readme/imgs/dogs_grouped_by_age_and_gender.png)| There are more male adult dogs in shelters.|
+|![raw counts of male vs female dogs](src/readme/imgs/dogs_grouped_by_age_and_gender.png) width=300| There are more male adult dogs in shelters.|
 |-|-|
 
 
