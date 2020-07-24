@@ -1,57 +1,39 @@
 # Dogs In Shelters
 ### Are there *really* more female dogs in animal rescue shelters than male dogs?
 
-| ![raw counts of male vs female dogs](src/readme/raw_counts.png)|<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%202.47.09%20AM.png" width=300 align=right>|
-|-|-|
+![raw counts of male vs female dogs](src/readme/raw_counts.png)
 
 ## Data science application: Hypothesis Testing--> 
 ### Ho : There are 50% female dogs in shelters.  
 ### Ha : It is not the case that there are 50% female dogs in shelters.  
 
-### Statistic:  A normal distribution, 2-tail test using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>.
+#### Statistic:  A binomial test using stats.binom.
 
-#### Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
+Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
 
-
-
-#### Conclusion:
-If p < alpha, we fail to reject the null hypothesis and determine there are not 50% male dogs in shelters, and our sample does not come from a noraml distribution.  
+Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/reject_null_hyp.png" align=center>
 
 
 
+
+<br>
+### Is this the case for *all* subrgroups of dogs?
+|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=right>| There are more male adult dogs in shelters.|
+|-|-|
+
+
+
+## Adjusted Project Focus Is On Adult Male Dogs
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/fig3_workflow.png" width=500 align=center>
 
 ## Web Scraping for Data Collection
-The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py>OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
+The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py>OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.|
+  |-|-|
 
 
 
 
-## Data Pipeline for EDA
-The scraped data was gathered in JSON form, with nested layers of dictionaries.  The data of interest was the 4th layer in. To be more manageable with PySpark, the 5,000 JSON files with 20 records each went through the following flow:
-
-
-
-
-
-### Data Visualization
-The following plots were generated using OOP for plotting. 
-
-
-
-
-<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%202.47.09%20AM.png" width=600 align=right>
-
-It is also evident in our JSON files that we are able to determine an animal's length of stay.
-
-The length of stay is the key feature in this analysis, barring potential bias given the age of the animal.  The suspected age of the animal is also a included in the data set.  It is accounted for by grouping using age categories, as deemed necessary.  
-
-We can use the IDs given by PetFinder as unique identifiers in the data set to track the animals.  As is seen in this JSON file, the URL is associated with said pet ID. 
-
-
-# Data Access
-The data is gathered using a curl command in the command terminal, using an API issued by PetFinders.
-
-<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/Screen%20Shot%202020-07-16%20at%204.41.03%20AM.png" width=600 align=center>
 
 
 
