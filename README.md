@@ -30,7 +30,7 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 <br />
 
 ## Adjusted Project Focus Is On Adult Male Dogs
-<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/fig3_workflow.png" width=500 align=center>
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/fig3_workflow.png" width=500 align=center>
 
 <br />
 
