@@ -16,6 +16,8 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 
 
+
+<br>
 ### Is this the case for *all* subrgroups of dogs?
 |<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=right>| There are more male adult dogs in shelters.|
 |-|-|
