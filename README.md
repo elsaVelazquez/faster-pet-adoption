@@ -20,7 +20,10 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 
 ## Adjusted Project Focus Is On Adult Male Dogs
-|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=500 align=center>|## Web Scraping for Data Collection
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/diagram_title.png" align=center>
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/fig3_workflow.png" align=center>
+
+## Web Scraping for Data Collection
 The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py>OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.|
   |-|-|
 
