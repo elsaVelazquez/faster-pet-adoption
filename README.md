@@ -53,9 +53,11 @@ These records were mashed into 1 giant JSON file that revealed a <a href="https:
 
 <br /> <br />
 
-#### The next question:  Does the pose of the adult male dog influence how fast it gets adopted from a rescue shelter?
+### The next question:  Does the adult male dog's picture pose influence how fast it gets adopted from a rescue shelter?
  <br />
+ 
 ## Machine Learning
+
 ### Image Processing
 Using img data from PetFinder.com, I began the process of image classification by finding existing python <a href="https://scikit-learn.org/stable/datasets/index.html">Scikit-Learn</a>, scikit-image libraries for image flattening.  
 
