@@ -26,7 +26,7 @@ Because p != alpha, we fail to reject the null hypothesis and determine there ar
 <br />
 
 ### Is this the case for *all* subrgroups of dogs?
-|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/by_age_and_gender.png" width=600 align=right> | <img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=right>| 
+|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/by_age_and_gender.png" width=600 align=right> | <img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=center>| 
 |-|-|
 
 ### There are more male adult dogs in shelters.
