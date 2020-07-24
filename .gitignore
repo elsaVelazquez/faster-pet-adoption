@@ -5,3 +5,5 @@ settings.json
 *.jpg
 *.mat
 *.pyc
+*.__pycache__
+*.DS_store
