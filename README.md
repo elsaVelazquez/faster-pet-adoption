@@ -14,7 +14,8 @@ The goal is to determine if there is a statistically significant difference betw
 
 <br />
 
-Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
+### Conclusion: 
+Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
 
 <br />
 
