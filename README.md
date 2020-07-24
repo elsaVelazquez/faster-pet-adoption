@@ -17,7 +17,7 @@
 Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
 
 ### Is this the case for *all* subrgroups of dogs?
-|href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html">scipy.stats.ttest_ind</a>| There are more male adult dogs in shelters.|
+|![raw counts of male vs female dogs](src/readme/imgs/dogs_grouped_by_age_and_gender.png)| There are more male adult dogs in shelters.|
 |-|-|
 
 
