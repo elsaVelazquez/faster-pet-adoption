@@ -1,0 +1,25 @@
++--------+------+------+---------------------+---------+--------------------+--------------------+
+|      id|   age|gender|primary_photo_cropped|   status|   status_changed_at|         description|
++--------+------+------+---------------------+---------+--------------------+--------------------+
+|48504802|  Baby|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T08:28:...|This puppy is sch...|
+|48504807| Adult|Female|                 null|adoptable|2020-07-16T08:23:...|All of our dogs a...|
+|48504805| Young|Female|                 null|adoptable|2020-07-16T08:22:...|Due to the outbre...|
+|48504803| Young|  Male|                 null|adoptable|2020-07-16T08:21:...|                   .|
+|48504799|  Baby|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T08:19:...|Meet cute baby Ji...|
+|48504800| Young|  Male|                 null|adoptable|2020-07-16T08:15:...|Primary Color: Tr...|
+|48504801| Young|Female|                 null|adoptable|2020-07-16T08:15:...|Primary Color: Tr...|
+|48504797|Senior|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T08:15:...|Primary Color: Br...|
+|48504796| Young|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T08:07:...|All of our dogs a...|
+|48504784| Adult|Female|                 null|adoptable|2020-07-16T07:38:...|                null|
+|48504785|Senior|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:38:...|                null|
+|48504783| Adult|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504781| Adult|Female| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504769| Adult|Female| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504779| Adult|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504782|  Baby|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504776| Adult|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504773| Adult|  Male| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504772| Adult|Female| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
+|48504777|Senior|Female| [https://dl5zpyw5...|adoptable|2020-07-16T07:37:...|                null|
++--------+------+------+---------------------+---------+--------------------+--------------------+
+
