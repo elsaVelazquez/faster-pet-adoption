@@ -7,7 +7,8 @@
 ### Ho : There are 50% female dogs in shelters.  
 ### Ha : It is not the case that there are 50% female dogs in shelters.  
 <br />
-#### Statistic:  A binomial test using stats.binom.
+
+### Statistic:  A binomial test using stats.binom.
 
 Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
 
