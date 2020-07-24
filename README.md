@@ -36,13 +36,19 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 ### Web Scraping for Data Collection
 
-The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py>OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
+The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py">OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
 
 <br />
+
 ### Data Ingestion
 
-The API call, due to the API setup, returned 5000 JSON files with 20 records each. 
+Due to the API, the scrape returned 5000 JSON files with 20 records each. 
 These records were mashed into 1 giant JSON file that revealed a <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/schemas.txt">multi-level schema</a> when put through a PySpark pipeline.
+https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/initial_eda.png
+
+https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/final_working_json.png
+
+
 
 
 
