@@ -47,7 +47,7 @@ The data was collected using <a href="https://github.com/elsaVelazquez/faster-pe
 Due to the API, the scrape returned 5000 JSON files with 20 records each. 
 These records were mashed into 1 giant JSON file that revealed a <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/schemas.txt">multi-level schema</a> when put through a PySpark pipeline.
 <br />
-| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=350 align=center> |  <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/final_working_json.png" width=350> |
+| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=500 align=center> |  <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/final_working_json.png" width=500> |
 |-|-|
 
 
@@ -68,7 +68,6 @@ Using img data from PetFinder.com, I began the process of image classification b
 
 
 ## By classifying animal shelter images and arrival and departure dates, a new hypothesis emerges from the data and we can now use science to determine if specific advertising methods can be used to help the adult male dog population.  
-<br />
 The feature selection process involves best methods to classify imgs with male dogs that are:
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Standing
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Sitting
