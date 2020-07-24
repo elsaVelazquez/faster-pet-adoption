@@ -1,6 +1,6 @@
-<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/title_banner.png" align=left width=800>
+<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/title_banner.png"  width=800>
 
-<br /><br />
+<br />
 
 
 ### Are there *really* more female dogs in animal rescue shelters than male dogs?
