@@ -14,7 +14,7 @@ Our goal is to ascertain whethere there is a statistically significant differenc
 Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
 
 ### Is this the case for *all* subrgroups of dogs?
-|![raw counts of male vs female dogs](src/readme/imgs/dogs_grouped_by_age_and_gender.png) width=300| There are more male adult dogs in shelters.|
+|<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dogs_grouped_by_age_and_gender.png" width=200 align=right>| There are more male adult dogs in shelters.|
 |-|-|
 
 
