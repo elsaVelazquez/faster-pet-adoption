@@ -29,11 +29,12 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 <br />
 
+# Revisit Data Science Application
 ## Adjusted Project Focus Is On Adult Male Dogs
 <img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/fig3_workflow.png" width=500 align=center>
 
-<br />
-
+<br /> <br />
+## Data Wrangling
 ### Web Scraping for Data Collection
 
 The data was collected using <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/json_data_cleaning.py">OS-level Curl command line prompt </a>, written in python, that sped up the collection of 200,000 records from PetFinder's public API to less than 1 minute.
@@ -45,30 +46,38 @@ The data was collected using <a href="https://github.com/elsaVelazquez/faster-pe
 Due to the API, the scrape returned 5000 JSON files with 20 records each. 
 These records were mashed into 1 giant JSON file that revealed a <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/schemas.txt">multi-level schema</a> when put through a PySpark pipeline.
 <br />
-| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=200 align=center> | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_schema.png" width=200> | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/final_working_json.png" width=200> |
-|-|-|-|
+| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=350 align=center> |  <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/final_working_json.png" width=350> |
+|-|-|
+
+
+<br /> <br />
+
+#### The next question:  Does the pose of the adult male dog influence how fast it gets adopted from a rescue shelter?
+ <br />
+## Machine Learning
+### Image Processing
+Using img data from PetFinder.com, I began the process of image classification by finding existing python <a href="https://scikit-learn.org/stable/datasets/index.html">Scikit-Learn</a>, scikit-image libraries for image flattening.  
+
+ <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/flatten_image.png" width=450 align=center> 
+
+<br /> <br />
 
 
 
-
-
-
-
-
-
-## Next steps --> IMG Classification Using ML <a href="https://scikit-learn.org/stable/datasets/index.html>Scikit-Learn</a>
-  
-#### The next question:  Is an animal's online presence a predictor of its adoptability? 
-
-Does the pose of a dog influence how fast it gets adopted from a rescue shelter?
-
-By classifying animal shelter data using image processing and tracing an animal's dates of arrival and departure from a shelter, it can be decided if we should fail to reject the null hypothesis and determine that pets are too adorable to be left, no matter how they pose for the cameera.  
-In the following image, it is clear to see the image classification categories, as pets are either:
+## By classifying animal shelter images and arrival and departure dates, a new hypothesis emerges from the data and we can now use science to determine if specific advertising methods can be used to help the adult male dog population.  
+<br />
+The feature selection process involves best methods to classify imgs with male dogs that are:
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Standing
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Sitting
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Laying
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Clothed
 
+
+## Future Work
+<br />
+Through this dataset, it is possible to determine when and where there will be an influx of male dogs to which rescue shelters, and those shelters can then be informed of the conclusions of this investigation to help them best present the male dogs to help balance the ratio of adult males in animal rescue shelters.   
+
+<br /><br />
 ## My Motivation
 | ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
