@@ -17,7 +17,7 @@ Conclusion: Because p != alpha, we fail to reject the null hypothesis and determ
 
 <br />
 
-<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/reject_null_hyp.png" align=center>
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/reject_null_hyp.png" align=center>
 
 
 
