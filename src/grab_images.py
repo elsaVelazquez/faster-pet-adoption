@@ -95,15 +95,15 @@ def get_all_images(soup, path, from_web=False):
 
 if __name__ == '__main__':
     # This will need to be updated to reflect the actual path to the
-    # ebay_shoes.html data file
-    path = 'data/ebay_shoes.html'
+    #html data file
+    path = 'data/Dog Adoption _ Petfinder_files'
     with open(path) as f:
         html_str = f.read()
     save_path = '.'
     soup = BeautifulSoup(html_str, 'lxml')
     get_all_images(soup, save_path)
 
-    # now lets try running this on a real ebay search page
-    ebay_url = 'http://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=board+games&_sacat=0'
-    soup = BeautifulSoup(requests.get(ebay_url).content, 'lxml')
+    # execute on live site
+    petfinder_url = 'https://www.petfinder.com/pet-adoption/dog-adoption/'
+    soup = BeautifulSoup(requests.get(petfinder_url).content, 'lxml')
     get_all_images(soup, save_path, True)
