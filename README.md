@@ -10,7 +10,7 @@
 
 ### Statistic:  A binomial test using stats.binom.
 
-Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
+The goal is to determine if there is a statistically significant difference between female vs male dog populations in animal rescue shelters. 
 
 <br />
 
