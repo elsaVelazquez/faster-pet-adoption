@@ -45,8 +45,8 @@ The data was collected using <a href="https://github.com/elsaVelazquez/faster-pe
 Due to the API, the scrape returned 5000 JSON files with 20 records each. 
 These records were mashed into 1 giant JSON file that revealed a <a href="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/schemas.txt">multi-level schema</a> when put through a PySpark pipeline.
 <br />
-| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=200 align=center> | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/images/final_working_json.png" width=200> |
-|-|-|
+| <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_eda.png" width=200 align=center> | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/initial_schema.png" width=200> | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/final_working_json.png" width=200> |
+|-|-|-|
 
 
 
