@@ -51,7 +51,7 @@ if __name__ == "__main__":
     #handle exceptions in columns
     def apply_json(input_lst):
         try:
-            return json.loads(input_lst)['animals'][0]                                                  'id']
+            return json.loads(input_lst)['animals'][0]
         except:
             return None 
 
