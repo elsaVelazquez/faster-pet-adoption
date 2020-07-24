@@ -91,7 +91,7 @@ Through this dataset, it is possible to determine when and where there will be a
  ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/ghandi_quote.png) 
  ![](/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg) 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
-
+-Quote by Ghandi
 
 >I am passionate about this project because I am a disabled veteran, and 
 >my dog saved my life.  
