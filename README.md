@@ -61,7 +61,7 @@ These records were mashed into 1 giant JSON file that revealed a <a href="https:
 ### Image Processing
 Using img data from PetFinder.com, I began the process of image classification by finding existing python <a href="https://scikit-learn.org/stable/datasets/index.html">Scikit-Learn</a>, scikit-image libraries for image flattening.  
 
- <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/flatten_image.png" width=450 align=center> 
+ <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/flatten_image.png" align=center> 
 
 <br /> <br />
 
