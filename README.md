@@ -1,4 +1,5 @@
 # Dogs In Shelters
+![raw counts of male vs female dogs](/src/readme/title_banner.png)
 ### Are there *really* more female dogs in animal rescue shelters than male dogs?
 
 ![raw counts of male vs female dogs](src/readme/raw_counts.png)
