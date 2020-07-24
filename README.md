@@ -12,7 +12,7 @@
 Our goal is to ascertain whethere there is a statistically significant difference betwee female vs male dog populations in animal rescue shelters. 
 
 Conclusion: Because p != alpha, we fail to reject the null hypothesis and determine there are not 50% female dogs in shelters.  
-<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/reject_null_hyp.png" width=500 align=center>
+<img src = "https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/reject_null_hyp.png" align=center>
 
 
 
