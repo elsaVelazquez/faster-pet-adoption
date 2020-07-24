@@ -81,7 +81,7 @@ Through this dataset, it is possible to determine when and where there will be a
 
 <br /><br />
 ## My Motivation
-| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/Screen%20Shot%202020-07-16%20at%203.51.18%20AM.png) | <img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/imgs/dl5zpyw5k3jeb.cloudfront-1.jpg" width=600 align=center> |
+| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/ghandi_quote.png) | ![](/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg) |
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
 
 |-|-|-|
