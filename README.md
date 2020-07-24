@@ -76,7 +76,7 @@ The feature selection process involves best methods to classify imgs with male d
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Laying
 - ![#9900c5](https://placehold.it/15/9900c5?text=+)Clothed
 
-
+<br /> <br />
 ## Future Work
 <br />
 Through this dataset, it is possible to determine when and where there will be an influx of male dogs to which rescue shelters, and those shelters can then be informed of the conclusions of this investigation to help them best present the male dogs to help balance the ratio of adult males in animal rescue shelters.   
