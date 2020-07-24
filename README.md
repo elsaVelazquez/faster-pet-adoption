@@ -81,10 +81,11 @@ Through this dataset, it is possible to determine when and where there will be a
 
 <br /><br />
 ## My Motivation
-| ![Ghandi Image](src/readme/imgs/5810891.jpg)Ghandi | ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/ghandi_quote.png) | ![](/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg) |
+ ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/ghandi_quote.png) 
+ ![](/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg) 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
 
-|-|-|-|
+
 >I am passionate about this project because I am a disabled veteran, and 
 >my dog saved my life.  
 >Surely more dogs can do more, for more vetearns and more people in general, and 
