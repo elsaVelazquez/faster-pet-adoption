@@ -1,15 +1,26 @@
 
+#### CUT AND PASTE COMMAND LINE API CALL (lines 26-39)
 
+
+#generic API curl command to request new token 
 curl -d "grant_type=client_credentials&client_id={CLIENT-ID}&client_secret={CLIENT-SECRET}" https://api.petfinder.com/v2/oauth2/token
 
 
 
-
-## note this token has expired and is for demo purposes only
+## command line response will look like:
 {"token_type":"Bearer","expires_in":3600,"access_token":"yJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6ImNiNTg2NjhlMzM2MjMwNWY1NmZkYTNhYzZlZjcwOTI5YzQzODg3NGUxMDQ1ZDZjOGIxODJhYjljY2FkOGNjOTY3ZTk0NmQxMjI1ZDRlOTc0IiwiaWF0IjoxNTk0ODg3NDU1LCJuYmYiOjE1OTQ4ODc0NTUsImV4cCI6MTU5NDg5MTA1NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.gZ_1wwq0Ttvx8I3GYKBjXDJnA7aiPpHv2SrSalYyzZ8ZuzqXMKcUxp7KsjWZptotsFEOD0ULZ71MZCDR996ztNQ960SuFbBT_4-W7_8j_d3l5kydRChSbupO_63wkyCkz3Qfp-so-irREBdcSlRYCrwQndorUlJfZj_soaesGvn4Jul5Wq-UXqXq3ng4Igyz8a1Tvu_KWNQU_iLMV_Bf9xQvdW3yJspKWyP-ayOGpywFqP-vU5OypzppAjYf1Yja5xdzTTaqJbTkWaQH4oIjEWYh0ydp8pHoDE75YijGsr2URy4zRFx5g6lXb4FRYIVb6VmpYjuvccuQ3C-NM7IQJw"}
 
 
+
+#result format for extracting img files:
 https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/48504302/1/?bust=1594870600
+
+
+
+****************************************************************************************
+****************************************************************************************
+
+
 
 
 curl -O  'photos_only_test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjFjMWM2ODJhYTIyNWRmMmQ2NmJiYzhlN2EyYzg5MTQxZWViMjdlMjQzNDViNGYxZjQ0OTA5MWZhYWM2ODRkZWU2YjI2NjE1NThjNjAwNzcyIiwiaWF0IjoxNTk1NDA2NjI4LCJuYmYiOjE1OTU0MDY2MjgsImV4cCI6MTU5NTQxMDIyOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.ZHZsWUKnmEwbENhw3iiKCyzKlyalXDwTazNPUNTVcFfS_VO1h6pjUc9ELDjLOibaoc5qj3NLshQyIaWBBp-QOotbOCntsasgZ-w75Jm-YtPSKPrHRgjs1_Mbu2C2yWDribemCdiCzYyhlywktZ-ekwh9bW9pA4wxHuO47zgiPJ8S9GflktVVMHvlhCr9E3JUBUwz56HuhGD8QuzeyYIFWVZQp9Xn8LJ-XttapBGHt89hdX0gnfBc1C2fLQBQ-Iy2Uwr6n9WsDU1G8VleO_I3preAFjz9smK0KwHJQjWi8Gl6X_vx8-FMK5N9s447QEMi_2sc8Agyt_6Ms7thorjJ0Q"  https://api.petfinder.com/v2/animals?type=dog&primary_photo_cropped=small&page=5
@@ -26,3 +37,6 @@ curl -O  'photos_only_test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG
         "status": []
     }
 }
+
+
+
