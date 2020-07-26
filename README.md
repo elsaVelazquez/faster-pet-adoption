@@ -1,5 +1,27 @@
-# Dogs In Shelters
+<img src="https://github.com/elsaVelazquez/faster-pet-adoption/blob/master/src/readme/title_banner.png"  width=800>
+
+<br />
+<div class="baron baron__root baron__clipper _MODIFIER">
+    <div class="baron__scroller">
+        <!-- Your content here --><br>
+     <br>
+     <br>
+     <br>
+     <br>
+    </div>
+
+    <div class="baron__track">
+        <div class="baron__control baron__up">▲</div>
+        <div class="baron__free">
+            <div class="baron__bar"></div>
+        </div>
+        <div class="baron__control baron__down">▼</div>
+    </div>
+</div>
+
+
 ### Are there *really* more female dogs in animal rescue shelters than male dogs?
+<br />
 
 ![raw counts of male vs female dogs](src/readme/raw_counts.png)
 
@@ -86,7 +108,7 @@ Through this dataset, it is possible to determine when and where there will be a
  ![quote the greatness of a nation can be measured by how they treat their pets](/src/readme/imgs/ghandi_quote.png) 
  ![](/data/img_dumps/dl5zpyw5k3jeb.cloudfront-1.jpg) 
 *https://www.goodreads.com/quotes/340-the-greatness-of-a-nation-and-its-moral-progress-can*
-
+-Quote by Ghandi
 
 >I am passionate about this project because I am a disabled veteran, and 
 >my dog saved my life.  
