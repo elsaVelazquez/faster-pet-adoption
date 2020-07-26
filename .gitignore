@@ -7,3 +7,5 @@ settings.json
 *.pyc
 *.__pycache__
 *.DS_store
+crypt.py
+*__pycache__

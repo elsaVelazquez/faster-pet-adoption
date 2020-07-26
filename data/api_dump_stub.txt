@@ -23,7 +23,7 @@ https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/48504302/1/?bust=1594870600
 
 
 
-curl -O  'photos_only_test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjFjMWM2ODJhYTIyNWRmMmQ2NmJiYzhlN2EyYzg5MTQxZWViMjdlMjQzNDViNGYxZjQ0OTA5MWZhYWM2ODRkZWU2YjI2NjE1NThjNjAwNzcyIiwiaWF0IjoxNTk1NDA2NjI4LCJuYmYiOjE1OTU0MDY2MjgsImV4cCI6MTU5NTQxMDIyOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.ZHZsWUKnmEwbENhw3iiKCyzKlyalXDwTazNPUNTVcFfS_VO1h6pjUc9ELDjLOibaoc5qj3NLshQyIaWBBp-QOotbOCntsasgZ-w75Jm-YtPSKPrHRgjs1_Mbu2C2yWDribemCdiCzYyhlywktZ-ekwh9bW9pA4wxHuO47zgiPJ8S9GflktVVMHvlhCr9E3JUBUwz56HuhGD8QuzeyYIFWVZQp9Xn8LJ-XttapBGHt89hdX0gnfBc1C2fLQBQ-Iy2Uwr6n9WsDU1G8VleO_I3preAFjz9smK0KwHJQjWi8Gl6X_vx8-FMK5N9s447QEMi_2sc8Agyt_6Ms7thorjJ0Q"  https://api.petfinder.com/v2/animals?type=dog&primary_photo_cropped=small&page=5
+curl -O  'photos_only_test.txt'  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjQ2MTBlNGU0M2I3YWJmNTEwYzFhZjFlMGQ3OTk1Nzc2N2ExZWUzYmVlMTA3ZmNkNDdkYjY4YzY4NWRkYjk0MGE0Yzc4NzI5OWFkMzAzOGE5IiwiaWF0IjoxNTk1NzMwODU0LCJuYmYiOjE1OTU3MzA4NTQsImV4cCI6MTU5NTczNDQ1NCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mFJFYzIhflJ-na2TfKsoWzGzuEfVbN_2ASdiPdVk8hS0ZdGwoYxhP_Rn_fIQvzpxkouheqHoqGG-bOi2wo0QDSNxj71uRujJ6lqhKakLLA-qrg-liTIC4Pej5f6unye2Pm_cRRqVwNHU1VO5ci745D7RPxSBaMhqAmnVboTukF7FEQFDvuneNsQ-51GNHKzRdjztICoUVjklM4fIj4VOX6o07mapouEWsyVlxk8lEkmBYqxBdlB3LJRvwEbCoMBt-K51wMPth-xTx56YLGVtiNd-nVSmDB0W0VGG8nYBzdX6nW95y0hD7kunT9ixQhZ5QpjPCNptdZihxZfy00VVWw"  https://api.petfinder.com/v2/animals?type=dog&primary_photo_cropped=small&page=5
 
 
 {
@@ -35,8 +35,44 @@ curl -O  'photos_only_test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG
         "photos":[]
         ,
         "status": []
+        ,
     }
 }
 
 
 
+##########################################################################
+
+curl -o adoptable.json -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjRlYmM0ZmEwNDc5ODE3NTIwMDZjZTEzMGEzMTUyZGUxYjM5MWJlMWNhNjM2YTNlNTc1OWI3NGU0YTZkYWFiYTM1NzMyYTVhZTE5OWRhODlhIiwiaWF0IjoxNTk1NzMzMTM0LCJuYmYiOjE1OTU3MzMxMzQsImV4cCI6MTU5NTczNjczNCwic3ViIjoiIiwic2NvcGVzIjpbXX0.uLhARB9iytUKoLJnvAbieIhBA57rpNwEpeinbvWbtpP5AsFDQxb3PwC_z3ExOCZRztWFxEkTzAcUR1oHGfFY5IMQ1LxHB4vBzKZzHeBLnuxR692YX0-Al7dtgVPDVTKEwTtNI-WwC_uLNEX3Sf-AHf3spaGGV0dOpJR_PXJ1457_b6mOAn2soFoCgXpUIzq_kxzbwfq3QNJiYPcfUMzeNU5I_5HPGsuLe9EhyWqU86sU0AEJ_b5OSv9svqUaoUqYQOkL7dHds4MkoOPUnYE0jNJV6pStg9cZ7abWZ2h-4_Ra5kiarH39AxTVsZFpTkgyeZZaAQTXeMJypBJ5bdUWJw" https://api.petfinder.com/v2/animals?type=dog&page=2 GET https://api.petfinder.com/v2/status/{status}/adopted > adoptable.json
+
+{
+    "animals": [
+        {
+            
+            "species": "Dog",
+            "breeds": [],
+            "age": [],
+            "gender": [],
+            "size": "Medium",
+            "coat": null,
+            "tags": [
+                "Cute",
+                "Intelligent",
+                "Large",
+                "Playful",
+                "Happy",
+                "Affectionate"
+            ],
+            "name": "",
+            "description": "",
+            "photos": [],
+            "status": "adopted",
+            "published_at": "",
+        }
+    ],
+    "pagination": {
+        "count_per_page": 40,
+        "total_pages": 100
+        }
+    }
+}
