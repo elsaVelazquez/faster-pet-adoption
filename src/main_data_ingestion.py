@@ -1,8 +1,8 @@
 import os
 
-from pipelines.ingest_webscrape_api import webscrape_api
-from pipelines.ingest_api_token import get_api_token
-from pipelines.crypt import crypt_it   
+from pipelines.data_ingestion.ingest_webscrape_api import webscrape_api
+from pipelines.data_ingestion.ingest_api_token import get_api_token
+from pipelines.data_ingestion.crypt import crypt_it   
 #need to figure out how to do this securely
 
 
