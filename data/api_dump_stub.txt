@@ -41,10 +41,58 @@ curl -O  'photos_only_test.txt'  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhb
 
 
 
+
+
+
+
 ##########################################################################
 
 curl -o adoptable.json -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjRlYmM0ZmEwNDc5ODE3NTIwMDZjZTEzMGEzMTUyZGUxYjM5MWJlMWNhNjM2YTNlNTc1OWI3NGU0YTZkYWFiYTM1NzMyYTVhZTE5OWRhODlhIiwiaWF0IjoxNTk1NzMzMTM0LCJuYmYiOjE1OTU3MzMxMzQsImV4cCI6MTU5NTczNjczNCwic3ViIjoiIiwic2NvcGVzIjpbXX0.uLhARB9iytUKoLJnvAbieIhBA57rpNwEpeinbvWbtpP5AsFDQxb3PwC_z3ExOCZRztWFxEkTzAcUR1oHGfFY5IMQ1LxHB4vBzKZzHeBLnuxR692YX0-Al7dtgVPDVTKEwTtNI-WwC_uLNEX3Sf-AHf3spaGGV0dOpJR_PXJ1457_b6mOAn2soFoCgXpUIzq_kxzbwfq3QNJiYPcfUMzeNU5I_5HPGsuLe9EhyWqU86sU0AEJ_b5OSv9svqUaoUqYQOkL7dHds4MkoOPUnYE0jNJV6pStg9cZ7abWZ2h-4_Ra5kiarH39AxTVsZFpTkgyeZZaAQTXeMJypBJ5bdUWJw" https://api.petfinder.com/v2/animals?type=dog&page=2 GET https://api.petfinder.com/v2/status/{status}/adopted > adoptable.json
 
+{
+    "animals": [
+        {
+            
+            "species": "Dog",
+            "breeds": [],
+            "age": [],
+            "gender": [],
+            "size": "Medium",
+            "coat": null,
+            "tags": [
+                "Cute",
+                "Intelligent",
+                "Large",
+                "Playful",
+                "Happy",
+                "Affectionate"
+            ],
+            "name": "",
+            "description": "",
+            "photos": [],
+            "status": "adopted",
+            "published_at": "",
+        }
+    ],
+    "pagination": {
+        "count_per_page": 40,
+        "total_pages": 100
+        }
+    }
+}
+
+
+
+
+
+========================================================
+
+curl -o adoptable.json -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjRlYmM0ZmEwNDc5ODE3NTIwMDZjZTEzMGEzMTUyZGUxYjM5MWJlMWNhNjM2YTNlNTc1OWI3NGU0YTZkYWFiYTM1NzMyYTVhZTE5OWRhODlhIiwiaWF0IjoxNTk1NzMzMTM0LCJuYmYiOjE1OTU3MzMxMzQsImV4cCI6MTU5NTczNjczNCwic3ViIjoiIiwic2NvcGVzIjpbXX0.uLhARB9iytUKoLJnvAbieIhBA57rpNwEpeinbvWbtpP5AsFDQxb3PwC_z3ExOCZRztWFxEkTzAcUR1oHGfFY5IMQ1LxHB4vBzKZzHeBLnuxR692YX0-Al7dtgVPDVTKEwTtNI-WwC_uLNEX3Sf-AHf3spaGGV0dOpJR_PXJ1457_b6mOAn2soFoCgXpUIzq_kxzbwfq3QNJiYPcfUMzeNU5I_5HPGsuLe9EhyWqU86sU0AEJ_b5OSv9svqUaoUqYQOkL7dHds4MkoOPUnYE0jNJV6pStg9cZ7abWZ2h-4_Ra5kiarH39AxTVsZFpTkgyeZZaAQTXeMJypBJ5bdUWJw" https://api.petfinder.com/v2/animals?type=dog&page=2 GET https://api.petfinder.com/v2/status/{status}/adopted > adoptable.json
+curl -o adopted.json -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6Ijg4NGUwYWUwMjUwYzU4OGRjMGY4YzliZTAzMjNjYzM0Zjc4MGMyNjg3NGYzZWFkOTU4YzJlNGM1MWJlNGNmYmU4ZjgxNDMzMDYzZTI5ZWY3IiwiaWF0IjoxNTk1OTYzNTQyLCJuYmYiOjE1OTU5NjM1NDIsImV4cCI6MTU5NTk2NzE0Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.uL-v9XWUvpugVmKwLpU4irvxfGg0MprzKZCG8-UEGZyjgkSwgFr0Ek8UeAMM4b8Jksg36xT1Jmp8BuVxtLb1C17dXcHYk9CE9OMZrm7dUCVgE3EexyzoGKr0DbrkGJ-EBzTjQXdn2iLwPj5TQtOrR532uXzLIlvVouMMT1vq_1Ory2eZtWhn18e-8gaQ1jGgp5_3rUuqB3f_Kh1uBMHPN4wAMsvfmuGKoofK7C8Rs31oSK0zwNOfuwKbb9S9ig9LPvLGRjj-ZPqkoKjjUy0hd3ZrrGd5rg6VEoWOfTdLgQaKSH_P5S2UNenqtb3pqjJCEiVHLuz9HXmaXMqMu4Jacg" GET https://api.petfinder.com/v2/animals?type=Dog&location=90210&limit=100&status=adopted 
+
+>adoptable.JSON
+
+curl -O adopted.json -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjllNmVmNGMwOTdkZjkxNzEzZGZmMGU0Y2M1NWVjZTY0ZDEwMmE3MTA1YmVmNWVjMzJkMGQxNGFjMDAxMGM3NzU2NDVmMDdhOWY3Yzk3MWMwIiwiaWF0IjoxNTk1OTAwMjQ1LCJuYmYiOjE1OTU5MDAyNDUsImV4cCI6MTU5NTkwMzg0NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.jVZaUpRzfb2lKMIyiuvmCJehmGyiTU7NXdl8xp8OCIzYy288iDICt25JiGPNj1nauykYJpovzHK-PuaeWNsSvR8jsoyDqRVEYpfhl0ImILsJwcrWvt-z0ScPAV_9E_BY1dsKDK9BGg9vAsMeBAFwRFSrnNv4P0k52RM2HSGDSHwvQazoXfXau1SxkDKrWXx2OiZa5GedTpcCRm9E8PGuavYf_cDc0nPXQ2GdAojY7cbTfGSKAra5AHdZoGfqxlDA-YTVme6gkxkw7zobZh7Ur6SVcevGWdOnavgH_zHdERYiaSZ-SPX37PxLHEky8cHXx6sySc-bJYwao2LnpaKxrA" GET https://api.petfinder.com/v2/animals?type=Dog&location=90210&limit=100&status=adopted
 {
     "animals": [
         {

@@ -27,7 +27,7 @@ if __name__ == "__main__":
     print("\nyour token is: ")
     print(token)
         
-    total_api_calls = 2
+    total_api_calls = 200
     call = webscrape_api(total_api_calls, token)
     print(call)
     
