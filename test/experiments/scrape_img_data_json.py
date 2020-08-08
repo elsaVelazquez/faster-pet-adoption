@@ -23,7 +23,7 @@ curl -o '../data/csv/api_img_dump_2019-05.txt' "Authorization: Bearer eyJ0eXAiOi
 curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6ImJlODM4MDhlNWE0N2Y5NDJlMTkwYWY1N2ZhZmNlZTdlZjhmNDIwMTU2NzE4MGM3OWRlMDNjN2YwOGU0ZWQzZjg1MzZhODhiNTI1ZTg4Y2Y1IiwiaWF0IjoxNTk1OTg2NjI3LCJuYmYiOjE1OTU5ODY2MjcsImV4cCI6MTU5NTk5MDIyNywic3ViIjoiIiwic2NvcGVzIjpbXX0.W8wDgvl2JKjpCrgqN6yvB5FCVsbHTevOsv9-NLatiEqnWhv_U4VH15wvMxdW5lwXzG8W01ftNTcvF75tPU55R9CoeBnjcGCJ_OX-f89LAOsjmu0GtHNj0ZznrCbHJ-TOcOwr2a-VINLYi9u6ZQVopqMLF8LF5oj3QtZtDZW2BUYvtQnGFARaNOvrALR7DVPZ-VvG8FwK83OJ2wCGCSpUmdTVOaZVuRAw7kfIJqVrWbV3DlYcl8YiZE961jjL5mjm4ThTVU7nmWLtAjKzRKlRIxT6hzLGeAo-DfJgKqa173e_9ogfWxNq8CkKsNgY9LmH6ohK7JUisN6k9j1gUd1OIw" GET https://api.petfinder.com/v2/animals?status=adopted&animals?type=dog -O
 
 
-curl  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjRkZWQ1ZmY3ZWM2MDllMzdkNDE1ZDgzMWUyYzY1MzAxOThhM2I3MDM5M2EwMmQ5MWZkYzk4ZDk0MGVkYmEzNWIzNzJjMWVmZmVmNjI4YTk5IiwiaWF0IjoxNTk2MjQ4NzcwLCJuYmYiOjE1OTYyNDg3NzAsImV4cCI6MTU5NjI1MjM3MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.lB3nuF-2CljpcLY5dfYKhYgJ90r9LbfA_6Px-ZxTagKCro5MIOfz2X_q3a8IshFNzryB4E9ZOr1D1kfdbB8wkTkX1Abh7FflJsaM8tCaq0QcrDrNIIGephg9h_ybaRBkgjpsj-WsV1hzPsskfx56ocAsjcqZ2pbOmMqESHWUuF4jciEWQzHCjxaJ27nQMQWfoOZkLFHvGfuTbCJG620-52zLFUVXxNkX42WzXkzSPR3weUcVsIV9tix68HgbK4FKa_jDoDbD_H5YKlgDVFRRZUy0rx_jylBY3oTOUnofiBKRSuycPIn2MxOjqGzhe8Fy0Ouxk9XamPQZ2SoA52Nyyw" GET https://api.petfinder.com/v2/animals?status=adopted&animals?type=dog -O
+curl  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjM2ZTkxODcxMGEwMzMwMzQ3ZTAxMTY4YjhiZjU0Yjg1NDE3Y2U1ZjJmNmMzNGNmYzIyYjVmY2M1MDMyNjgzODQyYmFhMjFmYWViZjg2ZTU2IiwiaWF0IjoxNTk2MzI2MjAyLCJuYmYiOjE1OTYzMjYyMDIsImV4cCI6MTU5NjMyOTgwMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.cYdl5ObfCEk2a6LYbkDYrWqUxSJbsJm_9VCYORzomu0ptflV2kyEY16bduF5oLAcPVDKfF-zwAaWo4SzTxRHVoqSi7sxpVb43IsgCXOXYvt4BqoQtuZ2MxramsnGtX47Tj9pQbLLwUL8BDaRPNoMuD_ehQ_mNM6teKsPQ0SVG7927wQDpNvdL5xRIfPgz4kLPaPLikJi9ThR1MC03zxb4mRAjhRTxb9VrG61yLQeapzLauVduVCFe4KJjl3DmIKJFdqxLqE6Jm5_JLF6LZce12rwsMhKbltMGqA2bmGfLcr73lQgfH8C87eJKOB0Pr80F6IMMHZgb3NY54OeYB3Xpg" GET https://api.petfinder.com/v2/animals?status=adopted&animals?type=dog&page=2 -O
 {
     "animals": [
         {
@@ -48,7 +48,79 @@ curl  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI
             "status": "adopted",
             "published_at": "",
         }
-    ]
+    ],
+    "pagination": {
+        "count_per_page": 40,
+        "total_pages": 100
+        }
     }
 }
->a_latest_adoptable.JSON
+
+
+
+curl  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjM2ZTkxODcxMGEwMzMwMzQ3ZTAxMTY4YjhiZjU0Yjg1NDE3Y2U1ZjJmNmMzNGNmYzIyYjVmY2M1MDMyNjgzODQyYmFhMjFmYWViZjg2ZTU2IiwiaWF0IjoxNTk2MzI2MjAyLCJuYmYiOjE1OTYzMjYyMDIsImV4cCI6MTU5NjMyOTgwMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.cYdl5ObfCEk2a6LYbkDYrWqUxSJbsJm_9VCYORzomu0ptflV2kyEY16bduF5oLAcPVDKfF-zwAaWo4SzTxRHVoqSi7sxpVb43IsgCXOXYvt4BqoQtuZ2MxramsnGtX47Tj9pQbLLwUL8BDaRPNoMuD_ehQ_mNM6teKsPQ0SVG7927wQDpNvdL5xRIfPgz4kLPaPLikJi9ThR1MC03zxb4mRAjhRTxb9VrG61yLQeapzLauVduVCFe4KJjl3DmIKJFdqxLqE6Jm5_JLF6LZce12rwsMhKbltMGqA2bmGfLcr73lQgfH8C87eJKOB0Pr80F6IMMHZgb3NY54OeYB3Xpg" GET https://api.petfinder.com/v2/animals?status=adopted&animals?type=dog&page=3 -O
+{
+    "animals": [
+        {
+            
+            "species": "Dog",
+            "breeds": [],
+            "age": [],
+            "gender": [],
+            "size": "Medium",
+            "coat": null,
+            "tags": [
+                "Cute",
+                "Intelligent",
+                "Large",
+                "Playful",
+                "Happy",
+                "Affectionate"
+            ],
+            "name": "",
+            "description": "",
+            "photos": [],
+            "status": "adopted",
+            "published_at": "",
+        }
+    ],
+    "pagination": {
+        "count_per_page": 40,
+        "total_pages": 100
+        }
+    }
+}
+
+
+curl  -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjM2ZTkxODcxMGEwMzMwMzQ3ZTAxMTY4YjhiZjU0Yjg1NDE3Y2U1ZjJmNmMzNGNmYzIyYjVmY2M1MDMyNjgzODQyYmFhMjFmYWViZjg2ZTU2IiwiaWF0IjoxNTk2MzI2MjAyLCJuYmYiOjE1OTYzMjYyMDIsImV4cCI6MTU5NjMyOTgwMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.cYdl5ObfCEk2a6LYbkDYrWqUxSJbsJm_9VCYORzomu0ptflV2kyEY16bduF5oLAcPVDKfF-zwAaWo4SzTxRHVoqSi7sxpVb43IsgCXOXYvt4BqoQtuZ2MxramsnGtX47Tj9pQbLLwUL8BDaRPNoMuD_ehQ_mNM6teKsPQ0SVG7927wQDpNvdL5xRIfPgz4kLPaPLikJi9ThR1MC03zxb4mRAjhRTxb9VrG61yLQeapzLauVduVCFe4KJjl3DmIKJFdqxLqE6Jm5_JLF6LZce12rwsMhKbltMGqA2bmGfLcr73lQgfH8C87eJKOB0Pr80F6IMMHZgb3NY54OeYB3Xpg" GET https://api.petfinder.com/v2/animals?status=adopted&current_page=8 -O
+{
+    "animals": [
+        {
+            
+            "species": "Dog",
+            "breeds": [],
+            "age": [],
+            "gender": [],
+            "size": "Medium",
+            "coat": null,
+            "tags": [
+                "Cute",
+                "Intelligent",
+                "Large",
+                "Playful",
+                "Happy",
+                "Affectionate"
+            ],
+            "name": "",
+            "description": "",
+            "photos": [],
+            "status": "adopted",
+            "published_at": "",
+        }
+    ],
+    "pagination": {
+        "count_per_page": 40,
+        "total_pages": 100
+        }
+    }
+}

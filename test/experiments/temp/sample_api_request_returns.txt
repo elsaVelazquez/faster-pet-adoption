@@ -5,7 +5,7 @@ curl -o 'test_no_header.txt' "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJS
 
 curl -O  '../data/test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjQ2MTBlNGU0M2I3YWJmNTEwYzFhZjFlMGQ3OTk1Nzc2N2ExZWUzYmVlMTA3ZmNkNDdkYjY4YzY4NWRkYjk0MGE0Yzc4NzI5OWFkMzAzOGE5IiwiaWF0IjoxNTk1NzMwODU0LCJuYmYiOjE1OTU3MzA4NTQsImV4cCI6MTU5NTczNDQ1NCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mFJFYzIhflJ-na2TfKsoWzGzuEfVbN_2ASdiPdVk8hS0ZdGwoYxhP_Rn_fIQvzpxkouheqHoqGG-bOi2wo0QDSNxj71uRujJ6lqhKakLLA-qrg-liTIC4Pej5f6unye2Pm_cRRqVwNHU1VO5ci745D7RPxSBaMhqAmnVboTukF7FEQFDvuneNsQ-51GNHKzRdjztICoUVjklM4fIj4VOX6o07mapouEWsyVlxk8lEkmBYqxBdlB3LJRvwEbCoMBt-K51wMPth-xTx56YLGVtiNd-nVSmDB0W0VGG8nYBzdX6nW95y0hD7kunT9ixQhZ5QpjPCNptdZihxZfy00VVWw"  https://api.petfinder.com/v2/animals?type=dog&page=5
 
-
+curl -O '../data/api_dump_2020-07.json' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjA1NTkzNWJlYmI0NmRhZDdhMmE0YmE1NjU1ZTg4YWFiNTlmODFjMmU1MGRiZmY3NzE4MTA0NDM5NGU3NTg1NTc0OTRkOTZlMTY5MTg1MGRkIiwiaWF0IjoxNTk2MzM5MzUyLCJuYmYiOjE1OTYzMzkzNTIsImV4cCI6MTU5NjM0Mjk1Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.r-g6cRRyh92aqDFrAT9-AhTWDaUuhRr9H5VDLPBJVqCR-BgQcV6GPhETv5yKLdVTf278fUYZ36Ilg6C25AgR0ARMFeOew3hfW9mryTyCWVmbFQx7yev2uJzCdU1AVg4f8iRAswCQFjUKHxpxLQAbeuvDTmFDMhXgqWFs10Ztw1eTnnzmn4wsmi5H1Xt4vIu3MQQKMJidWuO3XUqKkYowsafA1iV_GK6kYo5pUWGio9WDjxTFBHzeO_8XDQGLsiX8DR66eNqGk42naGdlsHhyVvnv5CVjfYZYxmpgOKqO2Wbaj72ZnDmZRnUmYFHDEKpnvGMr-vo5i0PP7Z6QyKtxyA" https://api.petfinder.com/v2/animals?type=dog&page=5
 {
     "type": {
         "name": "Dog",
@@ -35,7 +35,7 @@ curl -O  '../data/test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOi
             "Yellow / Tan / Blond / Fawn"
         ],
         "genders": [],
-            "published_at": "2020-07-20T14:49:09+0000",
+            "published_at": "2020-08-01T14:49:09+0000",
         "_links": {
             "self": {
                 "href": "/v2/types/dog"
@@ -54,3 +54,7 @@ curl -O  '../data/test.txt' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOi
         ]
     }
 } >test.txt
+
+
+
+curl -o  scraped_data_2.csv -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjVkZjg4ODAwZDI2NTAxYTUxNTRlNWJhZjdjYTAwNjYyNDU5ZjU3ZWFhZjE2OGMyY2ZiMDg0MTMxNTg1ZWI3ZTQzMTc5YzcxNGY4NGZiYmJjIiwiaWF0IjoxNTk2MzEyNzEwLCJuYmYiOjE1OTYzMTI3MTAsImV4cCI6MTU5NjMxNjMxMCwic3ViIjoiIiwic2NvcGVzIjpbXX0.MYKQnIk1By2qy4DXE7XPKl7pjfEuzoppq47MOoG9o8SODtUckGsrPmD__ucxGWGbJZi4wR9M_lRlQXCYn7FvXSl4QV6zbUwASSLfoIUFdnJNCk6OcX6ILDdxVHBiqhb7IE6wC2j-FG7XqPYmsmC5Sk0d8NrmDJ1leTu2y_kqRyaed2WaLnJ1X-5pVMVRDC1iLAF3o8v6GGGy7m6PyZ9FPXmFmxRpyWNB_uQqZSv9Tg7b43Q02jbv7sKtG9jcLkTu2UM3gUEc688lDy3lnun2zdrojhuCs65mHrG9P3XAKOeUx9E-RKpPiOFjBEmKjcbXUr1n1RFlV9i5FhfBEiSZzg" https://api.petfinder.com/v2/animals?status=adopted&type=dog&count_per_page=100&page=7

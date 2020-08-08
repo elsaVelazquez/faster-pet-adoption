@@ -8,7 +8,7 @@ stopwords = ENGLISH_STOP_WORDS
 
   
 # Opening JSON file 
-files_lst = getListOfFiles(dirName)
+files_lst = get_file_names(dirName)
 for name in files_lst:
     
     with open(name) as json_file: 
