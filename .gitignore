@@ -9,3 +9,4 @@ settings.json
 *.DS_store
 crypt.py
 *__pycache__
+creds.txt

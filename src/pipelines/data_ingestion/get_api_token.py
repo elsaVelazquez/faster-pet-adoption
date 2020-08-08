@@ -1,6 +1,7 @@
 import os
 
-def get_api_token(creds):
+
+def get_api_token(creds = ""):
 
     curl_beginning = 'curl -d \"grant_type=client_credentials&client_id='
     curl_end = '\" https://api.petfinder.com/v2/oauth2/token #api address'
