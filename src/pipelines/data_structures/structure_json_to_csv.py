@@ -4,26 +4,24 @@
   
 import json 
 import csv 
+from pipelines.data_structures.get_file_names import get_file_names
 
-# json_file = '../../../data/json/json_dump/output_4828.JSON'
 
-json_file = '../../../data/json/giant_json.json'
+json_file = '../../../data/json/json_dump/test_p8.json'
+print(json_file)
 # output_4828.JSON
   
 def json_to_csv(json_file):
-    # Opening JSON file and loading the data 
-    # into the variable data 
-    #TODO push in only one_giant.json 
-    # with open('../../../data/json/json_dump/output_4828.JSON') as json_file: 
-    with open('../../../data/json/giant_json.json') as json_file: 
+    # Opening JSON file and loading the data into the variable data 
+    open_file = json_file
+    with open(open_file) as json_file: 
 
         data = json.load(json_file) 
     
     animals_data = data['animals'] 
     
-    # now we will open a file for writing 
-    # data_file = open('../../../data/csv/output_4828.csv', 'w') 
-    data_file = open('../../../data/json/giant_json.csv', 'w') 
+    #open a file for writing to
+    data_file = open('../../../data/csv/aggregated_csv_1.csv', 'a+') 
 
     
     # create the csv writer object 
@@ -45,5 +43,11 @@ def json_to_csv(json_file):
         csv_writer.writerow(animal.values()) 
     
     data_file.close() 
+
+
+if __name__ == "__main__":
+
+
+file_names = get_file_names(dirName='../data/txt')
 
 json_to_csv(json_file)
