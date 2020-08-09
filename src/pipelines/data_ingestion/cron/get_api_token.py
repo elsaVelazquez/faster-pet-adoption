@@ -23,8 +23,9 @@ def clean_token(token):
     '''
     strip the json from the token to turn it into pure txt string
     '''
-    token_clean = token.strip('{"token_type":"Bearer","expires_in":3600,"access_token":"')
-    final_token = token_clean.strip('"}')
+    # token_clean = token.replace('{"token_type":"Bearer","expires_in":3600,"access_token":"', 'ey')
+    # final_token = token_clean.strip('"}')
+    final_token = token
     print(final_token)
     f= open("token.txt","w+")
     f.write(final_token)
@@ -35,7 +36,10 @@ def clean_token(token):
 if __name__ == "__main__":
     
     creds = open('creds.txt', 'r').read()
+    
+    get_api_token(creds)
+
+
     token = open('token.txt', 'r').read()
 
-    get_api_token(creds)
     clean_token(token)
