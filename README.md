@@ -1,7 +1,9 @@
 Workflow:
 Data Ingestion
 had to figure out how to get out the data i wanted using their whack API
-    ended up making a Python Flask version of a  cron job
+    ended up making a Python  cron job
+    
+    You will have to open the file creds_temp.txt ('src/pipelines/data_ingestion/cron/creds_temp.txt'), copy and paste your API key, given by PetFinders.com, rename the file as creds.txt and save it in that same directory, for the ingestion pipeline to be automated for you.  
 
 Clean the Data
     Data Structures Conversions-- turned all the JSON into csv with a python function
