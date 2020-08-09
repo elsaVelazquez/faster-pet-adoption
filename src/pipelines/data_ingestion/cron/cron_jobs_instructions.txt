@@ -1,0 +1,9 @@
+# #renew the key every 1 hours
+0 * * * * python get_api_token.py >> token.txt
+
+
+
+# # scrape the site every ten minutes
+# # run every hour starting at every ten minute mark
+10,20,30,40,50 0  * * * python scrape_adopted.py > "../data/json/json_dump/$(date +\%d\%m\%y_\%H\%M\%S).json" 2>&1
+
