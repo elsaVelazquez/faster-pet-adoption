@@ -8,6 +8,9 @@ had to figure out how to get out the data i wanted using their whack API
 Clean the Data
     Data Structures Conversions-- turned all the JSON into csv with a python function
 
+Data Wrangling/Munging
+I used an AWS S3 bucket to store the data and interacted with it using PySpark.
+
 
 EDA
 compare ratio of male and female dogs in shelters to ratios of adopted genders
