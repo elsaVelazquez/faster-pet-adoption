@@ -10,7 +10,7 @@ Clean the Data
 
 Data Wrangling/Munging
 I used an AWS S3 bucket to store the data and interacted with it using PySpark.
-
+I created a keypair using EC2.
 
 EDA
 compare ratio of male and female dogs in shelters to ratios of adopted genders
