@@ -25,6 +25,6 @@ if __name__ == "__main__":
     curl_end = '\"  https://api.petfinder.com/v2/animals?status=adopted&type=Dog&limit=100'
 
     curl_full = curl_beginning + out_txt + curl_middle + three_hour_token + curl_end
-    # print(curl_full)
+    print(curl_full)
         
     send_curl_cmd(curl_full)

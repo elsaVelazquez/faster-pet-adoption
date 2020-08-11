@@ -1,15 +1,19 @@
 import os
 
-total_calls = 5
+total_calls = 5000
 
 curl_beginning = '\"Authorization: Bearer '
 
-three_hour_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjE4MWE0YjM2Nzg1ODVmYmFhZTkzNWJlYTkwMTcwODA1Mzg3YzY3OTMyZGEyMDk2YTk3MWI4Y2ZiZDU2YmRjYjVjMjNkYjBmZjljZmU1MDk0IiwiaWF0IjoxNTk2MjUyMjEyLCJuYmYiOjE1OTYyNTIyMTIsImV4cCI6MTU5NjI1NTgxMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.Gm4Ly8kAjdutgNB3ggfOXdAK6Rpbn2tI1hrMAYZhpZKAczvvYFGrmDzFKlvnDGsvszqMSco8xaxvCUbt0TG7FdGW800sAhUfzJxi4Gr-MClviSqoKdD7IqF4TTe-0xwvwCtCvdp0Oz7o8C6f8unJBKrntlJnAGC8zNJI62QGPlH_ndXOOW9_LH4-mk8rYo2tH-gcxsu44mrXvM6Ed6RXNZLm8wo1lLFqxnRJ_QaGZKSm72ur-7DnlX516NZVaIJVmjkh9SQpA8z5zqpN2ErZ90LGzoM4fDihYnk4LbCCgAbe9XoC34Zsye3kE1-y600A58kXtIHTKBR9adhc29imuQ'
-curl_end = '\"  https://api.petfinder.com/v2/animals?type=dog&page=' #api address
+three_hour_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxOHFkRGVOMjJWSXVOUG01WEJFOXVIUnQycWJBckRWN0Y2VEFjRVdZRHlTVUpTNmRnZCIsImp0aSI6IjE5MzYwZTMzNzZiNjcxZGNkNTBkYmUyMDg3ZDA4NmRiNjdkYWRmZWM3YTkyYWFhM2YyYjJjMzViMTUzYjAxMjNjN2RjYTgxYWI1NjU5YmUwIiwiaWF0IjoxNTk3MTYzMjc1LCJuYmYiOjE1OTcxNjMyNzUsImV4cCI6MTU5NzE2Njg3NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.hTXHqrPedTt8xMcDNLe-vcWOhwVM1oTjwqWnV56MvvWA007-UiOAToUE7-1Isj4fTtnx4OBRGRIspWi60CSfpIaBI64auYnw2xFl4F0UK_hkzt8WC0gt0oCvJgQp2NNTnp-HPG_tcJ2B5IiDdpSfKzZBB_mvx1nsV8-S8eEFYwH-56XoYE_AmKrjhTLATKtQ3P8uIEW7Z0v65ugCaAAUhYtEczIe6srYrkClc6oC_0A12RbgX5EFkV12oEide1Oo8woPovgq0vpR8kBhq08tFAck0sCLpT9WsMrXHSu1bpdxIlhbcF6kFTPGdLUM4RAEF6zmiqarisfK1MS61vdVGQ'
+curl_end = '\"  https://api.petfinder.com/v2/animals?status=adopted&page=' #api address
 
 
 for i in range(1, total_calls+1):
     changing_page = i
     changing_page = str(i)
-    curl_full = (f'curl -o  \'../data/output_{i}.JSON\' ' + curl_beginning + three_hour_token + curl_end + changing_page)
+    curl_full = (f'curl -o  \'../data/ADOPTED_Aug112020_{i}.JSON\' ' + curl_beginning + three_hour_token + curl_end + changing_page)
     os.system(curl_full)
+
+
+
+
