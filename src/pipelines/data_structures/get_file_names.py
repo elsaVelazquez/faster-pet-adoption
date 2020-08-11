@@ -1,31 +1,26 @@
 import os
-'''
+
+
+def get_file_names(dir_name):
+    '''
     For the given path, get the List of all files in the directory tree 
-'''
-
-
-# dirName = '../data/json_dump';
-
-
-
-def get_file_names(dirName):
+    '''
     # create a list of file and sub directories 
     # names in the given directory 
-    listOfFile = os.listdir(dirName)
-    allFiles = list()
+    files_list = os.listdir(dir_name)
+    all_files = list()
     # Iterate over all the entries
-    for entry in listOfFile:
+    for file_n in files_list:
         # Create full path
-        fullPath = os.path.join(dirName, entry)
-        # If entry is a directory then get the list of files in this directory 
-        if os.path.isdir(fullPath):
-            allFiles = allFiles + get_file_names(fullPath)
+        full_path = os.path.join(dir_name, file_n)
+        # If file_n is a directory then get the list of files in this directory 
+        if os.path.isdir(full_path):
+            all_files = all_files + get_file_names(full_path)
         else:
-            allFiles.append(fullPath)
-    print(allFiles)                
-    return allFiles        
+            all_files.append(full_path)
+    print(all_files)                
+    return all_files        
     
-# dirName = '../data/json_dump';
     
 
  

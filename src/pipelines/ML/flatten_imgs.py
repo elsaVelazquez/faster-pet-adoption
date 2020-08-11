@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 #small dataset feature selection
 from skimage.io import imread
 image = imread(r"../data/scraped_dog_adoption_petfinder_img_files/test_img.jpg")
