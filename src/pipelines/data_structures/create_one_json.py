@@ -9,7 +9,7 @@ def create_cleaned_textline_from_words(words):
     text = ' '.join([word for word in words])
     return text
 
-dirName = '../../../data/json/json_dump';  
+dirName = '../../../data/json/json_dump_by_animal';  
 mash_jsons_together = get_file_names(dirName)
 
 clean_mashed_json_str = create_cleaned_textline_from_words(mash_jsons_together) 
