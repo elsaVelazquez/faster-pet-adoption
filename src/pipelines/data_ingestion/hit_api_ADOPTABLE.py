@@ -2,7 +2,7 @@ import os
 
 
 
-total_calls = 390412
+total_calls = 5000
 
 
 curl_beginning = "curl -o  ../../../data/json/json_dump/"
@@ -13,7 +13,7 @@ curl_middle = "-H \"Authorization: Bearer "
 
 three_hour_token =  open('cron/token.txt', 'r').read()
 
-curl_end = '\"  https://api.petfinder.com/v2/animals?status=adopted&page='
+curl_end = '\"  https://api.petfinder.com/v2/animals?status=adoptable&page='
 
 # ouput = '> '
 
@@ -21,7 +21,7 @@ for i in range(1, total_calls+1):
     changing_page = i
     changing_page = str(i)
     # curl_full = (f'curl -o  ../../../data/json/json_dump/ADOPTED_Aug112020_{i}.JSON ' + curl_middle + three_hour_token + curl_end + changing_page)
-    curl_full = (f'curl -o  ../../../data/json/json_dump/ADOPTED_Aug112020_{i}.JSON ' + curl_middle + three_hour_token + curl_end + changing_page ) #          + '&limit=100') #'>       ADOPTED.JSON 2>&1')
+    curl_full = (f'curl -o  ../../../data/json/json_dump/ADOPTABLE_Aug112020_{i}.JSON ' + curl_middle + three_hour_token + curl_end + changing_page ) #          + '&limit=100') #'>       ADOPTED.JSON 2>&1')
 
     print(curl_full)
     
