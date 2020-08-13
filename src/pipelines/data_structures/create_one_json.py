@@ -14,7 +14,7 @@ mash_jsons_together = get_file_names(dirName)
 
 clean_mashed_json_str = create_cleaned_textline_from_words(mash_jsons_together) 
 
-clean_mashed_json_str
+print(clean_mashed_json_str)
 
 
 # cmd_line_string = 'jq -s . ' + clean_mashed_json_str + '> big_json_v2.json'
