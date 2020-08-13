@@ -1,5 +1,5 @@
 Copy and paste your API key, given by PetFinders.com, 
-rename this file as creds.txt and save it in this same directory, 
+rename this file as crypt.py and save it in this same directory, 
 for the ingestion pipeline to be automated for you. 
 
 Make sure to delete all this text.  

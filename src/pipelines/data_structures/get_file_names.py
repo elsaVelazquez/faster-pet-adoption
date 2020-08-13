@@ -21,6 +21,8 @@ def get_file_names(dir_name):
     print(all_files)                
     return all_files        
     
+# if __name__ == '__main__':
+#     get_file_names(dir_name)
     
 
  
