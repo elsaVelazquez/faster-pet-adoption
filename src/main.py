@@ -7,15 +7,10 @@ from pipelines.data_ingestion.scrape_by_animal_id import scrape_by_id
 
 if __name__ == "__main__":
     '''   
-    # MUST DO STEPS 1, 2 ON FIRST RUN ONLY
-
-      1. paste your api key into crypt_copy.py, then rename the file crypt.py 
-      !!IMPORTANT You should rename crypt_copy.py to crypt.py and leave crypt.py in the .gitignore file for security reasons.
-    
-      2. get api token
-        1a. paste the key, generated in the command line , into main_ingestion.py
-         in crypt_copy.py then rename the file as crypt.py ##!! note crypt.py is in .gitignore for security reasons
-        2. scrape json 
+    # MUST DO THE FOLLOWING ON FIRST RUN ONLY
+        1. Paste your api key into crypt_copy.py.
+        2. Rename the file to crypt.py .
+        3. Leave crypt.py in gitignore for security reasons.
     '''
 
     #grab your key
@@ -24,8 +19,7 @@ if __name__ == "__main__":
     #generate a three-hour token
     three_hour_token = get_api_token(start)
     
-    #data ingestion pipeline
-    # scrape_by_animal_id.py
+    #data ingestion pipeline--> scrape 1 JSON per animal, by animal id
     animal_id = 48549546 #will search for this + the next 1000 animals
     scrape_by_id(animal_id) #scrape for 1000 records (per the API limit)
     data_ingestion_pipeline = 'src/pipelines/data_ingestion/scrape_by_animal_id.py'
@@ -41,16 +35,4 @@ if __name__ == "__main__":
     os.system(python data_wrangling_pipeline)
     data_wrangling_pipeline_imgs_to_cloud = 'src/pipelines/wrangling/AWS/imgs_to_cloud.py'
     os.system(python data_wrangling_pipeline_imgs_to_cloud)
-    
-    
-    
-
-    
-    #cleaning pipeline
-    file_names = get_file_names(dirName='../data/txt')
-    
-    
-    
-    
-    
     
