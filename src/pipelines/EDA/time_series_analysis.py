@@ -35,7 +35,7 @@ def create_time_year(year):
             freq = 'D'
         )
     })
-    df_time_yr["counts"] = np.zeros(len(df_time_yr))
+    # df_time_yr["counts"] = np.zeros(len(df_time_yr))
     # print("---------------------")
     # print(df_time_yr)
     # print(type(df_time_yr))
@@ -73,7 +73,7 @@ def count_unique_dogs(s):
 def counts_per_day(dict_):
     counts_df = pd.DataFrame.from_dict(dict_, orient='index')
     counts_df.sort_index(inplace=True)
-    print(counts_df)
+    # print(counts_df)
     return None
 
 if __name__ == "__main__":
@@ -84,21 +84,35 @@ if __name__ == "__main__":
     
     year = '2020'
     y = create_time_year(year)
-    # print(y) 
+    print(y) 
+    print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
     
-    df['normalised_date'] = pd.to_datetime(df['status_changed_at'], infer_datetime_format=True).dt.normalize()
-    print("---------------------")
-    print(df['normalised_date'])
-    print(type(df['normalised_date']))
-    print("---------------------")
+    #set every day to time 0/ midnight
+    df['date'] = pd.to_datetime(df['status_changed_at'], infer_datetime_format=True).dt.normalize()
+    # print("---------------------")
+    # print(df['normalised_date'])
+    # print(type(df['normalised_date']))
+    # print("---------------------")
+    df_normalised = df['date']
+    #change the time series to a pandas df for joining later
+    df_dates = pd.DataFrame([df_normalised]).T
+    # print(df_dates)
+    # print(type(df_dates))
+    # print("---------------------")
+
     
-    dict_count = count_unique_dogs(df['normalised_date'] )
-    # print("x: ", x)
-    df_all = pd.DataFrame(list(dict_count.items()),columns = ['date','counts']) 
-    print("***************\n", type(df_all))
-    print(df_all.head())
+    dict_count = count_unique_dogs(df['date'] )
+    #turn the dictionary into a dataframe for joining later
+    df_counts = pd.DataFrame(list(dict_count.items()),columns = ['date','counts']) 
+    print("***************\n") #, type(df_counts))
+    # print(df_counts.head())
     print("***************\n")
     
+    
+    #join pandas df's together (originally a time series and a dictionary)
+    df_tallies = y.join(df_counts.set_index('date'), on='date').fillna(0)
+    # df_tallies.fillna(0)
+    print(df_tallies)
     
     # counts_per_day(dict_count)
     #will have acount for every day

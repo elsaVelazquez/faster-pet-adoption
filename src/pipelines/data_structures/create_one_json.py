@@ -19,5 +19,5 @@ print(clean_mashed_json_str)
 
 # cmd_line_string = 'jq -s . ' + clean_mashed_json_str + '> big_json_v2.json'
 #right now it is outputting into the data structures folder
-cmd_line_string = 'jq -s . ' + clean_mashed_json_str + '> big_json_v3.json'
+cmd_line_string = 'jq -s . ' + clean_mashed_json_str + '> ../../../data/json/big_json_v4.json'
 os.system(cmd_line_string)

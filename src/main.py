@@ -36,3 +36,13 @@ if __name__ == "__main__":
     data_wrangling_pipeline_imgs_to_cloud = 'src/pipelines/wrangling/AWS/imgs_to_cloud.py'
     os.system(python data_wrangling_pipeline_imgs_to_cloud)
     
+    
+    #mash all jsons together into 1 giant json
+    create_one_json = 'src/pipelines/data_structures/create_one_json.py'
+    os.system(python create_one_json)
+    
+    #clean the json of any NaN or not found errors
+    
+    
+    #turn the clean, giant json into a csv
+    
