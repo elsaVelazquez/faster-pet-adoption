@@ -33,7 +33,7 @@ def delete_404_error_jsons(list_of_json_files):
 if __name__ == "__main__":
 
     
-    dir_name = '../../../data/json/json_dump/'
+    dir_name = '../../../data/json/json_dump_by_animal'
 
     list_of_files = get_file_names(dir_name)
             
