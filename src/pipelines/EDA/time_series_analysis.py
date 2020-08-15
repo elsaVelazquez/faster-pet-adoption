@@ -89,16 +89,9 @@ if __name__ == "__main__":
     
     #set every day to time 0/ midnight
     df['date'] = pd.to_datetime(df['status_changed_at'], infer_datetime_format=True).dt.normalize()
-    # print("---------------------")
-    # print(df['normalised_date'])
-    # print(type(df['normalised_date']))
-    # print("---------------------")
     df_normalised = df['date']
-    #change the time series to a pandas df for joining later
     df_dates = pd.DataFrame([df_normalised]).T
-    # print(df_dates)
-    # print(type(df_dates))
-    # print("---------------------")
+
 
     
     dict_count = count_unique_dogs(df['date'] )
