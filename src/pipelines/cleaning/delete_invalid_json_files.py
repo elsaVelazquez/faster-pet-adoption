@@ -1,6 +1,6 @@
 import os
 
-
+#TODO why does't get file names work here?
 def get_file_names(dir_name):
     '''
     For the given path, get the List of all files in the directory tree 
@@ -18,35 +18,40 @@ def get_file_names(dir_name):
             all_files = all_files + get_file_names(full_path)
         else:
             all_files.append(full_path)
-    print(all_files)                
+    # print(all_files)                
     return all_files  
 
-#good json
-# text_file = open('../../../data/json/json_dump/animal_id_48549546.JSON','r')
 
-
-#bad json
-file_name = open('../../../data/json/json_dump/animal_id_48549547.JSON','r')
-
-def delete_404_error_jsons(file_name):
+#TODO why can't i put this in a function?
+def delete_404_error_jsons(list_of_json_files):
     '''    https://www.journaldev.com/14408/python-read-file-open-write-delete-copy
     remove any JSONS that do not uphold key value structure of data-worthy API responses
     '''
-    #get the list of line
-    line_list = file_name.readlines();
-
-    #for each line from the list, print the line
-    for line in line_list:
-        print(line) #already in string format
-        if '"status":404' in line:
-            print(f"ERROR, deleted {file_name}") # {file_name}")
-        else:
-            pass
-
-    file_name.close() #close the file
-    os.remove('../../../data/json/json_dump/animal_id_48549547.JSON') #delete status:404 JSON file with ERROR
-    # print(f"ERROR, deleted {file_name}") # {file_name}")
     return None
 
 
-delete_404_error_jsons(file_name)
+if __name__ == "__main__":
+
+    
+    dir_name = '../../../data/json/json_dump/'
+
+    list_of_files = get_file_names(dir_name)
+            
+    for file in range(len(list_of_files)):     
+        file_name = list_of_files[file] 
+        # print(file_name)
+        with open(file_name, 'r') as file:
+            zinput1 = '"status":404'
+            zinput2 = '"status":429'
+            for line in file:    
+                if (zinput1 in line): # or (zinput2 in line): 
+                    # print(line)
+                    os.remove(file_name)
+                    print(f"ERROR, deleted {file_name}") # {file_name}")
+                if (zinput2 in line): # or (zinput2 in line): 
+                    # print(line)
+                    os.remove(file_name)
+                    print(f"ERROR, deleted {file_name}")
+
+            file.close()
+                                    
