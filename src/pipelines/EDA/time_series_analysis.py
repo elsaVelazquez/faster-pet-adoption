@@ -107,38 +107,27 @@ if __name__ == "__main__":
     # df_tallies.fillna(0)
     print(df_tallies)
     
-    # counts_per_day(dict_count)
-    #will have acount for every day
-    #will sort it so it's in order
-    #can then plot the indexes (the day vs the count column) using self.datagrame
-    #days will be x axis, counts will be y axis
-
-
-    # df_dict = pd.DataFrame(list(dog_counts.items()),columns = ['date','counts']) 
-
-
-    #join pandas df's together
-    # df.join(other.set_index('key'), on='key')
     
-    
-    
-    # import matplotlib
-    # matplotlib.use("agg")
+    y = df_tallies["counts"]
+    x = df_tallies["date"]
 
-    # import matplotlib.pyplot as plt
-    # import numpy as np
+    import matplotlib
+    matplotlib.use("agg")
+
+    import matplotlib.pyplot as plt
+    import numpy as np
 
 
-    # fig = plt.figure()
-    # ax = fig.gca()
+    fig = plt.figure()
+    ax = fig.gca()
 
     # x = y.index #np.linspace(1, 20)
-    # # y = np.linspace(1,365) #np.sinc(x)    
+    # y = np.linspace(1,365) #np.sinc(x)    
     # y = dict_count #= np.sinc(x) 
 
-    # ax.plot(dict_count, y)
-    # ax.set_xlabel("Each day of the year", fontsize=16)
-    # ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
-    # ax.set_title("Dog Adoption Trends", fontsize=18)
+    ax.plot(x, y)
+    ax.set_xlabel("Each day of the year", fontsize=16)
+    ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
+    ax.set_title("Dog Adoption Trends", fontsize=18)
 
-    # fig.savefig("dog_adoption_trends_y_sinc.png")
+    fig.savefig("dog_adoption_trends_y_sinc.png")
