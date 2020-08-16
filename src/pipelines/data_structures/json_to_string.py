@@ -1,3 +1,6 @@
+# TODO elsa hellllpp can't get it to print to a file directly 
+# I am copying and pasting output to a file for now
+
 import json 
 import os
 
