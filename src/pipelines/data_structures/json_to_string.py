@@ -27,7 +27,7 @@ def get_file_names(dir_name):
 filename = "../../../data/json/json_dump/animal_id_48549546.JSON"
 output_directory = '../../../data/json/json_dump/prepped_for_csv'
 
-dir_name = '../../../data/json/json_dump/'
+dir_name = '../../../data/json/json_dump_by_animal/'
 list_of_files = get_file_names(dir_name)
 
 def text_file_to_string(file):
@@ -41,7 +41,7 @@ def text_file_to_string(file):
         line = line[:-1]
         print(line)
         # cmd_line = line + '>' + output_directory +'test.json'
-        cmd_line = line + '>' +'test.json'
+        # cmd_line = line + '>' +'test.json'
         #TODO elsa can't figure out how to print it to file directly
         # os.system(cmd_line)
     file_name.close()
