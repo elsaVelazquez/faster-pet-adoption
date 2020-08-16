@@ -43,15 +43,20 @@ if __name__ == "__main__":
         with open(file_name, 'r') as file:
             zinput1 = '"status":404'
             zinput2 = '"status":429'
+            zinput3 = '"type":"Cat","species":"Cat"'
             for line in file:    
                 if (zinput1 in line): # or (zinput2 in line): 
                     # print(line)
                     os.remove(file_name)
-                    print(f"ERROR, deleted {file_name}") # {file_name}")
+                    print(f"ERROR 404 file not found, deleted {file_name}") # {file_name}")
                 if (zinput2 in line): # or (zinput2 in line): 
                     # print(line)
                     os.remove(file_name)
-                    print(f"ERROR, deleted {file_name}")
+                    print(f"ERROR 429 exceeded download rate limit, deleted {file_name}")
+                if (zinput3 in line): # or (zinput2 in line): 
+                    # print(line)
+                    os.remove(file_name)
+                    print(f"ERROR cat record, deleted {file_name}")
 
             file.close()
                                     
