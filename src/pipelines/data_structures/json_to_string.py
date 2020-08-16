@@ -27,6 +27,8 @@ def get_file_names(dir_name):
 filename = "../../../data/json/json_dump/animal_id_48549546.JSON"
 output_directory = '../../../data/json/json_dump/prepped_for_csv'
 
+dir_name = '../../../data/json/json_dump/'
+list_of_files = get_file_names(dir_name)
 
 def text_file_to_string(file):
     # for file in range(len(list_of_files)):     
@@ -45,9 +47,13 @@ def text_file_to_string(file):
     file_name.close()
 
 
-text_file_to_string(filename)
+# text_file_to_string(filename)
 
-
+for x in range(len(list_of_files)):
+    # print(list_of_files[x])
+    current_file = list_of_files[x]
+    text_file_to_string(current_file)
+    print(",")
 
 # for file in range(len(list_of_files)):     
 #         file_name = list_of_files[file] 
