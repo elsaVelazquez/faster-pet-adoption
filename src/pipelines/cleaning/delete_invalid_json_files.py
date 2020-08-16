@@ -44,6 +44,7 @@ if __name__ == "__main__":
             zinput1 = '"status":404'
             zinput2 = '"status":429'
             zinput3 = '"type":"Cat","species":"Cat"'
+            zinput4 = "type":"Dog","species":"Dog"'
             for line in file:    
                 if (zinput1 in line): # or (zinput2 in line): 
                     # print(line)
@@ -57,6 +58,10 @@ if __name__ == "__main__":
                     # print(line)
                     os.remove(file_name)
                     print(f"ERROR cat record, deleted {file_name}")
+                # TODO elsa check if this works on mares or whatnot
+                if (zinput4 not in line):
+                    os.remove(file_name)
+                    print(f"ERROR was not a dog species, deleted {file_name}")
 
             file.close()
                                     
