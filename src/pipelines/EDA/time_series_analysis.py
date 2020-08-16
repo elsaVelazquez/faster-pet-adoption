@@ -81,7 +81,7 @@ if __name__ == "__main__":
     #TODO elsa compare aggregated_csv_1 to running_main_csv.csv 
     #why does csv_1 work but not main?
     
-    df = read_df('../../../data/csv/aggregated_csv_1.csv')
+    df = read_df('../../../data/csv/aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
     # df = read_df('../../../data/csv/running_main_csv.csv')
 
     # explore_data(df)
