@@ -81,8 +81,8 @@ if __name__ == "__main__":
     #TODO elsa compare aggregated_csv_1 to running_main_csv.csv 
     #why does csv_1 work but not main?
     
-    # df = read_df('../../../data/csv/aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
-    df = read_df('../../../data/csv/running_main_csv.csv')
+    df = read_df('../../../data/csv/aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
+    # df = read_df('../../../data/csv/running_main_csv.csv')
 
     # explore_data(df)
     ##################################################################################
@@ -112,9 +112,10 @@ if __name__ == "__main__":
     #THIS CODE IS CORRECTLY CHANGING DATETIME AS A STRING BUT THEN DOESN'T WORK WITH REST OF THE CODE
     # I THINK CUZ IT'S NOT IN VALID DATETIME FORM BUT IT DOESN'T SEEM IT SHOULD MATTER
     #POSSIBLY CHANGE IT AS A DATAFRAME BEFORE EVEN SENDING IT HERE
+    #Timestamp object is not suscriptable
     # normalization_mask = 'T02:49:12+0000'
     # for x in range(len(df_normalised)):
-    #     df_normalised[x] = str(df_normalised[x])
+    #     df_normalised[x] = (df_normalised[x])
     #     df_normalised[x] = df_normalised[x][:-9]
     #     df_normalised[x] = df_normalised[x] + normalization_mask 
     #     # df_normalised[x] = pd.to_datetime(df_normalised[x])
