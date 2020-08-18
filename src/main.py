@@ -45,14 +45,19 @@ if __name__ == "__main__":
     #data structures
     json_to_string = 'src/pipelines/data_structures/json_to_string.py'
     os.system(json_to_string)
+    
     #put everything into 1 giant json file
-    #note: if there are issues, there is likely a badly formed json in the bunch
-    #TODO elsa how do I print to a file
-    #presently, I am copying output from above straight off the console and putting it into the file:
-    # ../data/json/prepped_for_csv/all_dogs_copied_off_console.json
-    #and adding enclosing [] to the entire output (remove final comma)
+    #TODO add enclosing [] to the entire output (remove final comma)
+    mash_into_1_json = 'src/pipelines/ETL/mash_jsons_with_animals_field.py'
+    os.system(mash_into_1_json)
+
     json_to_csv = 'src/pipelines/data_structures/json_to_csv.py'
     os.system(json_to_csv)
+    
+    #get imgs before they are taken down for adoptable dogs
+    get_images = 'src/pipelines/ETL/get_images.py'
+    os.system(get_images)
+    
     
     
     #EDA
