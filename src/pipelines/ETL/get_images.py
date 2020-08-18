@@ -11,13 +11,13 @@ if __name__ == "__main__":
 
         # len(dict_data)
         lst_urls = [] #TODO Delete?
-        dogs_count = 0 #TODO Delete?
+        # dogs_count = 0 #TODO Delete?
         total_animals = len(dict_data)
         for i in range(total_animals) : 
             animal_id = dict_data[i]["animal"]["id"]
             # print(animal_id)
 
-            if(dict_data[i]["animal"]["primary_photo_cropped"]) != "None" :
+            if(dict_data[i]["animal"]["primary_photo_cropped"]) != "None" and dict_data[i]["animal"]["species"] == "Dog":
                 animal_id = dict_data[i]["animal"]["id"]
                 animal_status = dict_data[i]["animal"]["status"]
                 url = (dict_data[i]["animal"]["primary_photo_cropped"]["medium"])
@@ -26,10 +26,10 @@ if __name__ == "__main__":
                     
                 r = requests.get(url)
                 file_name = str(animal_id) + '_' +  animal_status
-                print(file_name)
-                fname= (f'../../../data/img/testing_jsons/{file_name}.jpg')
+                # print(file_name)
+                fname= (f'../../../data/img/img_dumps/{file_name}.jpg')
                 
-                with open(f"../../../data/img/testing_jsons/{file_name}.jpg", "wb") as f:
+                with open(f"../../../data/img/img_dumps/{file_name}.jpg", "wb") as f:
                     f.write(r.content)
             else:
                 pass
