@@ -17,11 +17,11 @@ from create_main_dataframe import create_main_dataframe
 def read_df(path):
     '''read in file
     '''
-    print('read df')
+    # print('read df')
     return pd.read_csv(path) #, parse_dates=True, squeeze=True) 
 
 def explore_data(df):
-    print(df.head())
+    # print(df.head())
     return df
 
 def print_word_stats(words):
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     # print(list_dog_descriptions)
     # print(type(list_dog_descriptions))
     new_list = [word for line in list_dog_descriptions for word in line.split()]
-    print(new_list)
+    # print(new_list)
     
     from collections import Iterable
     def flatten(lis):
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     
     clean_word_list = []
     for x in range (len(flat_word_list)):
-        print(flat_word_list[x])
+        # print(flat_word_list[x])
         if flat_word_list[x] == '[]':
             # print('BAD') 
             # flat_word_list[x]
@@ -84,19 +84,28 @@ if __name__ == "__main__":
         else:
             clean_word_list.append(flat_word_list[x])
             
-        print(clean_word_list) 
+        # print(clean_word_list) 
         
     # final_dog_word_list = list(flatten(clean_word_list))      
     # print(type(final_dog_word_list))
 
     series = pd.Series(clean_word_list)
     result = series.ravel()
-    print(type(result))
+    # print(type(result))
     result_str = str(result)
-    print(result_str)
-    print(type(result_str))
-    str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(' ', ', ').replace("\n", ' ')
+    # print(result_str)
+    # print(type(result_str))
+    
+    print("**********************************")
+    str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower()
     print(str1)
+
+    def Convert(string): 
+        li = list(string.split(" ")) 
+        return li 
+    
+    # Driver code     
+    print(Convert(str1)) 
 
     # word_list = new_list.remove('[]')
     # print(word_list)
