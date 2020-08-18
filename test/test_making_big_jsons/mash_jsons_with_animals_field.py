@@ -15,14 +15,18 @@ import pprint
 #     data_animal_id_48550215 = json.load(f)
 #     pprint.pprint(data_animal_id_48550215["animal"])
 
+import sys
 
 with open("animal_id_48550215.json", "r+") as file:
+    sys.stdout = open('some.json', 'a')
+
     data_animal_id_48550215 = str(json.load(file))
-    print(type(data_animal_id_48550215))
-    clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', "'[]'").replace("None", '"None"')
+    # print(type(data_animal_id_48550215))
+    clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', "'True'")
     animal_id_48550215 = clean_48550215 
-    print(clean_48550215 + ',')
-    
+    print(clean_48550215 + ',' )
+    sys.stdout.close()
+
 # with open("animal_id_48550219.json", "r+") as file:
 #     data_animal_id_48550219 = str(json.load(file))
 #     print(type(data_animal_id_48550219))
