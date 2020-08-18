@@ -178,4 +178,4 @@ if __name__ == "__main__":
     ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
     ax.set_title("Dog Adoption Trends", fontsize=18)
 
-    fig.savefig("dog_adoption_trends_y_sinc.png")
+    fig.savefig("../../../src/readme/capstone_2_readme/dog_adoption_trends_time_series.png")
