@@ -118,7 +118,7 @@ if __name__ == "__main__":
     plt.margins(x=0, y=0)
     
     plt.show()
-    fig.savefig("word_cloud.png")
+    fig.savefig("../../../src/readme/capstone_2_readme/word_cloud.png")
     
     # X, y_adopted = create_main_dataframe(df)
 
