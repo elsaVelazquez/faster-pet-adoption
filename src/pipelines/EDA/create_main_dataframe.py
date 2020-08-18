@@ -1,20 +1,6 @@
 import numpy as np
 import pandas as pd
-from io import StringIO
-import datetime
-from datetime import datetime
-import time
-from datetime import datetime, date, time, timedelta
-import matplotlib
-matplotlib.use("agg")
-import matplotlib.pyplot as plt
-import numpy as np
-
 from skimage.io import imread
-
-# from wordcloud import WordCloud
-# from make_word_cloud.wordcloud import WordCloud
-
 
 def read_df(path):
     '''read in file
@@ -26,13 +12,15 @@ def explore_data(df):
     print(df.head())
     return df
 
-def make_X_and_y(df):
+def create_main_dataframe(df):
     # df.fillna("NothingEntered")
-    # df.drop(['photos', 'videos', 'distance', 'status_changed_at', 'published_at', 'distance', 'contact', 'organization_animal_id', 'type', 'photos'], axis = 1, inplace= True)
-    df = pd.get_dummies(df, columns=['status'])
-    y = df.pop("status_adopted")
-    df = df.drop('status_adoptable', axis=1)
-    X = df.values
+    df_fillna = df.fillna("NothingEntered")
+    df_fillna.drop(['photos', 'videos', 'distance', 'status_changed_at', 'published_at', 'distance', 'contact', 'organization_animal_id', 'type', 'photos'], axis = 1, inplace= True)
+    df_dummies = pd.get_dummies(df_fillna, columns=['status'])
+    y = df_dummies.pop("status_adopted")
+    df_dummies = df_dummies.drop('status_adoptable', axis=1)
+    X = df_dummies.values
+    print(df_dummies.info())
     return X, y
 
 if __name__ == "__main__":
@@ -41,18 +29,14 @@ if __name__ == "__main__":
 
     explore_data(df)
 
-    # df.drop(['photos', 'videos', 'status_changed_at', 'published_at', 'distance', 'contact', 'organization_animal_id', 'type', 'photos'], axis = 1, inplace= True)
-    # df.info()
-    
-    df_fillna = df.fillna("NothingEntered")
-    
-    # df_fillna = df.fillna("NothingEntered")
     print("************")
-    # print(df_fillna.info())
-    
-    df_fillna.drop(['photos', 'videos', 'distance', 'status_changed_at', 'published_at', 'distance', 'contact', 'organization_animal_id', 'type', 'photos'], axis = 1, inplace= True)
-    print(df_fillna.info())
 
+    X, y_adopted = create_main_dataframe(df)
+
+    print(y_adopted)
+    print(X)
+    
+    #to call this from another function 
 
 
     # #TODO elsa how do I put everything through to get turned into flattened imgs
@@ -83,13 +67,26 @@ if __name__ == "__main__":
     # print("Colored image shape:", image.shape)
     # print("Grayscale image shape:", gray_image.shape)
     # print(image)                
-                    
-                    
-                    
 
-    # df = pd.get_dummies(df, columns=['status'])
-    # print(df)
-    # X, y_adopted = make_X_and_y(df)
 
-    # print(y_adopted)
-    # print(X)
+    #sample of df.info()
+     #   Column           Non-Null Count  Dtype
+        # ---  ------           --------------  -----
+        # 0   id               165 non-null    int64
+        # 1   organization_id  165 non-null    object
+        # 2   url              165 non-null    object
+        # 3   species          165 non-null    object
+        # 4   breeds           165 non-null    object
+        # 5   colors           165 non-null    object
+        # 6   age              165 non-null    object
+        # 7   gender           165 non-null    object
+        # 8   size             165 non-null    object
+        # 9   coat             79 non-null     object
+        # 10  attributes       165 non-null    object
+        # 11  environment      165 non-null    object
+        # 12  tags             165 non-null    object
+        # 13  name             165 non-null    object
+        # 14  description      151 non-null    object
+        # 15  photos           165 non-null    object
+        # 16  status           165 non-null    object
+        # 17  _links           165 non-null    object
