@@ -31,7 +31,9 @@ def print_word_stats(words):
     print(f"The number of words in the description is {num_words}.")
     print(f"The number of unique words in the description is {num_unique_words}.")
     
-
+def Convert(string): 
+    li = list(string.split(" ")) 
+    return li 
 
 if __name__ == "__main__":
     
@@ -96,21 +98,27 @@ if __name__ == "__main__":
     # print(result_str)
     # print(type(result_str))
     
-    print("**********************************")
+    # print("**********************************")
     str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower()
-    print(str1)
+    # print(str1)
 
-    def Convert(string): 
-        li = list(string.split(" ")) 
-        return li 
+
     
     # Driver code     
-    print(Convert(str1)) 
+    # print(Convert(str1)) 
+    cleaned_text = str(Convert(str1))
+    
+    from wordcloud import WordCloud
 
-    # word_list = new_list.remove('[]')
-    # print(word_list)
-    # df_clean = df[df['tags'].map(lambda d: (d)) != '[]']
-    # print(df_clean)
+
+    wordcloud = WordCloud(background_color="white", width=960, height=960, margin=8).generate(cleaned_text)
+    fig, ax = plt.subplots(figsize=(8,8))
+    ax.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.margins(x=0, y=0)
+    
+    plt.show()
+    fig.savefig("word_cloud.png")
     
     # X, y_adopted = create_main_dataframe(df)
 
