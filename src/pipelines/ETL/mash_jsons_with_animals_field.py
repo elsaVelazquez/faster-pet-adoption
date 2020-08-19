@@ -2,26 +2,52 @@ import json
 import pandas as pd
 import pprint
 import sys
+import os
 
 
 
 #TODO SOMEHOW ADD [ and  ] and make sure there are not duplicates
+path = '../../../data/json/json_dump_by_animal'
 
-with open("animal_id_48550215.json", "r+") as file:
-    sys.stdout = open('../../../data/json/main_running.json', 'a')
+all_file_names = os.listdir(path)
+# print(all_file_names)
+for file in all_file_names:
+    print(file)
+    # with open(file, "r+") as file:
+    #     sys.stdout = open('../../../data/json/main_running.json', 'a')
+    #     temp_name = str(file)
+    #     print(temp_name)
+    #     print(type(temp_name))
 
-    data_animal_id_48550215 = str(json.load(file))
-    # print(type(data_animal_id_48550215))
-    clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
-    animal_id_48550215 = clean_48550215 
-    # print(animal_id_48550215[:521])
-    print(clean_48550215 + ',' )
-    sys.stdout.close()
+        #turn the file name into the data_animal_id_XXX
+
+
+
+        # data_animal_id_48550215 = str(json.load(file))
+        # # print(type(data_animal_id_48550215))
+        # clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
+        # animal_id_48550215 = clean_48550215 
+        # # print(animal_id_48550215[:521])
+        # print(clean_48550215 + ',' )
+        # sys.stdout.close()
     
     
     
     
     
+    
+    
+#THIS  WORKS PERFECTLY FILE BY FILE
+# with open("animal_id_48550215.json", "r+") as file:
+#     sys.stdout = open('../../../data/json/main_running.json', 'a')
+
+#     data_animal_id_48550215 = str(json.load(file))
+#     # print(type(data_animal_id_48550215))
+#     clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
+#     animal_id_48550215 = clean_48550215 
+#     # print(animal_id_48550215[:521])
+#     print(clean_48550215 + ',' )
+#     sys.stdout.close()G
     
     
     
