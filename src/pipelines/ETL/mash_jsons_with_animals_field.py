@@ -25,22 +25,22 @@ for file in all_file_names:
         data_animal_id = temp_name.replace("<_io.TextIOWrapper name='../../../data/json/json_dump_by_animal/", 'data_').replace(".JSON' mode='r+' encoding='UTF-8'>", '')
         # print("^^^^^^^^^^^^^^^^^^^^")
 
-        print(data_animal_id)
+        # print(data_animal_id)
         # print(type(temp_name))
         
-        # sys.stdout = open('../../../data/json/main_running.json', 'a')
+        sys.stdout = open('../../../data/json/main_running_json.json', 'a')
 
 
         #turn the file name into the data_animal_id_XXX
 
 
 
-        # data_animal_id_48550215 = str(json.load(file))
-        # # print(type(data_animal_id_48550215))
-        # clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
+        data_animal_id = str(json.load(file))
+        # print(type(data_animal_id))
+        clean_animal_id = data_animal_id.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
         # animal_id_48550215 = clean_48550215 
-        # # print(animal_id_48550215[:521])
-        # print(clean_48550215 + ',' )
+        # print(clean_animal_id[:521])
+        print(clean_animal_id + ',' )
         # sys.stdout.close()
     
     
