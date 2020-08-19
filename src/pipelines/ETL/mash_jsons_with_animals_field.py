@@ -9,15 +9,27 @@ import os
 #TODO SOMEHOW ADD [ and  ] and make sure there are not duplicates
 path = '../../../data/json/json_dump_by_animal'
 
+files_path = path = '../../../data/json/json_dump_by_animal/'
+
 all_file_names = os.listdir(path)
 # print(all_file_names)
 for file in all_file_names:
-    print(file)
-    # with open(file, "r+") as file:
-    #     sys.stdout = open('../../../data/json/main_running.json', 'a')
-    #     temp_name = str(file)
-    #     print(temp_name)
-    #     print(type(temp_name))
+    # print(file) #iterates through all files 
+    full_path = files_path + file
+    # print(full_path) #iterates through all files 
+    with open(full_path, "r+") as file:
+        # print("**********")
+        # print(file)
+        # print(full_path)
+        temp_name = str(file)
+        data_animal_id = temp_name.replace("<_io.TextIOWrapper name='../../../data/json/json_dump_by_animal/", 'data_').replace(".JSON' mode='r+' encoding='UTF-8'>", '')
+        # print("^^^^^^^^^^^^^^^^^^^^")
+
+        print(data_animal_id)
+        # print(type(temp_name))
+        
+        # sys.stdout = open('../../../data/json/main_running.json', 'a')
+
 
         #turn the file name into the data_animal_id_XXX
 
