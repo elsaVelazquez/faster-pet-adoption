@@ -10,3 +10,4 @@ settings.json
 crypt.py
 *__pycache__
 creds.txt
+*.ipynb
