@@ -11,3 +11,5 @@ crypt.py
 *__pycache__
 creds.txt
 *.ipynb
+.ipynb_checkpoints
+*.ipynb_checkpoints
