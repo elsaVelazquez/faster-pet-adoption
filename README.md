@@ -24,6 +24,16 @@ output:
 (tab content)
 
 
+
+---
+title: "Habits"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+
 Workflow:
 Data Ingestion
 had to figure out how to get out the data i wanted using their whack API
