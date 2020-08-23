@@ -15,12 +15,9 @@ import os
 
 def open_images(path):
     train_images = imread(path)
-    gray_image = rgb2gray(train_images) #for making image gray scale
-    # color_size = resize(train_images, (50, 50))
+    gray_image = rgb2gray(train_images) #makes image gray scale
     gray_size = resize(gray_image, (32, 32))
     grey_ravel = gray_size.ravel()
-    print("Grey ravel")
-    print(grey_ravel)
     return grey_ravel
 
 def make_X_y():
@@ -28,27 +25,30 @@ def make_X_y():
     y = []   
     dog_ids = []
 
-    all_images = os.listdir('../../../data/img/img_dumps/')[:2]
+    all_images = os.listdir('../../../data/img/img_dumps/') #[:10]
 
     for dog_pic_label in all_images:
-        path = glob.glob('../../../data/img/img_dumps/*.jpg')[:2]
-        label = dog_pic_label
-        y.append(dog_pic_label)
+        path = glob.glob('../../../data/img/img_dumps/*.jpg') #[:10]
+        label = (dog_pic_label)
+        if 'adoptable' in label:
+            label = 0
+        # if 'adopted' in label:
+            
+        else:
+            label = 1
+        y.append(label)
 
                
     for p in path:                
         X.append(open_images(p))
-        # y.append(dog_pic_label)
         dog_ids.append(dog_pic_label) #this is for keeping track of the dogs if necessary     
-                   
+
     X = np.asarray(X)
-    print("X: ")
-    print(X)
-    print(y)
-    print(len(y))
-    # print(type(y))
-    y = np.asarray(y)
-    print("y as np_array: ", y)
+    y = np.asarray(y)[:-1] #the [:-1] compensates for an extra appended in y, otherwise data aligns
+    # print("length X: ", len(X))
+    # print("length y: ", len(y))
+    # print("all images: ", all_images)
+    # print(y)
     return X, y, all_images
 
 
@@ -59,25 +59,17 @@ def naive_bayes():
     model = MultinomialNB()
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
-    # acc = accuracy_score(y_test, y_pred)
-    recall = recall_score(y_test, y_pred, labels=all_images, average=None)
-    prec = precision_score(y_test, y_pred, labels=all_images, average=None)
-    # fone = f1_score(y_test, y_pred, labels=all_images, average=None)
-    con_matrix = confusion_matrix(y_test, y_pred)
-    # bal_acc_scor = balanced_accuracy_score(y_test, y_pred)
-    # report = classification_report(y_test, y_pred, digits=3)
-    return recall, prec, con_matrix
-    
-    
-#  def rmse(y_true, y_predict):
-#     return np.sqrt(mean_squared_error(y_true, y_predict))
+    acc = accuracy_score(y_test, y_pred)
+    print("Naive Bayes Accuracy: ", acc)
+    return acc
+
     
 if __name__ == '__main__':
     # root_mean = rmse(y_true, y_predict)
     X, y, all_images = make_X_y()
-    # naive_bayes = naive_bayes()
+    naive_bayes = naive_bayes()
     
-    
+    # print(X)
 
 
 
