@@ -34,6 +34,12 @@ output:
 ---
 
 
+---
+title: "A Shiny Document"
+output: html_document
+runtime: shiny
+---
+
 Workflow:
 Data Ingestion
 had to figure out how to get out the data i wanted using their whack API
