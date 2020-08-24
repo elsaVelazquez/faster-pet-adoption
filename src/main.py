@@ -85,9 +85,12 @@ if __name__ == "__main__":
     #created a calendar to simulate epochs
     #called in json file with dates dog's status changed
     # turned it into a dataframe and plotted against the calendar when they came in and when they went to forever homes
+    os.system(time_series_analysis.py)
     
     
-    
+    #ML
+    #made a naive bayes
+    os.system(naive_bayes.py)
     
     
     
