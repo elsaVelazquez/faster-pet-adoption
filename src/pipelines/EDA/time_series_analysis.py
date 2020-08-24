@@ -9,9 +9,11 @@ from datetime import datetime
 import time
 from datetime import datetime, date, time, timedelta
 import matplotlib
-matplotlib.use("agg")
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+matplotlib.use("agg")
+
 
 def read_df(path):
     '''read in file
@@ -84,7 +86,10 @@ if __name__ == "__main__":
     #TODO elsa compare aggregated_csv_1 to running_main_csv.csv 
     #why does csv_1 work but not main?
     
-    df = read_df('../../../data/csv/aggregated_csv_1_copy_3.csv') #aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
+    # df = read_df('../../../data/csv/aggregated_csv_1_copy_3.csv') #aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
+    df = read_df('../../../data/csv/time_series_csv.csv') 
+    
+    
     # df = read_df('../../../data/csv/running_main_csv.csv')
 
     # explore_data(df)
@@ -104,10 +109,10 @@ if __name__ == "__main__":
     # so we will tak the column df_normalised = df['date']
     # turn it into a string, 
     # slice to omit the end and replace that with  T02:49:12+0000
+    print(df.columns)
+    df_adopted = df[df['status']=='adopted']
     
-    
-
-    df['date'] = pd.to_datetime(df['status_changed_at'], infer_datetime_format=True).dt.normalize()
+    df['date'] = pd.to_datetime(df_adopted['status_changed_at'], infer_datetime_format=True).dt.normalize()
     df_normalised = df['date']
     
     
@@ -133,8 +138,10 @@ if __name__ == "__main__":
     
     
     df_dates = pd.DataFrame([df_normalised]).T
+    print("%%%%%%%%%%%%%%%%%%%%%%%%")
 
-
+    print(df_dates)
+    print("%%%%%%%%%%%%%%%%%%%%%%%%")
     
     dict_count = count_unique_dogs(df['date'] )
     #turn the dictionary into a dataframe for joining later
@@ -159,8 +166,6 @@ if __name__ == "__main__":
     y = df_tallies["counts"]
     x = df_tallies["date"]
 
-    import matplotlib
-    matplotlib.use("agg")
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -174,6 +179,7 @@ if __name__ == "__main__":
     # y = dict_count #= np.sinc(x) 
 
     ax.plot(x, y)
+    ax.plot(x, np.linspace(1, 365, num=366))
     ax.set_xlabel("Each day of the year", fontsize=16)
     ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
     ax.set_title("Dog Adoption Trends", fontsize=18)
