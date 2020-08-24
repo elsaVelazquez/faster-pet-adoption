@@ -34,7 +34,7 @@ if __name__ == "__main__":
     #TODO elsa move this to README
     '''example output to console=
     ERROR cat record, deleted ../../../data/json/json_dump_by_animal/animal_id_48552870.JSON
-    ERROR 404, deleted ../../../data/json/json_dump_by_animal/animal_id_48553125.JSON
+    ERROR 404, deleted ../../../data/json/json_dump_by_animal/animal_id_48553125.JSON]#for the moment manually adding [] and removing the final ,for f
     ERROR cat record, deleted ../../../data/json/json_dump_by_animal/animal_id_48552734.JSON
     ERROR 404, deleted ../../../data/json/json_dump_by_animal/animal_id_48552671.JSON
     ERROR 404, deleted ../../../data/json/json_dump_by_animal/animal_id_48553430.JSON
@@ -48,9 +48,15 @@ if __name__ == "__main__":
     
     #put everything into 1 giant json file
     #TODO add enclosing [] to the entire output (remove final comma)
+    #  mash_jsons_with_animals_field.py prints out to 'data/json/main_running_json.json'
     mash_into_1_json = 'src/pipelines/ETL/mash_jsons_with_animals_field.py'
     os.system(mash_into_1_json)
+    
+    # 
+    edit_json = 'data/json/prepped_for_csv/all_dogs_copied_off_console.json'
+    
 
+    #make a csv to do time series stuf
     json_to_csv = 'src/pipelines/data_structures/json_to_csv.py'
     os.system(json_to_csv)
     
@@ -58,6 +64,11 @@ if __name__ == "__main__":
     get_images = 'src/pipelines/ETL/get_images.py'
     os.system(get_images)
     
+    
+    #put the images on the cloud
+    images_to_cloud = 'pipelines/ETL/AWS/imgs_to_cloud.py'
+    os.system(images_to_cloud)
+
     
     
     #EDA
@@ -69,6 +80,11 @@ if __name__ == "__main__":
     #TODO elsa figure out how to automate dropping bad records ^
     #copy and paste all new clean records to main csv---->    '../../../data/csv/running_main_csv.csv'
     
+    
+    #show time series of dog shelter activity
+    #created a calendar to simulate epochs
+    #called in json file with dates dog's status changed
+    # turned it into a dataframe and plotted against the calendar when they came in and when they went to forever homes
     
     
     
