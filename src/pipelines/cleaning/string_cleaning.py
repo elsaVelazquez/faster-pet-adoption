@@ -7,21 +7,35 @@ stopwords = ENGLISH_STOP_WORDS
 # from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 # stopwords = ENGLISH_STOP_WORDS
 
-def read_the_file(fname):
-    '''Reads the filename - should have a .txt extension.
-
-       Returns a text string containing the entire description.
-    ''' 
-    f = open(fname, 'r')
-    textstring = f.read()
-    return textstring
+import sys 
+sys.path.append('../data_ingestion') 
+from read_and_explore_data import *
 
 
-def read_df(path):
-    '''read in file
-    '''
-    print('read df')
-    return pd.read_csv(path) 
+
+''' code borrowef from DSI Data Sci Immersive
+Note many of the print statements are commented out here but are used for verifying pipeline
+'''
+
+
+
+# def read_text_file(fname):
+#     '''Reads the filename - should have a .txt extension.
+
+#        Returns a text string containing the entire description.
+#     ''' 
+#     f = open(fname, 'r')
+#     textstring = f.read()
+#     return textstring
+
+
+
+#TODO put correct file path to src/pipelines/data_ingestion/read_in_data.py
+# def read_df(path):
+#     '''read in file
+#     '''
+#     print('read df')
+#     return pd.read_csv(path) 
 
 
 
@@ -79,6 +93,9 @@ def create_cleaned_textline_from_words(words):
     text = ' '.join([word for word in words])
     return text
 
+def convert_string_to_list(string): 
+    li = list(string.split(" ")) 
+    return li 
 
 # def line_cleaning_pipeline(text, stopwords_set, name_set, replace_val):
 #     '''Transforms raw text into clean text using text-cleaning functions above'''
@@ -102,7 +119,7 @@ if __name__ == '__main__':
     #read in a sample scraped txt file
     path_including_filename = "small_json_string.txt"
 
-    text = read_the_file(path_including_filename)
+    text = read_text_file(path_including_filename)
     
 
     
