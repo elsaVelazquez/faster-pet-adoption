@@ -225,9 +225,20 @@ do a time series to see if there is any truth to covid driven adoption spikes- t
 Can I predict when more dogs will be adopted?
 When more will go to shelters?
 
+Yes, there was truth to the "Dog Demand Due to Covid" stories. 
+https://www.washingtonpost.com/nation/2020/08/12/adoptions-dogs-coronavirus/
+It appears so many people were desperate for dogs, the surge could possibly be explained by the raise in demand, first, then a purpoesful question 
+to find the supply by the shelters.  Per the news article, the data seems legitamite that as soon as they come in, 
+the doggoes are finding forever homes.  
 
 
+https://www.washingtonpost.com/graphics/2020/lifestyle/dogs-loneliness-coronavirus/
+This is the first time dogs are having a good pandemic, namely because science allowed us to track the 
+"real carriers" more quickly (parents, hide your children!). 
 
+India has declared the feeding of street dogs, who lost food sources when restaurants and street vendors shut down, an essential service.
+
+In March and April, when much of Europe was under total lockdown, one of the few permissible reasons to leave one’s house was to exercise a four-legged friend. People offered their dogs for rent on social media. One man in northern Spain was caught dragging a stuffed toy on a leash, and another disguised his daughter as a Dalmatian to get out of his apartment. A mayor on the Italian island of Sardinia felt compelled to offer the clarification that to qualify for a walk, the dog “must be alive.”
 
 find 1-3 features to really look into now that I have the data on adopted dogs
 
