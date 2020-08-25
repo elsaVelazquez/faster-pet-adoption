@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from create_main_dataframe import create_main_dataframe
 # from wordcloud import WordCloud
-# from make_word_cloud.wordcloud import WordCloud
+#TODO elsa fix the agg imaages error
+from make_word_cloud import make_word_cloud_func
 
 
 def read_df(path):
@@ -37,11 +38,7 @@ def Convert(string):
 
 if __name__ == "__main__":
     
-    #TODO elsa compare aggregated_csv_1 to running_main_csv.csv 
-    #why does csv_1 work but not main?
-    
-
-    df = read_df('../../../data/csv/running_main_csv.csv')
+    df = read_df('../../../data/csv/giant_valid_csv.csv')
 
     explore_data(df)
     ##################################################################################
@@ -56,13 +53,43 @@ if __name__ == "__main__":
 
     df['tags'] = (df['tags'])
     df_tags = df['tags']
+    # breakpoint()
+    list_dog_tags = df_tags.values.tolist()
     # print(df_tags)
-    # print(type(df_tags))
     
-    list_dog_descriptions = df_tags.values.tolist()
+    
+    df['description'] = (df['description'])
+    df_description = df['description']
+ 
+    list_dog_descriptions = str(df_description.values.tolist())
     # print(list_dog_descriptions)
-    # print(type(list_dog_descriptions))
-    new_list = [word for line in list_dog_descriptions for word in line.split()]
+    
+    lst_ = list_dog_descriptions.lower().split()
+    print(type(lst_))
+    # len_list = len(lst)
+    # print(len_list)
+    lst_arr = []
+    for word in range(len(lst_)):
+        word = np.array([lst_[word]])
+        # print(word)
+        lst_arr = np.append(lst_arr, word)
+        
+    # print(lst_arr)
+    # lst_arr = str(lst_arr)
+    # lst_arr.replace('None', '').replace('...', '').replace('.', '').replace(':', '')
+
+    
+    clean_descriptions = lst_arr.tolist()
+    print(type(clean_descriptions))
+
+#    list_descriptions =[]
+#    for x in len()
+    
+    # corpus = (list_dog_descriptions) + (list_dog_tags)
+    # print(corpus)
+    
+    
+    new_list = [word for line in list_dog_tags for word in line.split()]
     # print(new_list)
     
     from collections import Iterable
@@ -74,7 +101,7 @@ if __name__ == "__main__":
             else:        
                 yield item
     flat_word_list = list(flatten(new_list))
-    print(flat_word_list)
+    # print(flat_word_list)
     
     clean_word_list = []
     for x in range (len(flat_word_list)):
@@ -89,23 +116,15 @@ if __name__ == "__main__":
         # print(clean_word_list) 
         
     # final_dog_word_list = list(flatten(clean_word_list))      
-    # print(type(final_dog_word_list))
+
 
     series = pd.Series(clean_word_list)
     result = series.ravel()
     # print(type(result))
     result_str = str(result)
-    # print(result_str)
-    # print(type(result_str))
-    
-    # print("**********************************")
-    str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower()
-    # print(str1)
 
-
-    
-    # Driver code     
-    # print(Convert(str1)) 
+    str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower().replace("'", '').replace(' ', ',')
+ 
     cleaned_text = str(Convert(str1))
     
     from wordcloud import WordCloud
@@ -120,61 +139,4 @@ if __name__ == "__main__":
     plt.show()
     fig.savefig("../../../src/readme/capstone_2_readme/word_cloud.png")
     
-    # X, y_adopted = create_main_dataframe(df)
-
-    # print(X)
-    # print(y_adopted)
-    
-    # print(X['tags'])
-    # # dt.fit(X, y)
-    
-    # X_train, X_test, y_train, y_test = train_test_split(X, y)
-
-    
-    # print(dt) #print the tree
-    # phrases = []
-    # for x in range(len(df_tags)):
-    #     if df_tags[x] == '[]':
-    #         pass
-    #     else:
-    #         phrases.append(df_tags[x])
-    # print(phrases)
-                
-    
-    # from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-    # stopwords = ENGLISH_STOP_WORDS
-
-    # words_nsw = [word for word in words if word not in stopwords]
-
-
-    # print_word_stats(words_nsw)
-
-    # words_nsw
-
-    
-
-    
-    
-    # y = df_tallies["counts"]
-    # x = df_tallies["date"]
-
-    # import matplotlib
-    # matplotlib.use("agg")
-
-    # import matplotlib.pyplot as plt
-    # import numpy as np
-
-
-    # fig = plt.figure()
-    # ax = fig.gca()
-
-    # # x = y.index #np.linspace(1, 20)
-    # # y = np.linspace(1,365) #np.sinc(x)    
-    # # y = dict_count #= np.sinc(x) 
-
-    # ax.plot(x, y)
-    # ax.set_xlabel("Each day of the year", fontsize=16)
-    # ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
-    # ax.set_title("Dog Adoption Trends", fontsize=18)
-
-    # fig.savefig("dog_adoption_trends_y_sinc.png")
+   
