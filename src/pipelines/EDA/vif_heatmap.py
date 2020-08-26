@@ -1,32 +1,21 @@
-import datetime
-import pandas as pd 
-from datetime import date
-from pandas import Timestamp
-import numpy as np
-from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-from statsmodels.stats.outliers_influence import variance_inflation_factor   
-
-
-
-from calculate_vif import calculate_vif_
-
-
-
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+
 import seaborn as sns
-import datetime
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
 from sklearn.model_selection import train_test_split
 
-
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import datetime
+from statsmodels.stats.outliers_influence import variance_inflation_factor   
+from calculate_vif import calculate_vif_
 from IPython.display import display
+
+
+# from datetime import date
+# import datetime
+
+# from pandas import Timestamp
 
 def read_in_csv(path):
     print(f"read in {path}")
