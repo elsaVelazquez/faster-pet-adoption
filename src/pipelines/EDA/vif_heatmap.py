@@ -29,7 +29,8 @@ def draw_corr_heatmap(df, display=True):
     mpl.rcParams['ytick.labelsize'] = font_size-2
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10,10))
     # sns.heatmap(df.corr(), annot=False, fmt=".2f", ax=ax);
-    sns.heatmap(df.corr(), fmt=".2f", ax=ax).set_title('VIF: Severity of Multicolinearity');
+    sns.heatmap(df.corr(), fmt=".2f", ax=ax, mask=mask,
+                       vmin=-0.2, vmax=1).set_title('VIF: Severity of Multicolinearity');
 # VIF Heatmap of Dog Data Showing 
     
     if display:
@@ -71,19 +72,25 @@ if __name__ == "__main__":
 
     df.drop(['organization_id', 'url', 'species', 'breeds', 'colors', 'name', 'environment', 'age_Senior', 'age_Baby',
        'tags', 'organization_animal_id', 'photos', 'description', 'id','age_Adult', 'size_Medium', 'size_Small', 
-       'size_Large', 'primary_photo_cropped', 'videos', 'status_changed_at', 'attributes', 
-       'published_at', 'distance', 'contact', '_links', 'type', 'status_adoptable', 'gender_Female', 'coat_None'], axis = 1, inplace=True)
+       'size_Large', 'primary_photo_cropped', 'videos', 'status_changed_at', 'attributes', 'coat_Curly', 'coat_Long',
+       'published_at', 'distance', 'contact', 'coat_Medium', 'coat_Wire', '_links', 'type', 'status_adoptable', 'gender_Female', 'coat_None'], axis = 1, inplace=True)
    
     print(df.columns)
 
     df.rename(columns = {'gender_Male':'gender'}, inplace = True)
-    df.rename(columns = {'size_Extra_Large':'size'}, inplace = True)
+    df.rename(columns = {'size_Extra Large':'size'}, inplace = True)
     df.rename(columns = {'age_Young':'age'}, inplace = True)
+    df.rename(columns = {'coat_Short':'coat'}, inplace = True)
+    df.rename(columns = {'status_adopted': 'status'}, inplace = True)
+
+
 
     X = df
     
     vif = calculate_vif_(X, thresh=5.0)
     
+    mask = np.triu(np.ones_like(df.corr(), dtype=np.bool))
+
     draw_corr_heatmap(df)
     
     
