@@ -45,9 +45,11 @@ def print_word_stats(words):
     print(f"The number of unique words in the description is {num_unique_words}.")
     
 
-# class SpamDetector(object):
 class AdoptedOrNot(object):
-    """Implementation of Naive Bayes for binary classification"""
+    """Implementation of Naive Bayes for binary classification
+    Exploration into understanding classes using real-life example data
+    https://pythonmachinelearning.pro/text-classification-tutorial-with-naive-bayes/#Dataset
+    """
     def clean(self, s):
         translator = str.maketrans("", "", string.punctuation)
         return s.translate(translator)
@@ -115,9 +117,12 @@ class AdoptedOrNot(object):
     
 if __name__ == "__main__":
     
-    '''borrowed from https://pythonmachinelearning.pro/text-classification-tutorial-with-naive-bayes/#Dataset
+    '''heavily borrowed from https://pythonmachinelearning.pro/text-classification-tutorial-with-naive-bayes/#Dataset
+    #text binary classification for discrete features (word counts)
+    The multinomial distribution normally requires 
+    integer feature counts. 
     '''
-
+    
     ################################################
     #get dataframe of docs
     path_csv = '../../../data/csv/giant_valid_csv.csv'
@@ -138,13 +143,11 @@ if __name__ == "__main__":
     y = df_content["status_adopted"] #target
     # print(target)
     ################################################
-    
-    
-    # X, y = get_data(DATA_DIR)
-    MNB = AdoptedOrNot()
-    MNB.fit(X[100:], y[100:])
 
-    pred = MNB.predict(X[:100])
+    NaiveBayes = AdoptedOrNot()
+    NaiveBayes.fit(X[100:], y[100:])
+
+    pred = NaiveBayes.predict(X[:100])
     true = y[:100]
 
     accuracy = sum(1 for i in range(len(pred)) if pred[i] == true[i]) / float(len(pred))
