@@ -12,6 +12,9 @@ from skimage.color import rgb2gray
 import os
 
 
+from random import seed
+from random import randrange
+
 
 def open_images(path):
     train_images = imread(path)
@@ -49,27 +52,44 @@ def make_X_y():
     # print("length y: ", len(y))
     # print("all images: ", all_images)
     # print(y)
+    # print("these got misclassified: ")
+    # print(dog_ids[0])
+    print(X)
     return X, y, all_images
 
 
 def naive_bayes():
     X, y, all_images = make_X_y()
-    X_train, X_test, y_train, y_test = train_test_split(X, y)    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)    
     
     model = MultinomialNB()
     model.fit(X_train, y_train)
+    # print(y_train)
     y_pred = model.predict(X_test)
+    print(y_pred)
+    print(y_test)
+    print("X: ------------------------->")
+    print(X)
+    print("y: *************************>")
+
+    print(y)
     acc = accuracy_score(y_test, y_pred)
+#     print("The following indeces did not predict accurately: ")
+#     incorrect_predictions [
+#     list(set(list1).difference(list2))
+# ]
     print("Naive Bayes Accuracy: ", acc)
-    return acc
+    
+    return acc, y_pred, y_test, all_images
 
     
 if __name__ == '__main__':
     # root_mean = rmse(y_true, y_predict)
     X, y, all_images = make_X_y()
-    naive_bayes = naive_bayes()
+    naive_bayes_acc, y_pred, y_test, all_images = naive_bayes()
     
     # print(X)
+    # Naive Bayes Accuracy:  0.6440677966101694
 
 
 
