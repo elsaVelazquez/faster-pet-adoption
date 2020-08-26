@@ -9,7 +9,7 @@ dirs = os.listdir( path )
 
 def resize():
     for item in dirs:
-        if 'DS_Store' not in item: #to go around Mac-specific issue
+        if 'DS_Store' not in item: #to go around Mac-specific
             if os.path.isfile(path+item):
                 im = Image.open(path+item)
                 file, e = os.path.splitext(path+item)
