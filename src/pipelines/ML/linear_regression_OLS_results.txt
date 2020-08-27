@@ -1,0 +1,51 @@
+borrowed heavily from https://365datascience.com/linear-regression/
+X, y, and all_images made
+0      0
+1      1
+2      0
+3      1
+4      0
+      ..
+699    1
+700    1
+701    1
+702    1
+703    1
+Name: 0.1, Length: 704, dtype: int64
+0      0.761894
+1      0.965923
+2      0.326078
+3      0.438365
+4      0.308676
+         ...   
+699    0.873095
+700    0.501008
+701    0.868222
+702    0.575097
+703    0.612157
+Name: 2, Length: 704, dtype: float64
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    0.1   R-squared:                       0.007
+Model:                            OLS   Adj. R-squared:                  0.005
+Method:                 Least Squares   F-statistic:                     4.661
+Date:                Wed, 26 Aug 2020   Prob (F-statistic):             0.0312
+Time:                        22:26:27   Log-Likelihood:                -448.95
+No. Observations:                 704   AIC:                             901.9
+Df Residuals:                     702   BIC:                             911.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.6097      0.044     13.801      0.000       0.523       0.696
+2              0.1613      0.075      2.159      0.031       0.015       0.308
+==============================================================================
+Omnibus:                      762.292   Durbin-Watson:                   1.972
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              130.462
+Skew:                          -0.852   Prob(JB):                     4.68e-29
+Kurtosis:                       1.756   Cond. No.                         5.66
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

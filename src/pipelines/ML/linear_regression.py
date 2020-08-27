@@ -51,17 +51,19 @@ if __name__ == '__main__':
  
     results = sm.OLS(y,x).fit()
     
-    results.summary()
+    print(results.summary())
     
     plt.scatter(x1,y)
     
-    yhat = 0.0017*x1 + 0.275
+    yhat = 0.6097*x1 + 0.1613
     
     fig = plt.plot(x1,yhat, lw=4, c='red', label = 'regression line')
     
-    plt.xlabel('X data feature flat img column no. 2', fontsize = 20)
+    plt.xlabel('X data feature flat img column no. 2', fontsize = 16)
     
-    plt.ylabel('y data target', fontsize = 20)
+    plt.ylabel('y data target', fontsize = 16)
+    
+    plt.title('Linear Regression on 1 Image Feature', fontsize=18)
     
     plt.show()
     
