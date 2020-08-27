@@ -131,7 +131,7 @@ if __name__ == "__main__":
     # print(df.columns)
     df = pd.get_dummies(df, columns=['status'])
     df.drop("status_adoptable", axis = 1, inplace=True)
-    print(df.head())
+    print(df.shape)
     # new = old[['A', 'C', 'D']].copy()
 
     df_content = df[["status_adopted", "description"]].copy()
@@ -144,11 +144,20 @@ if __name__ == "__main__":
     # print(target)
     ################################################
 
-    NaiveBayes = AdoptedOrNot()
-    NaiveBayes.fit(X[100:], y[100:])
+    # NaiveBayes = AdoptedOrNot()
+    # NaiveBayes.fit(X[100:], y[100:])
+    
 
-    pred = NaiveBayes.predict(X[:100])
-    true = y[:100]
+    # pred = NaiveBayes.predict(X[:100])
+    # true = y[:100]
+
+
+    NaiveBayes = AdoptedOrNot()
+    NaiveBayes.fit(X[361:], y[361:])
+    
+
+    pred = NaiveBayes.predict(X[:361])
+    true = y[:361]
 
     accuracy = sum(1 for i in range(len(pred)) if pred[i] == true[i]) / float(len(pred))
     print("Accuracy using text: {0:.4f}".format(accuracy))
@@ -164,8 +173,8 @@ if __name__ == "__main__":
     
     
     
-    
-    
+    #for tf-Idf and cosine similarity
+    # https://janav.wordpress.com/2013/10/27/tf-idf-and-cosine-similarity/
     
     
     
