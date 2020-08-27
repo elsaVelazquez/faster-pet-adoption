@@ -28,6 +28,7 @@ import os
 import re
 import string
 import math
+from string import digits 
 
 '''Code borrowed from Galvanize DSI'''
 
@@ -175,81 +176,87 @@ if __name__ == "__main__":
         record = X[doc]
         # record.replace('None', '').replace('...', '').replace('.', '').replace(':', '').replace('[]', '').replace('"[', '').replace(']"', '').replace("''", '').replace(', ,', '')
         record = (record.lower())
-        # print("*****", (record))
-        
-        documents.append(record)
-    print(documents[8])
+        replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') #.rstrip(string.digits)
+        # print("*****", (replaced)) #.replace("',',", '').replace(", '...'", '').replace("',',", '').replace("'...'", '') #.rstrip(string.digits))
+        # print("*****", (replaced))
+        remove_digits = str.maketrans('', '', digits) 
+        replaced = replaced.translate(remove_digits) 
+        clean = replaced.replace(", '...'", "").replace("...", '')
+        documents.append(clean)
+    # print(documents)
     
     
     
     
-#     documents = X
 # #     # 2. Create a set of tokenized documents.
-#     docs = [word_tokenize(content) for content in documents]
-#     print(docs)
+    docs = [word_tokenize(content) for content in documents]
+    # print(docs)
 
 #     # 3. Strip out stop words from each tokenized document.
-#     stop = set(stopwords.words('english'))
-#     docs = [[word for word in words if word not in stop] for words in docs]
+    stop = set(stopwords.words('english'))
+    # print(stop)
+    my_stop_words_lst = ["she", "is", "of", "!", "of", "will"] #, "playful"]
+    # stop.add(words)
+    docs = [[word for word in words if (word not in stop) and (word not in my_stop_words_lst)] for words in docs]
 
 
 #     # Stemming / Lemmatization
 
-#     # 1. Stem using both stemmers and the lemmatizer
-#     porter = PorterStemmer()
-#     snowball = SnowballStemmer('english')
-#     wordnet = WordNetLemmatizer()
-#     docs_porter = [[porter.stem(word) for word in words] for words in docs]
-#     docs_snowball = [[snowball.stem(word) for word in words] for words in docs]
-#     docs_wordnet = [[wordnet.lemmatize(word) for word in words] for words in docs]
+    # 1. Stem using both stemmers and the lemmatizer
+    porter = PorterStemmer()
+    snowball = SnowballStemmer('english')
+    wordnet = WordNetLemmatizer()
+    docs_porter = [[porter.stem(word) for word in words] for words in docs]
+    docs_snowball = [[snowball.stem(word) for word in words] for words in docs]
+    docs_wordnet = [[wordnet.lemmatize(word) for word in words] for words in docs]
 
-#     # Compare
-#     for i in range(min(len(docs_porter[0]), len(docs_snowball[0]), len(docs_wordnet[0]))):
-#         p, s, w = docs_porter[0][i], docs_snowball[0][i], docs_wordnet[0][i]
-#         if len(set((p, s, w))) != 1:
-#             print("{}\t{}\t{}\t{}".format(docs[0][i], p, s, w))
+    # Compare
+    for i in range(min(len(docs_porter[0]), len(docs_snowball[0]), len(docs_wordnet[0]))):
+        p, s, w = docs_porter[0][i], docs_snowball[0][i], docs_wordnet[0][i]
+        if len(set((p, s, w))) != 1:
+            print("{}\t{}\t{}\t{}".format(docs[0][i], p, s, w))
 
-#     print("End of stemming and lemmatization")
-#     # Part of speech tagging
+    print("End of stemming and lemmatization")
+    # Part of speech tagging
 
-#     # 1. Create a part of speech tagged version of your already tokenized dataset.
-#     # commented out because it is slow...
-#     #pos_tagged = [pos_tag(tokens) for tokens in docs]
+    # 1. Create a part of speech tagged version of your already tokenized dataset.
+    # commented out because it is slow...
+    # pos_tagged = [pos_tag(tokens) for tokens in docs]
 
 
 #     # Bag of words and TF-IDF
 
-#     # 1. Create vocab, set of unique words
-#     docs = docs_snowball # choose which stemmer/lemmatizer to use
-#     vocab_set = set()
-#     [[vocab_set.add(token) for token in tokens] for tokens in docs]
-#     vocab = list(vocab_set)
+    # 1. Create vocab, set of unique words
+    docs = docs_snowball # choose which stemmer/lemmatizer to use
+    vocab_set = set()
+    [[vocab_set.add(token) for token in tokens] for tokens in docs]
+    vocab = list(vocab_set)
 
-#     # 2. Create word count vectors manually.
-#     matrix = [[0] * len(vocab) for doc in docs]
-#     vocab_dict = dict((word, i) for i, word in enumerate(vocab))
-#     for i, words in enumerate(docs):
-#         for word in words:
-#             matrix[i][vocab_dict[word]] += 1
+    # 2. Create word count vectors manually.
+    matrix = [[0] * len(vocab) for doc in docs]
+    vocab_dict = dict((word, i) for i, word in enumerate(vocab))
+    for i, words in enumerate(docs):
+        for word in words:
+            matrix[i][vocab_dict[word]] += 1
 
-#     # 3. Create word count vector over the whole corpus.
-#     cv = CountVectorizer(stop_words='english')
-#     vectorized = cv.fit_transform(documents)
+    # 3. Create word count vector over the whole corpus.
+    cv = CountVectorizer(stop_words='english')
+    vectorized = cv.fit_transform(documents)
 
-#     tfidf = TfidfVectorizer(stop_words='english')
-#     tfidfed = tfidf.fit_transform(documents) #my big x matrix, keep targets inline
+    tfidf = TfidfVectorizer(stop_words='english')
+    tfidfed = tfidf.fit_transform(documents) #my big x matrix, keep targets inline
 
 
-# X = tfidf
-# y = targets #this is y 
+    # X = tfidf
+    # y = targets #this is y 
 
-#     # Cosine Similarity using TF-IDF
+    # Cosine Similarity using TF-IDF
 
-#     # 1. Compute cosine similarity
-#     cosine_similarities = linear_kernel(tfidfed, tfidfed)
+    # 1. Compute cosine similarity
+    cosine_similarities = linear_kernel(tfidfed, tfidfed)
 
-#     # 2. Print out similarities
-#     for i, doc1 in enumerate(docs):
-#         for j, doc2 in enumerate(docs):
-#             print("Cosine Similarities Using TF-IDF")
-#             print(i, j, cosine_similarities[i, j])
+    # 2. Print out similarities
+    for i, doc1 in enumerate(docs):
+        for j, doc2 in enumerate(docs):
+            print("Cosine Similarities Using TF-IDF")
+            print(i, j, cosine_similarities[i, j])
