@@ -139,55 +139,43 @@ Using TF-IDF and cosine distances failed to provide insight into which words mad
 |Word Cloud of Adopted Dog Descriptions <img src ="src/readme/capstone_2_readme/word_cloud_adopted.png">|Word Cloud of Adoptable Dog Descriptions <img src="src/readme/capstone_2_readme/word_cloud_adoptable.png">|
 |-|-|
 
-
-Adoptable with Playful:
-people	peopl	peopl	people
-prepare	prepar	prepar	prepare
-End of stemming and lemmatization
-COSINE DISTANCE:  0.922
-
-
-Adoptable without Playful
-people	peopl	peopl	people
-prepare	prepar	prepar	prepare
-End of stemming and lemmatization
-COSINE DISTANCE:  0.922
-
-
-
-Adopted with Playful:
-probably	probabl	probabl	probably
-lbs	lb	lbs	lb
-complete	complet	complet	complete
-End of stemming and lemmatization
-COSINE DISTANCE:  0.953
-
-
-Adopted without Playful:
-probably	probabl	probabl	probably
-lbs	lb	lbs	lb
-complete	complet	complet	complete
-End of stemming and lemmatization
-COSINE DISTANCE:  0.953
-
-
-Entire dataset without and without Playful Identical Results
-probably	probabl	probabl	probably
-lbs	lb	lbs	lb
-complete	complet	complet	complete
-End of stemming and lemmatization
-COSINE DISTANCE:  0.954
-
-Heartworm also yielded no difference in results.
-
-
 <br>
 
-## Comparison of Words in Adopted Vs. Adopted
+## Comparisons of Cosine Distances
+There were no differences in cosine distances with any combinations of including and not including the words "playful" or "heartworm."
+<br>
+
+Adoptable :<br>
+>* Stemming and Lemmitization:<br>
+people	peopl	peopl	people<br>
+prepare	prepar	prepar	prepare<br>
+>* COSINE DISTANCE same for both:  0.922<br>
+
+<br>
+Adopted:<br>
+
+>* Stemming and Lemmitization:<br>
+probably	probabl	probabl	probably<br>
+lbs	lb	lbs	lb<br>
+complete	complet	complet	complete<br>
+>* COSINE DISTANCE same for both:  0.953<br>
+
+<br>
+Entire dataset with and without "playful":<br>
+
+>* Stemming and Lemmitization:<br>
+probably	probabl	probabl	probably<br>
+lbs	lb	lbs	lb<br>
+complete	complet	complet	complete<br>
+>* COSINE DISTANCE same for both:  0.954
+<br>
+
+## Comparison of Words in Entire Dataset Vs. Adopted Vs. Adoptable
 The following images show the top description words used, collectively, for adopted dogs, and for adoptable dogs.  Note that the word 'None' is a placeholder in the adoptable dogs' descriptions that was left blank in the dog's description.   
 <br>
-### Word Counts of Dog Descriptions
-|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png">|<img src="src/readme/capstone_2_readme/word_counts_adopted.png">|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png">|
+### Word Counts of Dog Descriptions 
+Top 25 Words Less Stopwords
+|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" >|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png">|
 |-|-|-|
 <br>
 
