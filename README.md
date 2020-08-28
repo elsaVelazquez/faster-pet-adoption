@@ -117,7 +117,7 @@ It appears the data shows all the dogs will be adopted.
 
 # Why not an SVM
 A preliminary quest to use a random forest model, applied with cross validation and 5 folds, showed to also do no better than random chance. 
-<img src="src/readme/capstone_2_readme/ROC_why_NOT_using_SVM.png">
+<img src="src/readme/capstone_2_readme/ROC_why_NOT_using_SVM.png" width=600>
 
  
 # VIF
@@ -178,8 +178,10 @@ The following images show the top description words used, collectively, for adop
 <br>
 ### Word Counts of Dog Descriptions 
 Top 25 Words Less Stopwords
-|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" width=400>|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png" width=400>|
+<br>
+|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" width=400 height=300>|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png" width=400>|
 |-|-|-|
+
 <br>
 
 ## NEXT STEPS
