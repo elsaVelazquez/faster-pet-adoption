@@ -7,7 +7,8 @@
 ### Using a Multinomial Naive Bayes Classification System to Predict on Images and 
 
 
-A Supervised Learning ML Project by Elsa Velazquez, MEd
+A Supervised Learning ML Project by Elsa Velazquez, MEd, Data Scientist, Software Engineer<br>
+LinkedIn: <a href="https://www.linkedin.com/in/elsa-velazquez-020bb9175/"> https://www.linkedin.com/in/elsa-velazquez-020bb9175/ </a>
 
 
 
@@ -169,7 +170,7 @@ lbs	lb	lbs	lb<br>
 complete	complet	complet	complete<br>
 >* COSINE DISTANCE same for both:  0.954
 <br>
-
+<br>
 ## Comparison of Words in Entire Dataset Vs. Adopted Vs. Adoptable
 The following images show the top description words used, collectively, for adopted dogs, and for adoptable dogs.  Note that the word 'None' is a placeholder in the adoptable dogs' descriptions that was left blank in the dog's description.   
 <br>
