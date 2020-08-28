@@ -31,7 +31,7 @@ therefore reject our null hypothesies.
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.
 >The dataset includes 527 adopted dogs and 227 adoptable dogs.
-<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png">
+<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png" align=center>
 
 
 
@@ -57,11 +57,9 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 ## False Positive Misclassification
  Naive Bayes predicted adopted when the dog's status was adoptable (it was still avaiable):
  
-|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=100> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=100>|
-|-|-|-|-|-|-|
+|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=100> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=100 height=30>|
+|-|-|-|-|-|-|-|-|
 
-|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=100 height=70>|
-|-|-|
 <br>
 
 ## False Negative Misclassifications
