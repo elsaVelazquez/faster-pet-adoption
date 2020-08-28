@@ -2,9 +2,10 @@
 ---
 
 
-|<img src="src/readme/capstone_2_readme/banner_imgs/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png">|<img src="src/readme/capstone_2_readme/banner_imgs/github_DSI_capstone2_logo.png" width=600>|<img src="src/readme/capstone_2_readme/banner_imgs/elsa_nichi_givaggio.png" width=70>|
+|<img src="src/readme/capstone_2_readme/banner_imgs/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png" width=100>|<img src="src/readme/capstone_2_readme/banner_imgs/github_DSI_capstone2_logo.png" width=600>|<img src="src/readme/capstone_2_readme/banner_imgs/elsa_nichi_givaggio.png" width=70>|
 |-|-|-|
-## CAN DOGS' ONLINE PRESENCES PREDICT IF THEY GET ADOPTED?
+
+# Can dogs' online presences predict if they get adopted?
 
 ### Using a Multinomial Naive Bayes Classification System to Predict on Images and Text
 
