@@ -1,3 +1,64 @@
+Adoptable with Playful:
+people	peopl	peopl	people
+prepare	prepar	prepar	prepare
+End of stemming and lemmatization
+COSINE DISTANCE:  0.922480
+
+## Using Dog Descriptions
+
+Adoptable without Playful
+people	peopl	peopl	people
+prepare	prepar	prepar	prepare
+End of stemming and lemmatization
+COSINE DISTANCE:  0.922480
+
+
+
+Adopted with Playful:
+probably	probabl	probabl	probably
+lbs	lb	lbs	lb
+complete	complet	complet	complete
+End of stemming and lemmatization
+COSINE DISTANCE:  0.9530579467
+
+
+Adopted without Playful:
+probably	probabl	probabl	probably
+lbs	lb	lbs	lb
+complete	complet	complet	complete
+End of stemming and lemmatization
+COSINE DISTANCE:  0.9530579467
+
+
+Entire dataset without and without Playful Identical Results
+probably	probabl	probabl	probably
+lbs	lb	lbs	lb
+complete	complet	complet	complete
+End of stemming and lemmatization
+COSINE DISTANCE:  0.9544280435939247
+
+Heartworm also yielded no difference in results.
+
+
+
+Bag of Words using Naive Bayes, incuding playful and heartworm:
+Using 361 training, 361 test records, 
+Accuracy is 70% off text using Naive Bayes
+
+
+## So which words are the key different words between adopted and adoptable?
+
+The number of words in the dataset description is 12792.
+The number of unique words in the dataset description is 2981.
+
+
+
+
+
+
+
+
+
 ---
 title: Habits
 author: John Doe
@@ -241,10 +302,48 @@ India has declared the feeding of street dogs, who lost food sources when restau
 In March and April, when much of Europe was under total lockdown, one of the few permissible reasons to leave one’s house was to exercise a four-legged friend. People offered their dogs for rent on social media. One man in northern Spain was caught dragging a stuffed toy on a leash, and another disguised his daughter as a Dalmatian to get out of his apartment. A mayor on the Italian island of Sardinia felt compelled to offer the clarification that to qualify for a walk, the dog “must be alive.”
 
 find 1-3 features to really look into now that I have the data on adopted dogs
+VIF results
 
 Regression - Lasso and Elastic Net-- predicting a quantity of dogs
 
 Clustering-- because number of categories is known, < 10K samples so can use KMeans (could have also bootstrapped)
+
+
+
+
+
+Compare word clouds of adopted vs adoptable
+so which words are having more impact?
+having "playful" - in adopted
+or having "under treatment"/ "heartworm positive" - in adoptable
+
+Naive Bayes accuracy to predict if adopted or adoptable is 79%.
+<!-- src/pipelines/EDA/bag_of_words_naive_bayes.py -->
+Naive Bayes using images to predict is 54%.
+Naive Bayes Accuracy:  0.64
+train_test_split(X, y, test_size=0.25, random_state=0)
+
+why i used multinomial naive bayes
+The multinomial Naive Bayes classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
+Naive Bayes Accuracy:  0.6384180790960452
+
+
+
+Linear Regression:
+classification question because our labels are discrete -adopted or adoptable                                                                                        
+chose column 2 because std dev was smallest (no other real reasons)   
+
+UNIQUE WORDS IN DESCRIPTION:
+ADOPTABLE:
+The number of words in the description is 179.
+The number of unique words in the description is 127.
+The unique words are:  {"friendly',", "Fences',", "girl',", "'intelligent',", "'Crate", "'Neutered',", "['Sweet", "'fostered']", 'for', "'Sweet',", 'treatment', "Kids',", "'loving']", 'the', 'well', "'Dog", "['Good", "['Dog", "'Owner", 'older', 'in', "'sweet',", 'Free', "Leash']", "Play',", "'Likes", 'Children', 'editing', "['stunning", 'Dog', "'bio", "room',", "'Energetic',", "Cats',", "['Playful']", "'People", "['Shy',", "trained',", "'Good", "'adorable']", "'Cuddler',", 'call', 'Well', "'Moderate", "Cats']", "['lap", 'positive', "Training',", "Preferred',", "'Shy", "'Outgoing',", 'NOT', 'children', 'like', "['happy',", "['loving',", "['Loving',", "'Needs", "Jumper',", "'Gentle']", "positive',", "'Friendly',", "['Smart',", "'Older", 'twelve', "'Smart']", "'Snuggler']", "'Forgiving',", "'Sweet']", 'Home', 'canned', "dog']", "cats',", "'Single", 'a', "Jumper']", "['Fence", 'dog', "car',", 'new', 'shelter', "['Does", "timid']", "girl']", "'cute',", 'On', "'No", "Home',", "'Heartworm", "Motivated',", "'Food", "'Spayed',", "['Adult", "['Playful',", 'on', "'Microchipped',", 'Only', "Positive']", 'more', "dogs',", "'Loving',", "Friendly',", "leash']", "['Friendly',", 'under', "Energy',", 'other', 'A', "food',", "People']", "Preferred']", "'Loves", "'Plays", "Home']", "'Shy',", "Experience',", "['Heartworm", "'']", "Trained',", "info',", "['Cat", 'with', "'active',", "'Jumps", "'Walks", "'House", "'Potty"}   ADOPTED:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 
 
 
