@@ -56,21 +56,21 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 ## False Positive Misclassification
  Naive Bayes predicted adopted when the dog's status was adoptable (it was still avaiable):
  
-|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=300><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=300><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=300><br>|
+|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=100><br>|
 |-|-|-|
 
-|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=300>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=300> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=300>|
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=100> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=100>|
 |-|-|-|
 
-|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=300>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=300 height=200>|
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=100 height=70>|
 |-|-|
-
+<br>
 
 ## False Negative Misclassifications
 Naive Bayes predicted adoptable though the dog was already adopted:
 <br>
 
-|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550728_adoptable.jpg" width=300>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550922_adoptable.jpg" width=300>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554156_adoptable.jpg" width=300>|
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550728_adoptable.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550922_adoptable.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554156_adoptable.jpg" width=100>|
 |-|-|-|
 
 
