@@ -27,10 +27,11 @@ def make_X_y():
     y = []   
     dog_ids = []
 
-    all_images = os.listdir('../../../data/img/img_dumps/') #[:10]
+    #the [:5] is for testing and when subset is smaller, remobe the [:-1] at ~line 49
+    all_images = os.listdir('../../../data/img/img_dumps/')#[:5]
 
     for dog_pic_label in all_images:
-        path = glob.glob('../../../data/img/img_dumps/*.jpg') #[:10]
+        path = glob.glob('../../../data/img/img_dumps/*.jpg')#[:5]
         label = (dog_pic_label)
         if 'adoptable' in label:
             label = 0

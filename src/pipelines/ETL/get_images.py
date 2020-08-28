@@ -5,7 +5,7 @@ import json
 #TODO Elsa test this today 
 
 if __name__ == "__main__":
-    breakpoint()
+    # breakpoint()
     with open(f"../../../data/json/main_running_json.json", "r") as f:
         dict_data = json.load(f)
 

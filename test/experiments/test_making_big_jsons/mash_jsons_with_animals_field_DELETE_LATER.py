@@ -16,14 +16,16 @@ import pprint
 #     pprint.pprint(data_animal_id_48550215["animal"])
 
 import sys
-
+path = 'data/json/json_dump_by_animal'
+all_file_names = os.listdir(path)
 with open("animal_id_48550215.json", "r+") as file:
     sys.stdout = open('some.json', 'a')
 
     data_animal_id_48550215 = str(json.load(file))
     # print(type(data_animal_id_48550215))
-    clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', "'True'")
+    clean_48550215 = data_animal_id_48550215.replace('null', '"null"').replace("'", '"').replace('[]', '"[]"').replace("None", '"None"').replace('False', '"False"').replace('True', '"True"')
     animal_id_48550215 = clean_48550215 
+    # print(animal_id_48550215[:521])
     print(clean_48550215 + ',' )
     sys.stdout.close()
 

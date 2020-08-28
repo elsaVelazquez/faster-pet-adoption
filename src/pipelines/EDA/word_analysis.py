@@ -14,7 +14,7 @@ from make_word_cloud import make_word_cloud_func
 
 import sys 
 sys.path.append('../data_ingestion') 
-from read_and_explore_data import *
+from read_in_data import *
 
 
 def print_word_stats(words):
@@ -23,6 +23,7 @@ def print_word_stats(words):
     num_unique_words = len(unique_words)
     print(f"The number of words in the description is {num_words}.")
     print(f"The number of unique words in the description is {num_unique_words}.")
+    print("The unique words are: ", unique_words)
     
 def Convert(string): 
     li = list(string.split(" ")) 
@@ -108,5 +109,9 @@ if __name__ == "__main__":
     str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower().replace("'", '').replace(' ', ',')
  
     cleaned_text = str(Convert(str1))
+
+    #find out stats
+    print_word_stats(result)
+
 
     make_word_cloud_func(cleaned_text)

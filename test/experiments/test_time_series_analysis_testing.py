@@ -85,7 +85,9 @@ if __name__ == "__main__":
     
     # df = read_df('../../../data/csv/aggregated_csv_1_copy_3.csv') #aggregated_csv_1.csv') #TODO elsa other csv are not working right, why
     # df = read_df('../../../data/csv/aggregated_csv_1_copy_3.csv') 
-    df = read_df('../../../data/csv/time_series_csv.csv') 
+    # df = read_df('../../../data/csv/time_series_csv.csv') 
+    df = read_df('../../../data/csv/time_series_adopted_csv.csv') 
+
     
     
     # df = read_df('../../../data/csv/running_main_csv.csv')
@@ -183,4 +185,4 @@ if __name__ == "__main__":
     ax.set_ylabel("Count of dogs adopted that day", fontsize=16)
     ax.set_title("Dog Adoption Trends", fontsize=18)
 
-    fig.savefig("../../../src/readme/capstone_2_readme/dog_adoption_trends_time_series.png")
+    fig.savefig("../../../src/readme/capstone_2_readme/ADOPTED_dogs_dog_adoption_trends_time_series.png")

@@ -113,13 +113,17 @@ if __name__ == "__main__":
     
     ################################################
     #get dataframe of docs
-    path_csv = '../../../data/csv/tf_idf_adoptable_csv.csv'
+    # path_csv = '../../../data/csv/tf_idf_adoptable_csv.csv'
+    path_csv = '../../../data/csv/giant_valid_csv.csv'
+
     df = read_df(path_csv)
 
     X = df["description"] #data
     # print(X.head())
 
-    y = df["status_adopted"] #target
+    # y = df["status_adopted"] #target
+    y = df["status"] #target
+
     # print(y.head())
 
     
@@ -153,7 +157,7 @@ if __name__ == "__main__":
 
 #     # 3. Strip out stop words from each tokenized document.
     stop = set(stopwords.words('english'))
-    my_stop_words_lst = ["she", "is", "of", "!", "of", "will", "he", "playful"]
+    my_stop_words_lst = ["she", "is", "of", "!", "of", "will", "he"] #, "playful"]
     docs = [[word for word in words if (word not in stop) and (word not in my_stop_words_lst)] for words in docs]
 
 
@@ -196,7 +200,7 @@ if __name__ == "__main__":
 
     # 3. Create word count vector over the whole corpus.
     stopwords = nltk.corpus.stopwords.words('english')
-    newStopWords = ["she", "is", "of", "!", "of", "will", "he", "playful"]
+    newStopWords = ["she", "is", "of", "!", "of", "will", "he"] #, "playful"]
     all_stopwords = stopwords.extend(newStopWords)
     cv = CountVectorizer(all_stopwords) #stop_words='english')
     vectorized = cv.fit_transform(documents)

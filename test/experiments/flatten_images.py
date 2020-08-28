@@ -2,15 +2,71 @@
 
 #small dataset feature selection
 from skimage.io import imread
+from skimage.transform import resize
+from skimage.color import rgb2gray
+import os
 
 
-# dog_pics_directory = os.listdir('../../../data/img/img_dumps')[:5]
 
+def open_images(path):
+    train_images = imread(path)
+    gray_image = rgb2gray(train_images) #for making image gray scale
+    # color_size = resize(train_images, (50, 50))
+    gray_size = resize(gray_image, (32, 32))
+    gray_ravel = gray_size.ravel()
+    return gray_ravel
+
+
+dog_pics_directory = os.listdir('../../../data/img/img_dumps')[:2]
+# print(dog_pics_directory)
+path = '../../../data/img/img_dumps/'
 
 # for folder in data_folders:
-    
-#     for dog_pic in dog_pics_directory:
+import pandas as pd
+import numpy as np
+
+data = pd.DataFrame([])
+for dog_pic in dog_pics_directory:
+    # image = imread(r"../../../data/img/img_dumps/48549555_adoptable.jpg")
+    # print(dog_pic)
+    # print(path + dog_pic )
+    # print(dog_pics_directory)
+    full_path = path + dog_pic 
+    # print(full_path)
+    # img = "../../../data/img/img_dumps/48554156_adoptable.jpg"
+    # print(img)
+    list_ravel = []
+    if dog_pic == dog_pic:
+        image_initial = imread(full_path)
+        # print(image)
+        image_grey = rgb2gray(image_initial)
+        image = resize(image_grey, (32,32))
+        image_ravel = image.ravel()
         
+        list_ravel.append(image_ravel)
+        # print(list_ravel)
+        list_ravel = np.asarray(list_ravel)
+        print(list_ravel.shape)
+        # image_ravel = np.array(image_ravel)
+        # # r = 'r"'
+        # # end = '"'
+        # # full_file_path_read = r + path + dog_pic + end
+        # # print(full_file_path_read)
+        # # image = imread(full_file_path_read)
+        # pic_title = dog_pic[:-4]
+        # print(pic_title)
+        # print(str(image_ravel))
+        # print(type(image_ravel_str))
+        print("*******************************************************")
+
+#         data = data.append(pd.DataFrame({'dog_ID': dog_pic[:-4], 'flattened_img': list_ravel }, index=[0]), ignore_index=True)
+
+
+# print(data)    
+# print(type(data.iloc[0][1]))
+# print(data)
+data.to_csv(r'df_dogID_and_flattened_img.csv', index = False)
+    
 #         # path = glob.glob('data/{}/{}/*.jpg'.format(folder, dog_pic))
 #         path = glob.glob('data/{}/{}/*.jpg'.format(folder, dog_pic))
 
@@ -24,24 +80,24 @@ from skimage.io import imread
 # print(X[0])
 # y = np.asarray(y)
 
-# image = imread(r"../data/scraped_dog_adoption_petfinder_img_files/test_img.jpg")
-image = imread(r"../../../data/img/img_dumps/48549549_adoptable.jpg")
-# show_img(image)
+# # image = imread(r"../data/scraped_dog_adoption_petfinder_img_files/test_img.jpg")
+# image = imread(r"../../../data/img/img_dumps/48549549_adoptable.jpg")
+# # show_img(image)
 
-red, yellow =   image.copy(), image.copy()
-red[:,:,(1,2)] = 0
-yellow[:,:,2]=0
-# show_images(images=[red,yellow], titles=['Red Intensity','Yellow Intensity'])
+# red, yellow =   image.copy(), image.copy()
+# red[:,:,(1,2)] = 0
+# yellow[:,:,2]=0
+# # show_images(images=[red,yellow], titles=['Red Intensity','Yellow Intensity'])
 
-from skimage.color import rgb2gray
-gray_image = rgb2gray(image)
-# show_images(images=[image,gray_image],titles=["Color","Grayscale"])
-# print("Colored image shape:", image.shape) #3 columm matrix
-# print("Grayscale image shape:", gray_image.shape) #2 column matrix
-# print(image) #3*3 matrices made of ints
-gray_image_ravel = gray_image.ravel()
-# print(gray_image.ravel())
-print(gray_image_ravel)
+# from skimage.color import rgb2gray
+# gray_image = rgb2gray(image)
+# # show_images(images=[image,gray_image],titles=["Color","Grayscale"])
+# # print("Colored image shape:", image.shape) #3 columm matrix
+# # print("Grayscale image shape:", gray_image.shape) #2 column matrix
+# # print(image) #3*3 matrices made of ints
+# gray_image_ravel = gray_image.ravel()
+# # print(gray_image.ravel())
+# print(gray_image_ravel)
 
 
 

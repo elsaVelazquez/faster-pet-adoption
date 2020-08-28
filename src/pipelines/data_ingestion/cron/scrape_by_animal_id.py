@@ -37,8 +37,8 @@
 
 import os
 
-animal_id = 48549546 + 1000
-last_id = animal_id + 1000 + 1000
+animal_id = 48549546 + 10000
+last_id = animal_id + 1000 
 
 
 curl_middle = "-H \"Authorization: Bearer "
@@ -53,6 +53,6 @@ for i in list(range(animal_id, last_id+1)):
     
     print(i)
     animal_id = animal_id+1
-    curl_full = (f'curl --limit-rate 50K -o  ../../../../data/json/json_dump_by_animal/animal_id_{i}.JSON ' + curl_middle + three_hour_token + curl_end + str(i) ) #          + '&limit=100') #'>       ADOPTED.JSON 2>&1')
+    curl_full = (f'curl --limit-rate 50K -o  ../../../../data/json/json_dump_by_animal/test_data/animal_id_{i}.JSON ' + curl_middle + three_hour_token + curl_end + str(i) ) #          + '&limit=100') #'>       ADOPTED.JSON 2>&1')
 
     os.system(curl_full)

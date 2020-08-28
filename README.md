@@ -1,3 +1,152 @@
+  
+
+Ho:  A Naive Bayes Image Classifier will have
+>= 90% accuracy in predicting which dogs 
+are adopted.  
+Ha: A Naive Bayes Image Classifier will 
+have < 90% accuracy in predicting which dogs are adopted.  
+
+Spoiler alert for the busy: a text description
+of the dog appears to be more telling
+of the dog's future than its pictures, and we
+therefore reject our hypothesies. 
+
+
+
+Using a random state to ensure 
+the model results can be replicated, 
+the Naive Bayes Image Classifier performed
+at 63% accuracy.  
+
+
+
+Naive Bayes accuracy to predict if adopted or adoptable based on text description is 79%.
+<!-- src/pipelines/EDA/bag_of_words_naive_bayes.py -->
+Naive Bayes using images to predict is 54%.
+Naive Bayes Accuracy:  0.64
+train_test_split(X, y, test_size=0.25, random_state=0)
+
+why i used multinomial naive bayes
+The multinomial Naive Bayes classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
+Naive Bayes Accuracy:  0.6384180790960452
+
+
+
+
+
+This result is only a bit better than random chance, 
+and the average colored images (shown below) show that
+this problem would be a more difficult problem to classify, 
+and possibly a more sophisticated ML algorithm could
+predict with a higher accuracy rate:
+<img average adopted> <img average adoptable>
+<img avg adopted tinted><img avg adoptable tinted>
+
+For a deeper explanation of Naive Bayes Multinomial, visit https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes
+<formula img>
+
+
+Examples of misclassified images (positive was labeled as
+                                  adopted):
+<false positives><false negatives>
+
+
+PCA further supports the decision to abandon a Naive Bayes Image Classification Investigation:
+Ho: PCA 
+Ha: 
+
+<table showing the data being discarded by dimension reduction>
+And here, PCA reducing from 1024 features (a flattened 32*32 image) to 2 features, showed
+no gain from extrapolating principal components.  The same results were shown for 2, 4, and 10 dprincipal components. 
+<blue and green graph>
+
+
+
+
+
+*note: Column 2 had the least std deviation 
+so was a likely candidate to show the most
+average scenario, but otherwise random feature (i.e. column) selection
+did not appear to have an impact. 
+
+ 
+We fail to reject the null hypothesis, 
+as PCA does not provide an increase in 
+prediction accuracy.  
+
+
+
+
+Logistic Regression, Two Tail
+Ho: The slope will be zero.  
+Ha: The slope will be < zero <. 
+
+Logistic Regression also shows that there 
+is not a best fitting line that could answer 
+the classification question using image data. 
+This scikit learn module is ideal 
+because the labels (adopted=1, adoptable=0)
+are discrete.
+It appears the data shows all the dogs will be adopted.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scraped the API using a curl command 
+with automated token and API call 
+functionality
+<img of bash terminal>
+
+Any animals in shelters were represented, 
+including cats and mares, but the focus for this project
+is on dogs. 
+
+
+
+
+Used Time Series Analysis to Determine the window
+of time we are examining
+
+Anomoly of so many dogs coming in at
+once then more than came in got out. 
+Informal research showed Covid, did, in fact, 
+affect dog adoption.  It is the first time
+in history, thanks to science that has proven
+animal species are not virus carriers, that
+animal lives are being preserved.  However, 
+this does pose an interesting twist to 
+this investigation.  
+
+Hopefully after the pandemic animals stay in 
+their forever homes, but if not, the pipeline is 
+set to analyze how to best improve a dog's a
+online presence to get it to its forever home
+the quickest.  
+
+
+
+
+
+
+
+
 Adoptable with Playful:
 people	peopl	peopl	people
 prepare	prepar	prepar	prepare
@@ -317,21 +466,7 @@ so which words are having more impact?
 having "playful" - in adopted
 or having "under treatment"/ "heartworm positive" - in adoptable
 
-Naive Bayes accuracy to predict if adopted or adoptable is 79%.
-<!-- src/pipelines/EDA/bag_of_words_naive_bayes.py -->
-Naive Bayes using images to predict is 54%.
-Naive Bayes Accuracy:  0.64
-train_test_split(X, y, test_size=0.25, random_state=0)
 
-why i used multinomial naive bayes
-The multinomial Naive Bayes classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
-Naive Bayes Accuracy:  0.6384180790960452
-
-
-
-Linear Regression:
-classification question because our labels are discrete -adopted or adoptable                                                                                        
-chose column 2 because std dev was smallest (no other real reasons)   
 
 UNIQUE WORDS IN DESCRIPTION:
 ADOPTABLE:
