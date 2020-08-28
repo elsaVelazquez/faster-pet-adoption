@@ -51,21 +51,20 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 
 
 <br>
+
 # The following are examples of misclassified images:
 ## False Positive Misclassification
  Naive Bayes predicted adopted when the dog's status was adoptable (it was still avaiable):
+ 
 |<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg"><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg"><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg"><br>|
 |-|-|-|
 
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg"><br>
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg"><br>
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg"><br>
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg">
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg">
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg">|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg">|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg">|
+|-|-|-|
 
-<br>
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg">|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg">|
+|-|-|
 
-<br>
 
 ## False Negative Misclassifications
 Naive Bayes predicted adoptable though the dog was already adopted:
