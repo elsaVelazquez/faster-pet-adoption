@@ -32,7 +32,7 @@ therefore reject our null hypothesies.
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
 >The dataset includes 527 adopted dogs and 227 adoptable dogs.
-<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png" align=center width=300>
+<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png" width=600>
 
 
 
@@ -77,14 +77,17 @@ Naive Bayes predicted adoptable though the dog was already adopted:
 PCA further supports the decision to abandon a Naive Bayes Image Classification Investigation because it did not help with data analysis, classification, or visualization to simply and interpret the multiviariate data. <br>
 > Ho: PCA will provide <= 4 features that will improve classification by increasing prediction accuracy. <br>
 >Ha: PCA will not provide <= 4 features that will improve classification by increasing prediction accuracy.  
+<br>
 
-The following tables shows, in red, the data that would be discarded by applying PCA.
-<img src="src/readme/capstone_2_readme/pca_amnt_data_discarded.png">
-In the following figure, it is evident there is no gain from reducing dimensionality from 1024 features (a flattened 32*32 pixel  colored image) to 2-dimensional space because there is no clustering as a result.  The same results were found when running PCA on 2, 4, 6 and 10 principal components.  
-<img src="src/readme/capstone_2_readme/pca_from_1024_to_2_dimensions.png"><br>
->*note: Column 2, i.e. the third column vector of the flattened images, had the least std deviation 
-so was a likely candidate to show the most
-average scenario, but otherwise random feature (i.e. column) selection did not appear to have an impact.*
+|The below figure shows, in red, the data that would be discarded by applying PCA.<img src="src/readme/capstone_2_readme/pca_amnt_data_discarded.png">|The below figure, shows no gain from reducing dimensionality.<img src="src/readme/capstone_2_readme/pca_from_1024_to_2_dimensions.png"><br>|
+|-|-|
+
+The figures show there is not reason to believe there is gain from reducing dimensionality from 1024 features (a flattened 32*32 pixel  colored image) to 2-dimensional space because there is no clustering as a result.  The same results were found when running PCA on 2, 4, 6 and 10 principal components. 
+*note: Column 2, i.e. the third column vector of the flattened images, had the least std deviation so was a likely candidate to show the most average scenario, but otherwise random feature (i.e. column) selection did not appear to have an impact.*|
+|-|-|
+
+
+
 
 <br>
  We therefore reject our null hypothesis because we did not find <= 4 features to help understand the data. 
@@ -94,7 +97,7 @@ average scenario, but otherwise random feature (i.e. column) selection did not a
 Logistic Regression, Two Tail
 <br>
 Ho: The slope will be zero.  
-Ha: The slope will be < zero <. 
+Ha: The slope will be < zero. 
 
 Logistic Regression also shows that there 
 is not a best fitting line that could answer 
