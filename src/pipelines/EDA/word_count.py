@@ -1,16 +1,11 @@
 import numpy as np
 import pandas as pd
 from io import StringIO
-import datetime
-from datetime import datetime
-import time
-from datetime import datetime, date, time, timedelta
 import matplotlib
-matplotlib.use("agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from create_main_dataframe import create_main_dataframe
-
+import six #for table
 
 def read_df(path):
     '''read in file
@@ -24,10 +19,32 @@ def print_word_stats(words):
     num_unique_words = len(unique_words)
     print(f"The number of words in the description is {num_words}.")
     print(f"The number of unique words in the description is {num_unique_words}.")
-    # print("**************\n", unique_words)    
-    # print(list(set(list_str)))
 
+def render_mpl_table(data, col_width=.70, row_height=0.625, font_size=14,
+                     header_color='#00cc99', row_colors=['#d9d9d9', 'w'], edge_color='w',
+                     bbox=[0, 0, 1, 1], header_columns=0,
+                     ax=None, **kwargs):
+    '''from stack overflow'''
+    if ax is None:
+        size = (np.array(data.shape[::-1]) + np.array([0, 1])) * np.array([col_width, row_height])
+        fig, ax = plt.subplots(figsize=size)
+        ax.axis('off')
 
+    mpl_table = ax.table(cellText=data.values, bbox=bbox, colLabels=data.columns, **kwargs)
+
+    mpl_table.auto_set_font_size(False)
+    mpl_table.set_fontsize(font_size)
+
+    for k, cell in six.iteritems(mpl_table._cells):
+        cell.set_edgecolor(edge_color)
+        if k[0] == 0 or k[1] < header_columns:
+            cell.set_text_props(weight='bold', color='w')
+            cell.set_facecolor(header_color)
+        else:
+            cell.set_facecolor(row_colors[k[0]%len(row_colors) ])
+    ax.set_title('Entire Dataset', fontsize=20, fontname="Times New Roman Bold")
+    plt.show()
+    return ax
 
 
 if __name__ == "__main__":
@@ -62,7 +79,7 @@ if __name__ == "__main__":
         if word not in my_stopwrds:
             new_lst.append(word)
             # print(word)
-    print(new_lst)
+    # print(new_lst)
     
     #list and count unique words in dog descriptions text
     # LIST = lst_
@@ -70,36 +87,15 @@ if __name__ == "__main__":
     LIST = new_lst
     counts,values = pd.Series(LIST).value_counts().values, pd.Series(LIST).value_counts().index
     df_results = pd.DataFrame(list(zip(values,counts)),columns=["value","count"])
-    print(df_results.head(25))
+    # print(df_results.head(25))
 
-#     lst_arr = []
-#     for word in range(len(lst_)):
-#         word = np.array([lst_[word]])
-#         # print(word)
-#         lst_arr = np.append(lst_arr, word)
-        
-#     print(lst_arr[2][:])
-#     lst_arr = str(lst_arr)
-#     lst_arr.replace('None', '').replace('...', '').replace('.', '').replace(':', '')
+    df_final = df_results.head(25)
+    print(df_final)
+    # df = pd.DataFrame()
+    # df['date'] = ['2016-04-01', '2016-04-02', '2016-04-03']
+    # df['calories'] = [2200, 2100, 1500]
+    # df['sleep hours'] = [2200, 2100, 1500]
+    # df['gym'] = [True, False, False]
 
-#     print(lst_arr)
-# #     # clean_descriptions = lst_arr.tolist()
-# #     print(type(clean_descriptions))
 
-# #    list_descriptions =[]
-# #    for x in len()
-    
-#     corpus = (clean_descriptions) + (list_dog_tags)
-#     str_corpus = str(corpus)
-#     print(str_corpus)
-#     clean_corpus = str_corpus.replace('None', '').replace('...', '').replace('.', '').replace(':', '').replace('[]', '').replace('"[', '').replace(']"', '').replace("''", '').replace(', ,', '')
-    
-    
-#     #TODO . try this corpus cleaner instead::
-#     # str1 = result_str.replace('"[', '').replace('"]', '').replace('[', '').replace(']', '').replace('"', '').replace("'", '').replace(',', '').replace(',', ' ').replace("\n", ' ').replace("''", '').replace(", '',", ',').replace("  ", ' ').lower().replace("'", '').replace(' ', ',')
-
-#     str_tags = str(df_tags)
-#     corpus = clean_corpus + str_tags
-#     print(corpus)
-# #     # cmd = 'python make_corpus.py > ../../../data/txt/corpus.txt'
-# #     # os.system(cmd)
+    render_mpl_table(df_final, header_columns=0, col_width=2.0)
