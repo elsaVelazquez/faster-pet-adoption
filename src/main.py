@@ -76,8 +76,6 @@ if __name__ == "__main__":
     
     #saves the console output to data/csv/all_dogs_copied_off_console_json_to_csv.csv
     #copy and paste into own file named with this structure: 'data/csv/aggregated_csv_id_48549546_to_48553546.csv'
-    #edit records manually 
-    #TODO elsa figure out how to automate dropping bad records ^
     #copy and paste all new clean records to main csv---->    '../../../data/csv/running_main_csv.csv'
     
     
@@ -89,7 +87,7 @@ if __name__ == "__main__":
     
     
     #ML
-    #made a naive bayes
+    #get a naive bayes accuracy score
     os.system(naive_bayes.py)
     
     
@@ -98,29 +96,30 @@ if __name__ == "__main__":
     
     
     
-    #TODO elsa can i call these files like this?
-    #data structures pipeline--> mash all single-record jsons together into 1 giant json
-    data_structs_pipeline = 'src/pipelines/data_structures/create_one_json.py'
-    os.system(python data_structs_pipeline)
+    # #TODO elsa --> Capstone 3
+    # can i call these files like this?
+    # #data structures pipeline--> mash all single-record jsons together into 1 giant json
+    # data_structs_pipeline = 'src/pipelines/data_structures/create_one_json.py'
+    # os.system(python data_structs_pipeline)
     
-    #data wrangling pipeline--> download images to local drive, push to the cloud
-    data_wrangling_pipeline_get_imgs = 'src/pipelines/wrangling/get_images.py'
-    os.system(python data_wrangling_pipeline)
-    data_wrangling_pipeline_imgs_to_cloud = 'src/pipelines/wrangling/AWS/imgs_to_cloud.py'
-    os.system(python data_wrangling_pipeline_imgs_to_cloud)
+    # #data wrangling pipeline--> download images to local drive, push to the cloud
+    # data_wrangling_pipeline_get_imgs = 'src/pipelines/wrangling/get_images.py'
+    # os.system(python data_wrangling_pipeline)
+    # data_wrangling_pipeline_imgs_to_cloud = 'src/pipelines/wrangling/AWS/imgs_to_cloud.py'
+    # os.system(python data_wrangling_pipeline_imgs_to_cloud)
     
     
-    # #removed all errored out JSONS
-    # delete_invalid_json_files = 'src/pipelines/cleaning/delete_invalid_json_files.py'
-    # os.system(delete_invalid_json_files)
+    # # #removed all errored out JSONS
+    # # delete_invalid_json_files = 'src/pipelines/cleaning/delete_invalid_json_files.py'
+    # # os.system(delete_invalid_json_files)
     
-    # #mash all jsons together into 1 giant json
-    # create_one_json = 'src/pipelines/data_structures/create_one_json.py'
-    # os.system(python create_one_json)
+    # # #mash all jsons together into 1 giant json
+    # # create_one_json = 'src/pipelines/data_structures/create_one_json.py'
+    # # os.system(python create_one_json)
     
-    #clean the json of any NaN or not found errors
-    clean_giant_json = 'clean_giant_json.py' 
-    os.system(python clean_giant_json > test.json)
+    # #clean the json of any NaN or not found errors
+    # clean_giant_json = 'clean_giant_json.py' 
+    # os.system(python clean_giant_json > test.json)
     
-    #turn the clean, giant json into a csv
+    # #turn the clean, giant json into a csv
     
