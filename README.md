@@ -7,8 +7,7 @@
 ### Using a Multinomial Naive Bayes Classification System to Predict on Images and 
 
 
-A Supervised Learning ML Project by Elsa Velazquez, MEd, Data Scientist, Software Engineer<br>
-LinkedIn: <a href="https://www.linkedin.com/in/elsa-velazquez-020bb9175/"> https://www.linkedin.com/in/elsa-velazquez-020bb9175/ </a>
+A Supervised Learning ML Project by <a href="https://www.linkedin.com/in/elsa-velazquez-020bb9175/"> Elsa Velazquez, MEd, Data Scientist, Software Engineer </a>
 
 
 
