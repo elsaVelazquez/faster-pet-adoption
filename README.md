@@ -2,7 +2,9 @@
 ---
 
 ## FASTER PET ADOPTION
-### HOW CAN A DOG SHELTER MANAGE DOGS' ONLINE PRESENCES TO GET DOGS ADOPTED OUT FASTER?
+|<img src="src/readme/capstone_2_readme/banner_imgs/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png">|<img src="src/readme/capstone_2_readme/banner_imgs/github_DSI_capstone2_logo.png" width=200>|<img src="src/readme/capstone_2_readme/banner_imgs/elsa_nichi_givaggio.png" width=70>|
+|-|-|-|
+### CAN DOGS' ONLINE PRESENCES PREDICT IF THEY GET ADOPTED?
 
 ### Using a Multinomial Naive Bayes Classification System to Predict on Images and Text
 
@@ -21,8 +23,10 @@ have < 90% accuracy in predicting which dogs are adopted.
 
 * ### Spoiler alert for the busy: 
 
->* The Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
->* A text description of the dog appears to be more telling of the dog's future than its pictures.
+  >* The Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
+  >* A text description of the dog appears to be more telling of the dog's future than its pictures.
+* ### The Takeaway
+  >* During the Covid pandemic, my recommendation to animal shelters who wish to know actionable steps, is to first spend resources on manually inputting dog descriptions, rather than on images, disregard the dog species and breed, and worry not about dog health because sick dogs, too, are flying off the shelf.  
 
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
@@ -185,12 +189,12 @@ Text analysies will be used to determine if leaving the description blank has a 
 
 
 ## DATA PIPELINE
-The majority of the automated pipeline can be seen in <a href="src/main.py">main.py</a>.
->* The data was acquired using an automated script that ran a curl command to scrape the API using an authentication key (<a href="src/pipelines/data_ingestion/cron/get_api_token.py">get_api_token.py</a>).  Only 1K API calls are allowed per 24 hour period, with a download limit of 50K.  This lead to only being able to access 1K records per ID per day (<a href="src/pipelines/data_ingestion/cron/scrape_by_animal_id.py">scrape_by_animal_id.py</a>).
-<br>
->* From there data was further skimmed down to only include dog data ( <a href="src/pipelines/cleaning/delete_invalid_json_files.py"> delete_invalid_json_files.py</a>). The data were cleaned through string manipulation, as dataframes, and pushed into CSV format for ease of use (<a href="https://raw.githubusercontent.com/elsaVelazquez/faster-pet-adoption/master/data/csv/giant_valid_csv.csv">raw json</a>).  <br>
->* A <a href="test/unit_tests/test_strings_are_lowercase.py">unit test </a>was used to determine if the corpuses for IF-IDF was correctly processing in all lowercase.  <br>
-The images were acquired using an automated Beautiful Soup 4 Script.
+The majority of the automated pipeline can be seen in <a href="src/main.py">main.py</a>.<br>
+
+>* I scraped the data using an <a href="src/pipelines/data_ingestion/cron/get_api_token.py">automated authentication script</a> that ran a <a href="src/pipelines/data_ingestion/cron/scrape_by_animal_id.py">curl command via terminal to scrape the API </a> using a controlled authentication key.  Only 1K API calls are allowed per 24 hour period, with a download limit of 50K.  This lead to only being able to access 1K records by sequential ID per day.
+>* From there data was further skimmed down to only include dog data ( <a href="src/pipelines/cleaning/delete_invalid_json_files.py"> delete_invalid_json_files.py</a>). The data were cleaned through string manipulation, as dataframes, and pushed into CSV format for ease of use (<a href="https://raw.githubusercontent.com/elsaVelazquez/faster-pet-adoption/master/data/csv/giant_valid_csv.csv">raw json</a>).
+>* A <a href="test/unit_tests/test_strings_are_lowercase.py">unit test </a>was used to determine if the corpuses for IF-IDF was correctly processing in all lowercase.
+>* The images were downloaded using <a href="src/pipelines/ETL/get_images.py">an automated Beautiful Soup 4 Script</a>.
 <br>
 <br>
 
@@ -214,8 +218,8 @@ is on dogs.
 
 
 
-For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a><br>
-<img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=325>
+For a deeper explanation of Naive Bayes Multinomial, please visit Wikipedia at <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a><br>
+<img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=600>
 
 ---
 FASTER PET ADOPTION<br>
