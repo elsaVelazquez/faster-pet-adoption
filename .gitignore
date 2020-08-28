@@ -18,3 +18,10 @@ running_main_csv_TEST_DATA.csv
 scrape_api_DELETE_LATER.py
 * .DS_store
 *DS_store
+scratch.py 
+test/experiments/*
+test/experiments/
+test/data_backup_copies/*
+test/data_backup_copies/
+test/extra_documentation/*
+test/extra_documentation/
