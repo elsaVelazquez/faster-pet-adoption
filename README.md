@@ -4,7 +4,7 @@
 ## FASTER PET ADOPTION
 ### HOW CAN A DOG SHELTER MANAGE DOGS' ONLINE PRESENCES TO GET DOGS ADOPTED OUT FASTER?
 
-### Using a Multinomial Naive Bayes Classification System to Predict on Images and 
+### Using a Multinomial Naive Bayes Classification System to Predict on Images and Text
 
 
 A Supervised Learning ML Project by <a href="https://www.linkedin.com/in/elsa-velazquez-020bb9175/"> Elsa Velazquez, MEd, Data Scientist, Software Engineer </a>
