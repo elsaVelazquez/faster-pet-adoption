@@ -26,8 +26,9 @@ have < 90% accuracy in predicting which dogs are adopted.
 
   >* The Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
   >* A text description of the dog appears to be more telling of the dog's future than its pictures.
-* ### The takeaway:
-  >* During the Covid pandemic, my recommendation to animal shelters who wish to know actionable steps, is to first spend resources on manually inputting dog descriptions, rather than on images, disregard the dog species and breed, and worry not about dog health because sick dogs, too, are flying off the shelf.  
+* ### The takeaways:
+  >* During the Covid pandemic, my recommendation to animal shelters who wish to know actionable steps, is to first spend resources on manually inputting dog descriptions, rather than on images, disregard the dog species and breed, and worry not about dog health because sick dogs, too, are flying off the shelf. 
+  >* This repo is meant to highlight my skills in ETL. 
 
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
@@ -214,18 +215,13 @@ is on dogs.
 * This is the first pandemic in known history where dogs are not scapegoated as carriers, thanks to advances in science, so are subsequently in high demand. 
 * In other countries, people have started renting out their dogs as companions during the Covid pandemic.  
 * India has declared the feeding of street dogs, who lost food sources when restaurants and street vendors shut down, an essential service.
-
-
-<br>
 ---
-
-
-
+___
 For a deeper explanation of Naive Bayes Multinomial, please visit Wikipedia at <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a><br>
 <img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=600>
 
-___
 ---
+___
 ## Dogs are flying off the shelf.  <br>
 ## I am open to partnering to start a rent-a-pet-business.  
 |<img src="src/readme/capstone_2_readme/banner_imgs/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png" width=400>|<img src="src/readme/capstone_2_readme/banner_imgs/github_DSI_capstone2_logo.png" width=800>|<img src="src/readme/capstone_2_readme/banner_imgs/flying_dog.jpg" width=200>|<img src="src/readme/capstone_2_readme/banner_imgs/dog_with_human_baby.jpg" width=300>|<img src="src/readme/capstone_2_readme/banner_imgs/simpsons_animals_evolve_further.jpg" width=250>|
