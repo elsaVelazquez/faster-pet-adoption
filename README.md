@@ -26,7 +26,7 @@ have < 90% accuracy in predicting which dogs are adopted.
 
   >* The Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
   >* A text description of the dog appears to be more telling of the dog's future than its pictures.
-* ### The Takeaway
+* ### The takeaway:
   >* During the Covid pandemic, my recommendation to animal shelters who wish to know actionable steps, is to first spend resources on manually inputting dog descriptions, rather than on images, disregard the dog species and breed, and worry not about dog health because sick dogs, too, are flying off the shelf.  
 
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
@@ -102,19 +102,21 @@ because the labels (adopted=1, adoptable=0)
 are discrete.
 It appears the data shows all the dogs will be adopted. 
 <br>
->The original data is compared side by side with the Logistic Regression of the image data. 
+>The original data is compared side by side with the logistic regression of the image data. 
 
 |<img src="src/readme/capstone_2_readme/dog_adoption_status_initial_data_viz.png">|<img src="src/readme/capstone_2_readme/logistic_regression_dog_img_data.png">|
 |-|-|
 
 
 <br>
-# Why not an SVM
+
+## SVM
+## Why not an SVM <br>
 A preliminary quest to use a random forest model, applied with cross validation and 5 folds, showed to also do no better than random chance. 
 <img src="src/readme/capstone_2_readme/ROC_why_NOT_using_SVM.png" width=600>
 
  
-# VIF
+## VIF
 Due to the continued dead ends in understanding the dog's online presence using image classification, the direction of the investigation lead to a text analysis and VIF was used to determine which features to keep, as they did not have strong multicollinearity.  It was determined that the strongest predictive factor was the manually input description.  <br>
 <img src="src/readme/capstone_2_readme/VIF_multicollinearity.png" width=600>
 
