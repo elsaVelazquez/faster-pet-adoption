@@ -222,7 +222,13 @@ is on dogs.
 For a deeper explanation of Naive Bayes Multinomial, please visit Wikipedia at <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a><br>
 <img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=600>
 
+___
 ---
+## Dogs are flying off the shelf.  I am open to partnering to start a rent-a-pet-business.  
+|<img src="src/readme/capstone_2_readme/banner_imgs/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png" width=400>|<img src="src/readme/capstone_2_readme/banner_imgs/github_DSI_capstone2_logo.png" width=800>|<img src="src/readme/capstone_2_readme/banner_imgs/flying_dog.jpg" width=200>|<img src="src/readme/capstone_2_readme/banner_imgs/dog_with_human_baby.jpg" width=300>|<img src="src/readme/capstone_2_readme/banner_imgs/simpsons_animals_evolve_further.jpg" width=250>|
+|-|-|-|-|-|
+
+
 FASTER PET ADOPTION<br>
 by Elsa Velazquez, MEd<br>
 Data Scientist, Software Engineer<br>
