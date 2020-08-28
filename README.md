@@ -114,7 +114,6 @@ It appears the data shows all the dogs will be adopted.
 
 
 <br>
-
 # Why not an SVM
 A preliminary quest to use a random forest model, applied with cross validation and 5 folds, showed to also do no better than random chance. 
 <img src="src/readme/capstone_2_readme/ROC_why_NOT_using_SVM.png" width=600>
@@ -122,7 +121,7 @@ A preliminary quest to use a random forest model, applied with cross validation 
  
 # VIF
 Due to the continued dead ends in understanding the dog's online presence using image classification, the direction of the investigation lead to a text analysis and VIF was used to determine which features to keep, as they did not have strong multicollinearity.  It was determined that the strongest predictive factor was the manually input description.  <br>
-<img src="src/readme/capstone_2_readme/VIF_multicollinearity.png">
+<img src="src/readme/capstone_2_readme/VIF_multicollinearity.png" width=600>
 
 <br>
 
@@ -164,7 +163,7 @@ complete	complet	complet	complete<br>
 >* COSINE DISTANCE same for both:  0.953<br>
 
 <br>
-Entire dataset with and without "playful":<br>
+Entire dataset:<br>
 
 >* Stemming and Lemmitization:<br>
 probably	probabl	probabl	probably<br>
@@ -173,6 +172,7 @@ complete	complet	complet	complete<br>
 >* COSINE DISTANCE same for both:  0.954
 <br>
 <br>
+
 ## Comparison of Words in Entire Dataset Vs. Adopted Vs. Adoptable
 The following images show the top description words used, collectively, for adopted dogs, and for adoptable dogs.  Note that the word 'None' is a placeholder in the adoptable dogs' descriptions that was left blank in the dog's description.   
 <br>
