@@ -22,12 +22,8 @@ have < 90% accuracy in predicting which dogs are adopted.
 
 * ### Spoiler alert for the busy: 
 
-* Using a random state to ensure the model results can be replicated with 25% of data as the test set, the Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
-* A text description
-of the dog appears to be more telling
-of the dog's future than its pictures, and we
-therefore reject our null hypothesies. 
-
+>* The Naive Bayes Image Classifier performed at 63.8% accuracy on image classification, and we therefore reject our null hypothesis.  
+>* A text description of the dog appears to be more telling of the dog's future than its pictures.
 
 The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
@@ -82,13 +78,8 @@ PCA further supports the decision to abandon a Naive Bayes Image Classification 
 |The below figure shows, in red, the data that would be discarded by applying PCA.<img src="src/readme/capstone_2_readme/pca_amnt_data_discarded.png">|The below figure, shows no gain from reducing dimensionality.<img src="src/readme/capstone_2_readme/pca_from_1024_to_2_dimensions.png"><br>|
 |-|-|
 
-The figures show there is not reason to believe there is gain from reducing dimensionality from 1024 features (a flattened 32*32 pixel  colored image) to 2-dimensional space because there is no clustering as a result.  The same results were found when running PCA on 2, 4, 6 and 10 principal components. 
-*note: Column 2, i.e. the third column vector of the flattened images, had the least std deviation so was a likely candidate to show the most average scenario, but otherwise random feature (i.e. column) selection did not appear to have an impact.*|
-|-|-|
-
-
-
-
+The figures show there would require more work to make gains from reducing dimensionality from 1024 features (a flattened 32*32 pixel  colored image) to 2-dimensional space because there is no clustering as a result.  Similar results were found when running PCA on 2, 4, 6 and 10 principal components. <br>
+*note: Column 2, i.e. the third column vector of the flattened images, had the least std deviation so was a likely candidate to show the most average scenario, but otherwise random feature (i.e. column) selection did not appear to have an impact.*
 <br>
  We therefore reject our null hypothesis because we did not find <= 4 features to help understand the data. 
 <br>
@@ -127,14 +118,14 @@ Due to the continued dead ends in understanding the dog's online presence using 
 
 # Text Analysis to Predict Dog's Adopted Status
 
-## Bag of Words Cosine DIstance and TF-IDF
+## Naive Bayes on Text
 When text was analyzed using Naive Bayes on manually input dog descriptions, the prediction performance improved significantly, but we were still not able to fail to reject our null hypothesis.
 >Ho: Naive Bayes Text Classification will predict adoption status of adopted with >= 90% accuracy. <br>
 >Ha: Naive Bayes Text Classification will predict adoption status of adopted with < 90% accuracy. 
 <br>
-
 We reject the null hypothesis because Naive Bayes text analysis on dog descriptions had an accuracy rate of 70% despite rates of test and training data splits. 
 
+## Bag of Words Cosine DIstance and TF-IDF
 
 Using TF-IDF and cosine distances failed to provide insight into which words made the dog's adoption status predictable.  The words "playful" and "heartworm" appeared in Word Clouds but did not have an impact when investigated further.  
 
@@ -179,7 +170,7 @@ The following images show the top description words used, collectively, for adop
 ### Word Counts of Dog Descriptions 
 Top 25 Words Less Stopwords
 <br>
-|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" width=400 height=300>|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png" width=400>|
+|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png" width=400>|
 |-|-|-|
 
 <br>
@@ -195,19 +186,22 @@ Text analysies will be used to determine if leaving the description blank has a 
 
 
 ## DATA PIPELINE
-The data was acquired using an automated script that ran a curl command to scrape the API using an authentication key (<a href="src/pipelines/data_ingestion/cron/get_api_token.py">get_api_token.py</a>).  Only 1K API calls are allowed per 24 hour period, with a download limit of 50K.  This lead to only being able to access 1K records per ID per day (<a href="src/pipelines/data_ingestion/cron/scrape_by_animal_id.py">scrape_by_animal_id.py</a>).
+The majority of the automated pipeline can be seen in <a href="src/main.py">main.py</a>.
+>* The data was acquired using an automated script that ran a curl command to scrape the API using an authentication key (<a href="src/pipelines/data_ingestion/cron/get_api_token.py">get_api_token.py</a>).  Only 1K API calls are allowed per 24 hour period, with a download limit of 50K.  This lead to only being able to access 1K records per ID per day (<a href="src/pipelines/data_ingestion/cron/scrape_by_animal_id.py">scrape_by_animal_id.py</a>).
 <br>
-From there data was further skimmed down to only include dog data ( <a href="src/pipelines/cleaning/delete_invalid_json_files.py"> delete_invalid_json_files.py</a>). The data were cleaned through string manipulation, as dataframes, and pushed into CSV format for ease of use (<a href="https://raw.githubusercontent.com/elsaVelazquez/faster-pet-adoption/master/data/csv/giant_valid_csv.csv">raw json</a>).  A <a href="test/unit_tests/test_strings_are_lowercase.py">unit test </a>was used to determine if the corpuses for IF-IDF was correctly processing in all lowercase.  <br>
+>* From there data was further skimmed down to only include dog data ( <a href="src/pipelines/cleaning/delete_invalid_json_files.py"> delete_invalid_json_files.py</a>). The data were cleaned through string manipulation, as dataframes, and pushed into CSV format for ease of use (<a href="https://raw.githubusercontent.com/elsaVelazquez/faster-pet-adoption/master/data/csv/giant_valid_csv.csv">raw json</a>).  <br>
+>* A <a href="test/unit_tests/test_strings_are_lowercase.py">unit test </a>was used to determine if the corpuses for IF-IDF was correctly processing in all lowercase.  <br>
 The images were acquired using an automated Beautiful Soup 4 Script.
 <br>
-The majority of the automated pipeline can be seen in <a href="src/main.py">main.py</a>.
 <br>
 
 
+<br>
 
-## Sidenotes regarding this project
+## Sidenotes regarding this project and repo
 
 * The code is not PEP8 compliant, but it *is* readable by the author, whom is dyslexic and with other visual and cognitive impairments. 
+* This repo is created with the Travis CLI rapid deployment pipeline coding approach.
 *  All animal species in shelters were represented by the API call JSON responses, 
 including cats and mares, but the focus for this project
 is on dogs. 
@@ -216,13 +210,13 @@ is on dogs.
 * India has declared the feeding of street dogs, who lost food sources when restaurants and street vendors shut down, an essential service.
 
 
-
+<br>
 ---
 
 
 
 For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a>
-<img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center>
+<img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=325>
 
 ---
 FASTER PET ADOPTION<br>
