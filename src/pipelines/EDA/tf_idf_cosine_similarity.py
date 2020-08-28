@@ -1,19 +1,13 @@
 import numpy as np
 import pandas as pd
 from io import StringIO
-import datetime
-from datetime import datetime
-import time
-from datetime import datetime, date, time, timedelta
-import matplotlib
-matplotlib.use("agg")
-import matplotlib.pyplot as plt
-import numpy as np
-from create_main_dataframe import create_main_dataframe
-# from wordcloud import WordCloud
-#TODO elsa fix the agg imaages error
-# from make_word_cloud import make_word_cloud
-# from pymongo import MongoClient, errors
+import os
+import re
+import string
+import math
+from string import digits 
+
+import nltk #to add my own stopwords
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem.porter import PorterStemmer
@@ -23,20 +17,11 @@ from nltk import pos_tag
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-
-import os
-import re
-import string
-import math
-from string import digits 
-
-'''Code borrowed from Galvanize DSI'''
-
 def read_df(path):
     '''read in file
     '''
     # print('read df')
-    return pd.read_csv(path) #, parse_dates=True, squeeze=True) 
+    return pd.read_csv(path) 
 
 def print_word_stats(words):
     num_words = len(words)
@@ -50,6 +35,7 @@ class AdoptedOrNot(object):
     """Implementation of Naive Bayes for binary classification
     Exploration into understanding classes using real-life example data
     https://pythonmachinelearning.pro/text-classification-tutorial-with-naive-bayes/#Dataset
+    Some code borrowed from Galvanize DSI and pythonmachinelearning.pro
     """
     def clean(self, s):
         translator = str.maketrans("", "", string.punctuation)
@@ -119,6 +105,7 @@ class AdoptedOrNot(object):
 if __name__ == "__main__":
     
     '''heavily borrowed from https://pythonmachinelearning.pro/text-classification-tutorial-with-naive-bayes/#Dataset
+    and Galvanize DSI
     #text binary classification for discrete features (word counts)
     The multinomial distribution normally requires 
     integer feature counts. 
@@ -126,40 +113,19 @@ if __name__ == "__main__":
     
     ################################################
     #get dataframe of docs
-    path_csv = '../../../data/csv/giant_valid_csv.csv'
+    path_csv = '../../../data/csv/tf_idf_adoptable_csv.csv'
     df = read_df(path_csv)
-    df = df.dropna()
-    # print(df.columns)
-    df = pd.get_dummies(df, columns=['status'])
-    df.drop("status_adoptable", axis = 1, inplace=True)
-    print(df.shape)
-    # new = old[['A', 'C', 'D']].copy()
 
-    df_content = df[["status_adopted", "description"]].copy()
-    # print(df_content.head())
-    
-    X = df_content["description"] #data
-    
-    # print(data)
-    
-    y = df_content["status_adopted"] #target
-    # print(target)
-    ################################################
+    X = df["description"] #data
+    # print(X.head())
+
+    y = df["status_adopted"] #target
+    # print(y.head())
 
     
-    #for tf-Idf and cosine similarity
-    # https://janav.wordpress.com/2013/10/27/tf-idf-and-cosine-similarity/
+    id = df["id"] #dog ID
+    # print(id)
     
-    # df['tags'] = (df['tags'])
-    # df_tags = df['tags']
-    # # breakpoint()
-    # list_dog_tags = df_tags.values.tolist()
-    # print(df_tags)
-    
-   
-
-    # documents = [' '.join(article['content']).lower() for X in coll.find()]
-    # print(X)
     corpus_dirty = []
     
     for doc in range(len(X)):
@@ -167,18 +133,11 @@ if __name__ == "__main__":
 
         corpus_dirty.append(str_corpus)
 
-        # str_corpus.replace('None', '').replace('...', '').replace('.', '').replace(':', '').replace('[]', '').replace('"[', '').replace(']"', '').replace("''", '').replace(', ,', '')
-    # print(corpus_dirty[4])
-
     documents = []
     for doc in range(len(X)):
-        # print(type(X[doc]), X[doc])
         record = X[doc]
-        # record.replace('None', '').replace('...', '').replace('.', '').replace(':', '').replace('[]', '').replace('"[', '').replace(']"', '').replace("''", '').replace(', ,', '')
         record = (record.lower())
-        replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') #.rstrip(string.digits)
-        # print("*****", (replaced)) #.replace("',',", '').replace(", '...'", '').replace("',',", '').replace("'...'", '') #.rstrip(string.digits))
-        # print("*****", (replaced))
+        replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') 
         remove_digits = str.maketrans('', '', digits) 
         replaced = replaced.translate(remove_digits) 
         clean = replaced.replace(", '...'", "").replace("...", '')
@@ -194,15 +153,11 @@ if __name__ == "__main__":
 
 #     # 3. Strip out stop words from each tokenized document.
     stop = set(stopwords.words('english'))
-    # print(stop)
-    my_stop_words_lst = ["she", "is", "of", "!", "of", "will"] #, "playful"]
-    # stop.add(words)
+    my_stop_words_lst = ["she", "is", "of", "!", "of", "will", "he", "playful"]
     docs = [[word for word in words if (word not in stop) and (word not in my_stop_words_lst)] for words in docs]
 
 
-#     # Stemming / Lemmatization
-
-    # 1. Stem using both stemmers and the lemmatizer
+#     # 4. Stemming / Lemmatization--> Stem using both stemmers and the lemmatizer
     porter = PorterStemmer()
     snowball = SnowballStemmer('english')
     wordnet = WordNetLemmatizer()
@@ -210,7 +165,7 @@ if __name__ == "__main__":
     docs_snowball = [[snowball.stem(word) for word in words] for words in docs]
     docs_wordnet = [[wordnet.lemmatize(word) for word in words] for words in docs]
 
-    # Compare
+    # 5. Compare
     for i in range(min(len(docs_porter[0]), len(docs_snowball[0]), len(docs_wordnet[0]))):
         p, s, w = docs_porter[0][i], docs_snowball[0][i], docs_wordnet[0][i]
         if len(set((p, s, w))) != 1:
@@ -221,7 +176,7 @@ if __name__ == "__main__":
 
     # 1. Create a part of speech tagged version of your already tokenized dataset.
     # commented out because it is slow...
-    # pos_tagged = [pos_tag(tokens) for tokens in docs]
+    pos_tagged = [pos_tag(tokens) for tokens in docs]
 
 
 #     # Bag of words and TF-IDF
@@ -240,10 +195,13 @@ if __name__ == "__main__":
             matrix[i][vocab_dict[word]] += 1
 
     # 3. Create word count vector over the whole corpus.
-    cv = CountVectorizer(stop_words='english')
+    stopwords = nltk.corpus.stopwords.words('english')
+    newStopWords = ["she", "is", "of", "!", "of", "will", "he", "playful"]
+    all_stopwords = stopwords.extend(newStopWords)
+    cv = CountVectorizer(all_stopwords) #stop_words='english')
     vectorized = cv.fit_transform(documents)
 
-    tfidf = TfidfVectorizer(stop_words='english')
+    tfidf = TfidfVectorizer(all_stopwords) #stop_words='english')
     tfidfed = tfidf.fit_transform(documents) #my big x matrix, keep targets inline
 
 
@@ -256,7 +214,95 @@ if __name__ == "__main__":
     cosine_similarities = linear_kernel(tfidfed, tfidfed)
 
     # 2. Print out similarities
+    cosine_distance_acc = []
     for i, doc1 in enumerate(docs):
         for j, doc2 in enumerate(docs):
-            print("Cosine Similarities Using TF-IDF")
-            print(i, j, cosine_similarities[i, j])
+            # print("Cosine Similarities Using TF-IDF")
+            # print("Cosine Similarities Using TF-IDF: ", i, j, cosine_similarities[i, j])
+            cosine_distance = 1 - (cosine_similarities[i, j])
+            # print('COSINE DISTANCE: ', cosine_distance)
+            cosine_distance_acc.append(cosine_distance)
+    print("COSINE DISTANCE: ", np.mean(np.array(cosine_distance_acc)))
+    # print(tfidf)
+    
+    
+    
+    
+    
+    
+##########################
+#FUTURE WORK DO NOT DELETE
+ #create original df
+    #     path_csv = '../../../data/csv/giant_valid_csv.csv'
+    # df = read_df(path_csv)
+    
+    
+    #     # print(df.columns)
+    # df = pd.get_dummies(df, columns=['status'])
+    # df.drop("status_adoptable", axis = 1, inplace=True)
+    # print(df.shape)
+    # df = df.dropna()
+#     # print(df.columns)
+#     df = pd.get_dummies(df, columns=['status'])
+#     df.drop("status_adoptable", axis = 1, inplace=True)
+#     print(df.shape)
+#     df_content = df[["status_adopted", "description", "id"]].copy()
+#     # print(df_content.head())
+#     # df_content_adopted = df_content[df_content.status_adopted  == 1]
+#     df_content_adoptable = df_content[df_content.status_adopted  == 0]
+#     # print(df_content_adopted.head())  
+#     # X = df_content["description"] #data
+#     # print(X.head())
+#     # X = df_content_adopted["description"] #data
+#     X = df_content_adoptable["description"] #data
+#     # print(X)
+# #     # print(data) 
+# #     y = df_content["status_adopted"] #target
+#     # y = df_content_adopted["status_adopted"] #target
+#     y = df_content_adoptable["status_adopted"] #target
+  
+#     # id = df_content_adopted["id"] #dog ID
+#     id = df_content_adoptable["id"] #dog ID
+#     print(id)
+    
+    
+    
+    
+    #merge the two dataframes together
+    #make a csv out of them
+    # df_content_adoptable.to_csv('../../../data/csv/tf_idf_adoptable_csv.csv')
+    
+    
+
+# #     # print(target)
+    
+#     X = pd.DataFrame(X)
+#     y = pd.DataFrame(y)
+#     X.reset_index(inplace=True)
+#     y.reset_index(inplace=True)
+    
+    
+#     print(X.head())
+#     print(type(X))
+#     print(y.head())
+#     print(len(X))
+    
+#     ################################################
+
+    # pd.Series(X)
+    # pd.Series(y)
+    
+    
+    # print(X.head())
+    # print(type(X))
+    # print(y.head())
+    # print(len(X))
+    #for tf-Idf and cosine similarity
+    # https://janav.wordpress.com/2013/10/27/tf-idf-and-cosine-similarity/
+    
+    # df['tags'] = (df['tags'])
+    # df_tags = df['tags']
+    # # breakpoint()
+    # list_dog_tags = df_tags.values.tolist()
+    # print(df_tags)
+    
