@@ -16,3 +16,5 @@ creds.txt
 aggragted_csv*
 running_main_csv_TEST_DATA.csv
 scrape_api_DELETE_LATER.py
+* .DS_store
+*DS_store
