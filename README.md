@@ -54,9 +54,9 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 # The following are examples of misclassified images:
 ## False Positive Misclassification
  Naive Bayes predicted adopted when the dog's status was adoptable (it was still avaiable):
-<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg"><br>
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg"><br>
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg"><br>
+|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg"><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg"><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg"><br>|
+|-|-|-|
+
 <img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg"><br>
 <img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg"><br>
 <img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg"><br>
@@ -69,10 +69,9 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 
 ## False Negative Misclassifications
 Naive Bayes predicted adoptable though the dog was already adopted:
+<br>
 
-|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550728_adoptable.jpg"><br>|
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550922_adoptable.jpg"><br>|
-<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554156_adoptable.jpg">|
+|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550728_adoptable.jpg">|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550922_adoptable.jpg">|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554156_adoptable.jpg">|
 |-|-|-|
 
 
@@ -97,6 +96,7 @@ average scenario, but otherwise random feature (i.e. column) selection did not a
 
 ## Logistic Regression
 Logistic Regression, Two Tail
+<br>
 Ho: The slope will be zero.  
 Ha: The slope will be < zero <. 
 
