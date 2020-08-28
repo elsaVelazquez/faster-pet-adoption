@@ -42,17 +42,18 @@ def render_mpl_table(data, col_width=.70, row_height=0.625, font_size=14,
             cell.set_facecolor(header_color)
         else:
             cell.set_facecolor(row_colors[k[0]%len(row_colors) ])
-    ax.set_title('Entire Dataset', fontsize=20, fontname="Times New Roman Bold")
+    ax.set_title('Adopted', fontsize=20, fontname="Times New Roman Bold")
     plt.show()
     return ax
 
 
 if __name__ == "__main__":
     
-    df = read_df('../../../data/csv/giant_valid_csv.csv')
-
+    # df = read_df('../../../data/csv/giant_valid_csv.csv')
+    df = read_df('../../../data/csv/tf_idf_adopted_csv.csv')
     ##################################################################################
-    #TODO elsa bag of words and sentiment analysis
+    #TODO --> capstone 3
+    # elsa bag of words and sentiment analysis
 
 
     df['description'] = (df['description'])
@@ -90,12 +91,6 @@ if __name__ == "__main__":
     # print(df_results.head(25))
 
     df_final = df_results.head(25)
-    print(df_final)
-    # df = pd.DataFrame()
-    # df['date'] = ['2016-04-01', '2016-04-02', '2016-04-03']
-    # df['calories'] = [2200, 2100, 1500]
-    # df['sleep hours'] = [2200, 2100, 1500]
-    # df['gym'] = [True, False, False]
-
+    # print(df_final)
 
     render_mpl_table(df_final, header_columns=0, col_width=2.0)
