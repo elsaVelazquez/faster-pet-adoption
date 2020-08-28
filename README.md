@@ -178,7 +178,7 @@ The following images show the top description words used, collectively, for adop
 <br>
 ### Word Counts of Dog Descriptions 
 Top 25 Words Less Stopwords
-|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" >|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png">|
+|<img src="src/readme/capstone_2_readme/word_counts_entire_dataset.png" width=400>|<img src="src/readme/capstone_2_readme/word_counts_adopted.png" width=400 >|<img src="src/readme/capstone_2_readme/word_counts_adoptable.png" width=400>|
 |-|-|-|
 <br>
 
