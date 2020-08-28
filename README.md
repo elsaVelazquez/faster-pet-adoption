@@ -234,6 +234,8 @@ For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https
 ---
 FASTER PET ADOPTION<br>
 by Elsa Velazquez, MEd<br>
-August 28, 2020
+Data Scientist, Software Engineer<br>
+August 28, 2020<br>
+LinkedIn: <a href="https://www.linkedin.com/in/elsa-velazquez-020bb9175/"> https://www.linkedin.com/in/elsa-velazquez-020bb9175/ </a>
 
 ---
