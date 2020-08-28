@@ -53,7 +53,7 @@ this problem would be a more difficult problem to classify.  Possibly, a more so
 ## False Positive Misclassification
  Naive Bayes predicted adopted when the dog's status was adoptable (it was still avaiable):
  
-|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=100> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=100 height=30>|
+|<img src ="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550332_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48550683_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551112_adopted.jpg" width=100><br>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551249_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48551520_adopted.jpg" width=100> |<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554016_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48554271_adopted.jpg" width=100>|<img src="src/readme/capstone_2_readme/misclassified_naive_bayes_imgs/48555413_adopted.jpg" width=100 height=80>|
 |-|-|-|-|-|-|-|-|
 
 <br>
@@ -214,7 +214,7 @@ is on dogs.
 
 
 
-For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a>
+For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a><br>
 <img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center width=325>
 
 ---
