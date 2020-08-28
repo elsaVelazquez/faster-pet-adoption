@@ -1,0 +1,66 @@
+[0 0 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 0 0 1 1 1 1 1 0 1 1 0 1 1 0 0 1 1
+ 1 1 1 1 1 0 0 1 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0
+ 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 0 1
+ 1 1 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 0 1 0 1 1 1 1 1 0 0 1 1]
+
+
+[1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 1 0 1 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1 0 0 1 1
+ 0 0 1 1 0 0 1 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 1 1 1 1 1 1 1 1 0 1 1 1 0 1 0
+ 1 1 0 0 1 0 1 0 1 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 0 0 1 0 1 1 0 1 1 1 1 0 0
+ 1 0 1 0 1 0 1 0 0 0 1 0 1 1 0 0 0 1 1 0 1 1 1 1 0 1 0 1 1 1 0 0 1 1 0 0 1
+ 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1]
+
+
+
+
+
+[0 0 1 1 1 1 1 1 1 1 1 1 1 0 1 
+
+[1 1 1 1 1 1 0 0 1 0 1 1 1 1 1 
+ 
+ 
+ 15
+ 
+ 0 1 1 1 1 0 0 1 1 1 1 1 0 1 1 0 1 1 0 0 1 1
+ 1 0 1 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1 0 0 1 1
+ 
+ 
+ 
+ 
+48554156_adoptable.jpg
+48554016_adopted.jpg
+48550728_adoptable.jpg
+48554271_adopted.jpg
+48551249_adopted.jpg
+48555413_adopted.jpg
+48550332_adopted.jpg
+48551520_adopted.jpg
+48550922_adoptable.jpg
+48551112_adopted.jpg
+48550683_adopted.jpg
+
+
+
+
+#     #hard coded for now
+#     print("The following indeces did not predict accurately: ")
+#     # print(all_images[0])
+#     # print(all_images[1])
+#     # print(all_images[6])
+#     # print(all_images[7])
+#     # print(all_images[9])
+#     # print(all_images[13])
+#     # print(all_images[15])
+#     # print(all_images[16])
+#     # print(all_images[18])
+#     # print(all_images[20])
+#     # print(all_images[21])
+
+
+
+
+
+
+
+
