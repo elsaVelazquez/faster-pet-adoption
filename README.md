@@ -28,10 +28,11 @@ of the dog appears to be more telling
 of the dog's future than its pictures, and we
 therefore reject our null hypothesies. 
 
+
+The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.<br>
 *Note that the data described here only captures a specific window in time that was deeply affected by the Covid global pandemic and the reissuance of global lockdowns.*<br>
-The following figure shows the time series for which this data was taken and the activity that week at dog shelters.  Due to the nature of the PetFinder API, it was not possible to legally scrape for data before this time period and the databases are such that length of stays is overwritten when the dog status changes.
 >The dataset includes 527 adopted dogs and 227 adoptable dogs.
-<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png" align=center>
+<img src="src/readme/capstone_2_readme/dog_adoption_trends_time_series.png" align=center width=300>
 
 
 
