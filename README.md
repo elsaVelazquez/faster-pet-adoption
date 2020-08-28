@@ -225,15 +225,15 @@ is on dogs.
 
 
 ---
----
-title: FASTER PET ADOPTION
 
-author: Elsa Velazquez
-date: August 28, 2020
-output: html_document
-runtime: shiny
----
 
 
 For a deeper explanation of Naive Bayes Multinomial, please visit <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes">https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Multinomial_na%C3%AFve_Bayes</a>
 <img src="src/readme/capstone_2_readme/Screen Shot 2020-08-28 at 1.49.39 AM.png" align=center>
+
+---
+FASTER PET ADOPTION<br>
+by Elsa Velazquez, MEd<br>
+August 28, 2020
+
+---
