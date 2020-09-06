@@ -29,8 +29,11 @@ def predict():
     """
     # breakpoint()
     data = str(request.form['article_body'])
-    print("User entered: ", data)
-    sentiment = str(model.sentiment([data])[0]) #passes description as a string array of words
+    # print("User entered: ", data)
+    # clean = str(model.clean_description([data])) #[0]) #passes description as a string array of words
+    # tokenize = str(model.clean_description([clean])) #clean_description
+    sentiment = str(model.sentiment([data])) #[0]) #passes description as a string array of words
+    # print("sentiment:", sentiment)
     pred = str(model.predict([data])[0])
     return render_template('predict.html', article=data, predicted=pred)
 

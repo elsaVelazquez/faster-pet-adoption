@@ -16,6 +16,13 @@ from nltk.corpus import stopwords
 from nltk.text import Text
 import string, re
 
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.corpus import twitter_samples, stopwords
+from nltk.tag import pos_tag
+from nltk.tokenize import word_tokenize
+from nltk import FreqDist, classify, NaiveBayesClassifier
+
+
 
 
 class TextClassifier(object):
@@ -23,26 +30,115 @@ class TextClassifier(object):
     def __init__(self):
         self._vectorizer = TfidfVectorizer()
         self._classifier = MultinomialNB()
+        self.data = data
 
 
     def predict(self, X):
-        print(self)
-        print(X)
+        # print(self)
+        # print(X)
         X = self._vectorizer.transform(X)
-        print(X)
-        print("***%%%%%%%%%%%%%%%%%%%%%%%%*****", X)
+        # print(X)
+        # print("***%%%%%%%%%%%%%%%%%%%%%%%%*****", X)
 
         return self._classifier.predict(X)
+    
+    
+    def clean_description(self, data):
+        data = str(data)
+        # print("string data: ", data)
+        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for ele in data:  
+            if ele in punc:  
+                data = data.replace(ele, "")
+        # print("cleaned data: ", data)
+        return data
+    
+    
+    def tokenize_data(self, data):
+        data = str(data)
+        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for ele in data:  
+            if ele in punc:  
+                data = data.replace(ele, "")
+        data = data.split()
+        # print("tokenized data: ", data)
+        return data
 
+
+    def lemmatize_data(self, data):
+        data = str(data)
+        
 
     def sentiment(self, data):
-        print("printing out passed in data: ", data)
+        data = str(data)
+        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for ele in data:  
+            if ele in punc:  
+                data = data.replace(ele, "")
+        data = data.split()
+        print("tokenized data: ", data)
+        
+        #breakdown parts of speech
+        parts_of_speech = [] 
+        parts_of_speech.append(nltk.pos_tag(data))
+        print("parts of speech tagging: ", parts_of_speech) 
+       #lemmatized data:
+        stop_words = [] #left here in case I want to add words in the future
+        cleaned_tokens = []
+        # classifier = NaiveBayesClassifier.train(parts_of_speech)
+
+        #https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk
+        positive_tweets = twitter_samples.strings('positive_tweets.json')
+        negative_tweets = twitter_samples.strings('negative_tweets.json')
+
+        for token, tag in nltk.pos_tag(data):
+            if tag.startswith("NN"):
+                pos = 'n'
+            elif tag.startswith('VB'):
+                pos = 'v'
+            else:
+                pos = 'a'
+
+            lemmatizer = WordNetLemmatizer()
+            token = lemmatizer.lemmatize(token, pos)
+            print("token: ", token)
+            print("lemmatizer: ", lemmatizer)
+            # classifier = NaiveBayesClassifier.train(token, pos)
+
+
+            if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
+                cleaned_tokens.append(token.lower())
+        
+            print("***************************************")
+        #     print(data, classifier.classify(dict([token, True] for token in custom_tokens)))
+            
+        # print("Accuracy is:", classify.accuracy(classifier, test_data))
+
+        # print('most informative features: ', classifier.show_most_informative_features(10))
+
+        # print("printing out parts of speech data: ", data)
+        
+       
+        
         return data
+    
+    # def clean_description(self, data):
+    #     data = str(data)
+    #     # print("string data: ", data)
+    #     punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    #     for ele in data:  
+    #         if ele in punc:  
+    #             data = data.replace(ele, "")
+    #             # data2 = data1.replace(".", '')
+    #     # print("cleaned string: ", data2)
+
+    #     # return clean
+    #     print("cleaned data: ", data)
+    #     return data
 
 if __name__ == '__main__':
 
     pass
-
 
 
 
