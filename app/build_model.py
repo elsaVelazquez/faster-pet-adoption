@@ -23,6 +23,33 @@ from nltk.tokenize import word_tokenize
 from nltk import FreqDist, classify, NaiveBayesClassifier
 
 
+from nltk.tag import pos_tag
+
+import sys
+sys.path.append('../src/pipelines/data_ingestion/')
+from read_in_data import *
+
+import numpy as np
+from io import StringIO
+import os
+import re
+import string
+import math
+from string import digits 
+
+from nltk.tokenize import word_tokenize
+from nltk.stem.porter import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk import pos_tag
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.metrics.pairwise import linear_kernel
+
+import random
+
+
+
+
 
 
 class TextClassifier(object):
@@ -70,6 +97,107 @@ class TextClassifier(object):
         
 
     def sentiment(self, data):
+        path_csv = '../data/csv/tf_idf_adoptable_csv.csv'
+        df = read_df_csv(path_csv)
+        X_negative = df["description"] #data
+        corpus_dirty = []
+        for doc in range(len(X_negative)):
+            str_corpus = str(X_negative[doc])
+            corpus_dirty.append(str_corpus)
+
+        negative_documents = []
+        for doc in range(len(X_negative)):
+            record = X_negative[doc]
+            record = (record.lower())
+            replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') 
+            remove_digits = str.maketrans('', '', digits) 
+            replaced = replaced.translate(remove_digits) 
+            clean = replaced.replace(", '...'", "").replace("...", '')
+            negative_documents.append(clean)
+        # print(documents)
+    # #     # 2. Create a set of tokenized documents.
+        negative_descriptions = [word_tokenize(content) for content in negative_documents]
+        # print("\n\nPositive Descriptions Tokenized: ", positive_descriptions)
+        data_negative = str(negative_descriptions)
+        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for ele in data_negative:  
+            if ele in punc:  
+                data_negative = data_negative.replace(ele, "")
+        data_negative = data_negative.split()
+        # print("tokenized data: ", data_negative)
+        ##################################################################
+        ##################################################################
+        ##################################################################
+
+        
+        path_csv = '../data/csv/tf_idf_adopted_csv.csv'
+        df = read_df_csv(path_csv)
+        X_positive = df["description"] #data
+        corpus_dirty = []
+        for doc in range(len(X_positive)):
+            str_corpus = str(X_positive[doc])
+            corpus_dirty.append(str_corpus)
+
+        positive_documents = []
+        for doc in range(len(X_positive)):
+            record = X_positive[doc]
+            record = (record.lower())
+            replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') 
+            remove_digits = str.maketrans('', '', digits) 
+            replaced = replaced.translate(remove_digits) 
+            clean = replaced.replace(", '...'", "").replace("...", '')
+            positive_documents.append(clean)
+        # print(documents)
+    # #     # 2. Create a set of tokenized documents.
+        positive_descriptions = [word_tokenize(content) for content in positive_documents]
+        # print("\n\nPositive Descriptions Tokenized: ", positive_descriptions)
+        data_positive = str(positive_descriptions)
+        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for ele in data_positive:  
+            if ele in punc:  
+                data_positive = data_positive.replace(ele, "")
+        data_positive = data_positive.split()
+        # print("tokenized data: ", data_negative)
+        
+        ##################################################################
+        ##################################################################
+        ##################################################################
+        
+        positive_dataset = [(description_dict, "Positive")
+                     for description_dict in data_positive]
+
+        negative_dataset = [(description_dict, "Negative")
+                            for description_dict in data_negative]
+        
+        # print("positive_dataset: ", positive_dataset)
+        print("negative_dataset: ", negative_dataset)
+
+
+        dataset = positive_dataset + negative_dataset
+        seventy_percent_of_data = int(len(dataset) * .7)
+        thirty_percent_of_data = int(len(dataset) * .3)
+        # print(thirty_percent_of_data) #361
+
+        random.shuffle(dataset) #to avoid bias
+
+        train_data = dataset[:seventy_percent_of_data]
+        test_data = dataset[thirty_percent_of_data:]
+        # print("test_data: ", test_data)
+        # print("type: ", type(test_data))
+
+
+        train_data_dict = {train_data[i]: train_data[i + 1] for i in range(0, len(train_data), 2)} 
+        print("train data dict: ", train_data_dict)
+        
+        # classifier = NaiveBayesClassifier.train(train_data_dict)
+
+        # print("Accuracy is:", classify.accuracy(classifier, test_data))
+
+        # print(classifier.show_most_informative_features(10))
+        
+        # from nltk.corpus import twitter_samples
+        # print("&&&&&&&&&&&&&&&&&&&&&&&&&")
+        # print(twitter_samples)
         data = str(data)
         punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         for ele in data:  
@@ -88,8 +216,53 @@ class TextClassifier(object):
         # classifier = NaiveBayesClassifier.train(parts_of_speech)
 
         #https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk
-        positive_tweets = twitter_samples.strings('positive_tweets.json')
-        negative_tweets = twitter_samples.strings('negative_tweets.json')
+        # positive_descriptions = ('../data/json/positive_adopted_json.json')
+        # negative_descriptions = ('../data/json/positive_adopted_json.json')
+        # print(positive_descriptions[0])
+
+    #     path_csv = '../data/csv/tf_idf_adoptable_csv.csv'
+    #     df = read_df_csv(path_csv)
+    #     X = df["description"] #data
+    #     corpus_dirty = []
+    #     for doc in range(len(X)):
+    #         str_corpus = str(X[doc])
+    #         corpus_dirty.append(str_corpus)
+
+    #     documents = []
+    #     for doc in range(len(X)):
+    #         record = X[doc]
+    #         record = (record.lower())
+    #         replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') 
+    #         remove_digits = str.maketrans('', '', digits) 
+    #         replaced = replaced.translate(remove_digits) 
+    #         clean = replaced.replace(", '...'", "").replace("...", '')
+    #         documents.append(clean)
+    #     # print(documents)
+    # # #     # 2. Create a set of tokenized documents.
+    #     negative_descriptions = [word_tokenize(content) for content in documents]
+    #     print(negative_descriptions)
+
+    # #     # 3. Strip out stop words from each tokenized document.
+    #     stop = set(stopwords.words('english'))
+    #     my_stop_words_lst = ["she", "is", "of", "!", "of", "will", "he"] #, "playful"]
+    #     docs = [[word for word in words if (word not in stop) and (word not in my_stop_words_lst)] for words in docs]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         for token, tag in nltk.pos_tag(data):
             if tag.startswith("NN"):
@@ -100,9 +273,9 @@ class TextClassifier(object):
                 pos = 'a'
 
             lemmatizer = WordNetLemmatizer()
-            token = lemmatizer.lemmatize(token, pos)
+            token = lemmatizer.lemmatize(token, pos) 
             print("token: ", token)
-            print("lemmatizer: ", lemmatizer)
+            print("lemmatizer: ", lemmatizer) #same as lemmatized sentence
             # classifier = NaiveBayesClassifier.train(token, pos)
 
 
