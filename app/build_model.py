@@ -1,6 +1,4 @@
-
-
-
+'''heavily borrowed from https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk and Galvanize DSI'''
 
 import argparse
 import pickle as pickle
@@ -47,8 +45,52 @@ from sklearn.metrics.pairwise import linear_kernel
 
 import random
 
+#########################################################
 
 
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.corpus import twitter_samples, stopwords
+from nltk.tag import pos_tag
+from nltk.tokenize import word_tokenize
+from nltk import FreqDist, classify, NaiveBayesClassifier
+
+import re, string, random
+
+def remove_noise(tweet_tokens, stop_words = ()):
+
+    cleaned_tokens = []
+
+    for token, tag in pos_tag(tweet_tokens):
+        token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|'\
+                       '(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
+        token = re.sub("(@[A-Za-z0-9_]+)","", token)
+
+        if tag.startswith("NN"):
+            pos = 'n'
+        elif tag.startswith('VB'):
+            pos = 'v'
+        else:
+            pos = 'a'
+
+        lemmatizer = WordNetLemmatizer()
+        token = lemmatizer.lemmatize(token, pos)
+
+        if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
+            cleaned_tokens.append(token.lower())
+    return cleaned_tokens
+
+def get_all_words(cleaned_tokens_list):
+    for tokens in cleaned_tokens_list:
+        for token in tokens:
+            yield token
+
+def get_tweets_for_model(cleaned_tokens_list):
+    for tweet_tokens in cleaned_tokens_list:
+        yield dict([token, True] for token in tweet_tokens)
+
+
+
+#######################################
 
 
 
@@ -96,7 +138,13 @@ class TextClassifier(object):
         data = str(data)
         
 
-    def sentiment(self, data):
+    def sentim(self, data):
+        
+        stop_words = ['the', 'an', 'the', 'i', 'a', 'and', 'to'] #, 'none'] #, 'heartworm', ' distemper/parvo'] #stopwords.words('english')
+
+        # [('be', 616), ('a', 333), ('and', 249), ('to', 189), ('old', 169), ('mix', 127), ('i', 120), ('the', 116), ('adoption', 113), ('an', 108)]
+        
+        
         path_csv = '../data/csv/tf_idf_adoptable_csv.csv'
         df = read_df_csv(path_csv)
         X_negative = df["description"] #data
@@ -117,14 +165,20 @@ class TextClassifier(object):
         # print(documents)
     # #     # 2. Create a set of tokenized documents.
         negative_descriptions = [word_tokenize(content) for content in negative_documents]
-        # print("\n\nPositive Descriptions Tokenized: ", positive_descriptions)
-        data_negative = str(negative_descriptions)
-        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-        for ele in data_negative:  
-            if ele in punc:  
-                data_negative = data_negative.replace(ele, "")
-        data_negative = data_negative.split()
-        # print("tokenized data: ", data_negative)
+
+        negative_cleaned_tokens_list = []
+        for tokens in negative_descriptions:
+            negative_cleaned_tokens_list.append(remove_noise(tokens, stop_words))
+
+
+        
+        
+        all_neg_words = get_all_words(negative_cleaned_tokens_list)
+        
+        
+        freq_dist_neg = FreqDist(all_neg_words)
+        print("most common ADOPTABLE words: ", freq_dist_neg.most_common(10))
+
         ##################################################################
         ##################################################################
         ##################################################################
@@ -151,26 +205,40 @@ class TextClassifier(object):
     # #     # 2. Create a set of tokenized documents.
         positive_descriptions = [word_tokenize(content) for content in positive_documents]
         # print("\n\nPositive Descriptions Tokenized: ", positive_descriptions)
-        data_positive = str(positive_descriptions)
-        punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-        for ele in data_positive:  
-            if ele in punc:  
-                data_positive = data_positive.replace(ele, "")
-        data_positive = data_positive.split()
-        # print("tokenized data: ", data_negative)
+        # ['dora', 'female', 'shep', 'mix', 'brindle', 'dhpp', 'kc', '//', 'no', 'puppy', 'hi', 'cathleen', ',', 'she', 'is', 'doing', 'great', 'and', 'really', 'starting'], ['meet', 'nova', '!', 'now', 'that', 'she', 'is', 'done', 'raising', 'her', 'pups', 'she', 'is', 'looking', 'for', 'a', 'home', 'of', 'her', 'own', 'where']]
         
+        positive_cleaned_tokens_list = []
+        for tokens in positive_descriptions:
+            positive_cleaned_tokens_list.append(remove_noise(tokens, stop_words))
+
+
+        
+        
+        all_pos_words = get_all_words(positive_cleaned_tokens_list)
+        
+        
+        freq_dist_pos = FreqDist(all_pos_words)
+        print("most common ADOPTED words: ", freq_dist_pos.most_common(10))
+
+
         ##################################################################
         ##################################################################
         ##################################################################
+        
+        positive_tokens_for_model = get_tweets_for_model(positive_cleaned_tokens_list)
+        negative_tokens_for_model = get_tweets_for_model(negative_cleaned_tokens_list)
+
+        
+        
         
         positive_dataset = [(description_dict, "Positive")
-                     for description_dict in data_positive]
+                     for description_dict in positive_tokens_for_model]
 
         negative_dataset = [(description_dict, "Negative")
-                            for description_dict in data_negative]
+                            for description_dict in negative_tokens_for_model]
         
         # print("positive_dataset: ", positive_dataset)
-        print("negative_dataset: ", negative_dataset)
+        # print("negative_dataset: ", negative_dataset)
 
 
         dataset = positive_dataset + negative_dataset
@@ -182,18 +250,12 @@ class TextClassifier(object):
 
         train_data = dataset[:seventy_percent_of_data]
         test_data = dataset[thirty_percent_of_data:]
-        # print("test_data: ", test_data)
-        # print("type: ", type(test_data))
 
+        classifier = NaiveBayesClassifier.train(train_data)
 
-        train_data_dict = {train_data[i]: train_data[i + 1] for i in range(0, len(train_data), 2)} 
-        print("train data dict: ", train_data_dict)
-        
-        # classifier = NaiveBayesClassifier.train(train_data_dict)
+        print("Accuracy is:", classify.accuracy(classifier, test_data))
 
-        # print("Accuracy is:", classify.accuracy(classifier, test_data))
-
-        # print(classifier.show_most_informative_features(10))
+        print(classifier.show_most_informative_features(10))
         
         # from nltk.corpus import twitter_samples
         # print("&&&&&&&&&&&&&&&&&&&&&&&&&")
@@ -204,7 +266,7 @@ class TextClassifier(object):
             if ele in punc:  
                 data = data.replace(ele, "")
         data = data.split()
-        print("tokenized data: ", data)
+        # print("tokenized data: ", data)
         
         #breakdown parts of speech
         parts_of_speech = [] 
@@ -213,55 +275,6 @@ class TextClassifier(object):
        #lemmatized data:
         stop_words = [] #left here in case I want to add words in the future
         cleaned_tokens = []
-        # classifier = NaiveBayesClassifier.train(parts_of_speech)
-
-        #https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk
-        # positive_descriptions = ('../data/json/positive_adopted_json.json')
-        # negative_descriptions = ('../data/json/positive_adopted_json.json')
-        # print(positive_descriptions[0])
-
-    #     path_csv = '../data/csv/tf_idf_adoptable_csv.csv'
-    #     df = read_df_csv(path_csv)
-    #     X = df["description"] #data
-    #     corpus_dirty = []
-    #     for doc in range(len(X)):
-    #         str_corpus = str(X[doc])
-    #         corpus_dirty.append(str_corpus)
-
-    #     documents = []
-    #     for doc in range(len(X)):
-    #         record = X[doc]
-    #         record = (record.lower())
-    #         replaced = record.replace(", '...'", "").replace("...", '').replace('\d+', '') 
-    #         remove_digits = str.maketrans('', '', digits) 
-    #         replaced = replaced.translate(remove_digits) 
-    #         clean = replaced.replace(", '...'", "").replace("...", '')
-    #         documents.append(clean)
-    #     # print(documents)
-    # # #     # 2. Create a set of tokenized documents.
-    #     negative_descriptions = [word_tokenize(content) for content in documents]
-    #     print(negative_descriptions)
-
-    # #     # 3. Strip out stop words from each tokenized document.
-    #     stop = set(stopwords.words('english'))
-    #     my_stop_words_lst = ["she", "is", "of", "!", "of", "will", "he"] #, "playful"]
-    #     docs = [[word for word in words if (word not in stop) and (word not in my_stop_words_lst)] for words in docs]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         for token, tag in nltk.pos_tag(data):
@@ -274,40 +287,25 @@ class TextClassifier(object):
 
             lemmatizer = WordNetLemmatizer()
             token = lemmatizer.lemmatize(token, pos) 
-            print("token: ", token)
-            print("lemmatizer: ", lemmatizer) #same as lemmatized sentence
-            # classifier = NaiveBayesClassifier.train(token, pos)
+
 
 
             if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
                 cleaned_tokens.append(token.lower())
         
-            print("***************************************")
-        #     print(data, classifier.classify(dict([token, True] for token in custom_tokens)))
-            
-        # print("Accuracy is:", classify.accuracy(classifier, test_data))
+        custom_tokens = remove_noise(word_tokenize(str(data)))
 
-        # print('most informative features: ', classifier.show_most_informative_features(10))
+        print(str(data), classifier.classify(dict([token, True] for token in custom_tokens)))
 
-        # print("printing out parts of speech data: ", data)
-        
+        sentiment_result = [classifier.classify(dict([token, True] for token in custom_tokens))]
+
+        print("sentiment_result: ", type(sentiment_result), sentiment_result)
        
-        
+        # data = str(data) + str(result)
+        # data.append(sentiment_result)
+        data = sentiment_result
         return data
     
-    # def clean_description(self, data):
-    #     data = str(data)
-    #     # print("string data: ", data)
-    #     punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-    #     for ele in data:  
-    #         if ele in punc:  
-    #             data = data.replace(ele, "")
-    #             # data2 = data1.replace(".", '')
-    #     # print("cleaned string: ", data2)
-
-    #     # return clean
-    #     print("cleaned data: ", data)
-    #     return data
 
 if __name__ == '__main__':
 
