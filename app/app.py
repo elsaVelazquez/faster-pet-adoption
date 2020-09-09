@@ -30,20 +30,19 @@ def predict():
     """
     # breakpoint()
     data = str(request.form['article_body'])
-    # print("User entered: ", data)
-    # clean = str(model.clean_description([data])) #[0]) #passes description as a string array of words
-    # tokenize = str(model.clean_description([clean])) #clean_description
-    # sentiment = str(model.sentiment([data])) #[0]) #passes description as a string array of words
-    # print("sentiment:", sentiment)
-    pred = str(model.predict([data])[0])
+    pred = str(model.sentim([data])[0])
     sent = str(model.sentim([data])[0])
-    # return render_template('predict.html', article=data, predicted=pred, sentiment=sentiment)
-    return render_template('predict.html', description=data, predicted=pred, sentiment=sent)
+    twit = str(model.sentim_twitter([data]))#[0])
+    return render_template('predict.html', description=data, predicted=pred, sentiment=sent, twitter=twit)
 
-
+@app.route('/about', methods=['GET'])
+def about():
+    """Render a page containing a textarea input where the user can paste an
+    description to be classified.  """
+    return render_template('about.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5011, debug=True)
+    app.run(host='0.0.0.0', port=5013, debug=True)
     
     
 #
