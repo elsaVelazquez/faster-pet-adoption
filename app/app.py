@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, request, jsonify
 import pickle
-from build_model import * 
+from build_model_pickled import * 
 
 app = Flask(__name__)
 

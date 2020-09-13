@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
+# from sklearn.externals import joblib
 
 import nltk
 from nltk.tokenize import word_tokenize
@@ -30,7 +31,6 @@ from read_in_data import *
 import numpy as np
 from io import StringIO
 import os
-import re
 import string
 import math
 from string import digits 
@@ -57,24 +57,19 @@ from nltk import FreqDist, classify, NaiveBayesClassifier
 import re, string, random
 
 def remove_noise(tweet_tokens, stop_words = ()):
-
     cleaned_tokens = []
-
     for token, tag in pos_tag(tweet_tokens):
         token = re.sub('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|'\
                        '(?:%[0-9a-fA-F][0-9a-fA-F]))+','', token)
         token = re.sub("(@[A-Za-z0-9_]+)","", token)
-
         if tag.startswith("NN"):
             pos = 'n'
         elif tag.startswith('VB'):
             pos = 'v'
         else:
             pos = 'a'
-
         lemmatizer = WordNetLemmatizer()
         token = lemmatizer.lemmatize(token, pos)
-
         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
             cleaned_tokens.append(token.lower())
     return cleaned_tokens
@@ -89,28 +84,26 @@ def get_tweets_for_model(cleaned_tokens_list):
         yield dict([token, True] for token in tweet_tokens)
 
 
-
 #######################################
 
 
 
 class TextClassifier(object):
 
-    def __init__(self):
+    def __init__(self, model):
         self._vectorizer = TfidfVectorizer()
         self._classifier = MultinomialNB()
         self.data = data
+        self.model = MultinomialNB()
 
 
-    def predict(self, X):
-        # print(self)
-        # print(X)
-        X = self._vectorizer.transform(X)
-        # print(X)
-        # print("***%%%%%%%%%%%%%%%%%%%%%%%%*****", X)
-
-        return self._classifier.predict(X)
     
+    
+        # model = MultinomialNB()
+        # model.fit(test_data, train_data)
+        # joblib.dump(model, fitted_data.joblib)
+    
+
     
     def clean_description(self, data):
         data = str(data)
@@ -139,12 +132,8 @@ class TextClassifier(object):
         
 
     def sentim(self, data):
-        
         stop_words = ['the', 'an', 'the', 'i', 'a', 'and', 'to'] #, 'none'] #, 'heartworm', ' distemper/parvo'] #stopwords.words('english')
 
-        # [('be', 616), ('a', 333), ('and', 249), ('to', 189), ('old', 169), ('mix', 127), ('i', 120), ('the', 116), ('adoption', 113), ('an', 108)]
-        
-        
         path_csv = '../data/csv/tf_idf_adoptable_csv.csv'
         df = read_df_csv(path_csv)
         X_negative = df["description"] #data
@@ -169,10 +158,7 @@ class TextClassifier(object):
         negative_cleaned_tokens_list = []
         for tokens in negative_descriptions:
             negative_cleaned_tokens_list.append(remove_noise(tokens, stop_words))
-
-
-        
-        
+  
         all_neg_words = get_all_words(negative_cleaned_tokens_list)
         
         
@@ -216,17 +202,22 @@ class TextClassifier(object):
         
         all_pos_words = get_all_words(positive_cleaned_tokens_list)
         
+        # save_documents = open("pickled_algos/all_pos_words.pickle","wb")
+        # pickle.dump(positive_cleaned_tokens_list, save_documents)
+        # save_documents.close()
         
+
         freq_dist_pos = FreqDist(all_pos_words)
         print("most common ADOPTED words: ", freq_dist_pos.most_common(10))
 
-
         ##################################################################
         ##################################################################
         ##################################################################
-        
         positive_tokens_for_model = get_tweets_for_model(positive_cleaned_tokens_list)
+        # positive_tokens_for_model = all_pos_words.pickle
+        
         negative_tokens_for_model = get_tweets_for_model(negative_cleaned_tokens_list)
+        
 
         
         
@@ -252,8 +243,12 @@ class TextClassifier(object):
         test_data = dataset[thirty_percent_of_data:]
 
         classifier = NaiveBayesClassifier.train(train_data)
+        # classifier = MultinomialNB.fit(train_data)
+        save_classifier = open("naivebayes_pet.pickle","wb")
+        pickle.dump(classifier, save_classifier)
+        save_classifier.close()
 
-        print("Accuracy is:", classify.accuracy(classifier, test_data))
+        print("%%%%%%%%%%%%%%%%%%%Accuracy is:", classify.accuracy(classifier, test_data))
 
         print(classifier.show_most_informative_features(10))
         
@@ -318,6 +313,8 @@ class TextClassifier(object):
 
         positive_tweet_tokens = twitter_samples.tokenized('positive_tweets.json')
         negative_tweet_tokens = twitter_samples.tokenized('negative_tweets.json')
+        
+        
 
         positive_cleaned_tokens_list = []
         negative_cleaned_tokens_list = []
@@ -346,13 +343,13 @@ class TextClassifier(object):
 
         random.shuffle(dataset)
 
-        train_data = dataset[:7000]
-        test_data = dataset[7000:]
+        train_data = dataset[:700]
+        test_data = dataset[700:]
 
         classifier = NaiveBayesClassifier.train(train_data)
         print("twitter data **********************************")
 
-        print("Accuracy is:", classify.accuracy(classifier, test_data))
+        print("%%%%%%%%%%%%%%%%%%% Twitter Accuracy is:", classify.accuracy(classifier, test_data))
         print("twitter data **********************************")
 
         print(classifier.show_most_informative_features(10))
