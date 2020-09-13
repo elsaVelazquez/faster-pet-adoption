@@ -1,0 +1,204 @@
+22 Tweets records have no words left after text cleaning and were imputed with the word "None"
+64 Dog records were imputed with the word "None"
+*~*~*~*~*~*~*~*~*
+Begin dataset: TWEETS using 
+model: MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)  
+parameters: {'clf__alpha': (0.25, 0.5, 0.75)}
+
+Performing grid search on TWEETS...
+TWEETS pipeline: ['features', 'clf']
+ TWEETS parameters:
+{'clf__alpha': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__max_df': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__min_df': (1, 2),
+ 'features__pipe__vect__ngram_range': ((1, 1), (1, 2))}
+Fitting 5 folds for each of 36 candidates, totalling 180 fits
+TWEETS done in 19.303s
+
+TWEETS Best CV score: 0.768
+TWEETS Best parameters set:
+ TWEETS 	clf__alpha: 0.5
+ TWEETS 	features__pipe__vect__max_df: 0.25
+ TWEETS 	features__pipe__vect__min_df: 2
+ TWEETS 	features__pipe__vect__ngram_range: (1, 2)
+TWEETS Test score with best_estimator_: 0.777
+
+
+TWEETS Classification Report Test Data
+              precision    recall  f1-score   support
+
+    negative       0.80      0.92      0.85       911
+     neutral       0.65      0.44      0.53       320
+    positive       0.80      0.69      0.74       233
+
+    accuracy                           0.78      1464
+   macro avg       0.75      0.68      0.71      1464
+weighted avg       0.77      0.78      0.76      1464
+
+*~*~*~*~*~*~*~*~*
+END dataset: TWEETS using 
+model: MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)  
+parameters: {'clf__alpha': (0.25, 0.5, 0.75)}*~*~*~*~*~*~*~*~*
+
+*~*~*~*~*~*~*~*~*
+Begin dataset: TWEETS using 
+model: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=4000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)  
+parameters: {'clf__C': (0.25, 0.5, 1.0), 'clf__penalty': ('l1', 'l2')}
+
+Performing grid search on TWEETS...
+TWEETS pipeline: ['features', 'clf']
+ TWEETS parameters:
+{'clf__C': (0.25, 0.5, 1.0),
+ 'clf__penalty': ('l1', 'l2'),
+ 'features__pipe__vect__max_df': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__min_df': (1, 2),
+ 'features__pipe__vect__ngram_range': ((1, 1), (1, 2))}
+Fitting 5 folds for each of 72 candidates, totalling 360 fits
+TWEETS done in 797.297s
+
+TWEETS Best CV score: 0.793
+TWEETS Best parameters set:
+ TWEETS 	clf__C: 0.5
+ TWEETS 	clf__penalty: 'l2'
+ TWEETS 	features__pipe__vect__max_df: 0.25
+ TWEETS 	features__pipe__vect__min_df: 1
+ TWEETS 	features__pipe__vect__ngram_range: (1, 2)
+TWEETS Test score with best_estimator_: 0.811
+
+
+TWEETS Classification Report Test Data
+              precision    recall  f1-score   support
+
+    negative       0.83      0.92      0.88       911
+     neutral       0.72      0.54      0.62       320
+    positive       0.80      0.74      0.77       233
+
+    accuracy                           0.81      1464
+   macro avg       0.79      0.74      0.76      1464
+weighted avg       0.80      0.81      0.80      1464
+
+*~*~*~*~*~*~*~*~*
+END dataset: TWEETS using 
+model: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=4000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)  
+parameters: {'clf__C': (0.25, 0.5, 1.0), 'clf__penalty': ('l1', 'l2')}*~*~*~*~*~*~*~*~*
+
+*~*~*~*~*~*~*~*~*
+Begin dataset: DOGS using 
+model: MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)  
+parameters: {'clf__alpha': (0.25, 0.5, 0.75)}
+
+Performing grid search on DOGS...
+DOGS pipeline: ['features', 'clf']
+ DOGS parameters:
+{'clf__alpha': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__max_df': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__min_df': (1, 2),
+ 'features__pipe__vect__ngram_range': ((1, 1), (1, 2))}
+Fitting 5 folds for each of 36 candidates, totalling 180 fits
+DOGS done in 5.384s
+
+DOGS Best CV score: 0.757
+DOGS Best parameters set:
+ DOGS 	clf__alpha: 0.5
+ DOGS 	features__pipe__vect__max_df: 0.5
+ DOGS 	features__pipe__vect__min_df: 1
+ DOGS 	features__pipe__vect__ngram_range: (1, 2)
+DOGS Test score with best_estimator_: 0.808
+
+
+DOGS Classification Report Test Data
+              precision    recall  f1-score   support
+
+    negative       0.81      0.54      0.65        24
+    positive       0.81      0.94      0.87        49
+
+    accuracy                           0.81        73
+   macro avg       0.81      0.74      0.76        73
+weighted avg       0.81      0.81      0.80        73
+
+*~*~*~*~*~*~*~*~*
+END dataset: DOGS using 
+model: MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)  
+parameters: {'clf__alpha': (0.25, 0.5, 0.75)}*~*~*~*~*~*~*~*~*
+
+*~*~*~*~*~*~*~*~*
+Begin dataset: DOGS using 
+model: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=4000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)  
+parameters: {'clf__C': (0.25, 0.5, 1.0), 'clf__penalty': ('l1', 'l2')}
+
+Performing grid search on DOGS...
+DOGS pipeline: ['features', 'clf']
+ DOGS parameters:
+{'clf__C': (0.25, 0.5, 1.0),
+ 'clf__penalty': ('l1', 'l2'),
+ 'features__pipe__vect__max_df': (0.25, 0.5, 0.75),
+ 'features__pipe__vect__min_df': (1, 2),
+ 'features__pipe__vect__ngram_range': ((1, 1), (1, 2))}
+Fitting 5 folds for each of 72 candidates, totalling 360 fits
+DOGS done in 9.795s
+
+DOGS Best CV score: 0.749
+DOGS Best parameters set:
+ DOGS 	clf__C: 0.25
+ DOGS 	clf__penalty: 'l2'
+ DOGS 	features__pipe__vect__max_df: 0.25
+ DOGS 	features__pipe__vect__min_df: 1
+ DOGS 	features__pipe__vect__ngram_range: (1, 2)
+DOGS Test score with best_estimator_: 0.753
+
+
+DOGS Classification Report Test Data
+              precision    recall  f1-score   support
+
+    negative       0.75      0.38      0.50        24
+    positive       0.75      0.94      0.84        49
+
+    accuracy                           0.75        73
+   macro avg       0.75      0.66      0.67        73
+weighted avg       0.75      0.75      0.73        73
+
+*~*~*~*~*~*~*~*~*
+END dataset: DOGS using 
+model: LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=4000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)  
+parameters: {'clf__C': (0.25, 0.5, 1.0), 'clf__penalty': ('l1', 'l2')}*~*~*~*~*~*~*~*~*
+
+
+Conclusion:
+                                    precision    recall  f1-score   support
+use logistic regression for TWEETS and MultinomialNB for DOGS
+
+*~*~*~*~*~*~*~*~*
+dataset: DOGS
+
+model: LogisticRegression
+weighted avg                            0.75      0.75      0.73        73
+ 
+model: MultinomialNB(alpha
+weighted avg                            0.81      0.81      0.80        73
+*~*~*~*~*~*~*~*~*
+
+*~*~*~*~*~*~*~*~*
+dataset: TWEETS
+
+model: LogisticRegression
+weighted avg                            0.80      0.81      0.80      1464
+
+model: MultinomialNB
+weighted avg                            0.77      0.78      0.76      1464
+*~*~*~*~*~*~*~*~*
