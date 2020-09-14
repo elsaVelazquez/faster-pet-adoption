@@ -293,21 +293,33 @@ if __name__ == "__main__":
     # # grid_vect(clf, parameters, X_train=X_train_dogs, X_test=X_test_dogs, y_train=y_train_dogs, y_test=y_test_dogs, dataset='DOGS', parameters_text=None, vect=None, is_w2v=False)
     
     
-    mnb = MultinomialNB()
-    logreg = LogisticRegression(max_iter=4000)
     
-    countvect = CountVectorizer()
-    # MultinomialNB
-    best_mnb_countvect_tweets = grid_vect(mnb, parameters_mnb, X_train=X_train_tweets, X_test=X_test_tweets, y_train=y_train_tweets, y_test=y_test_tweets, dataset='TWEETS',  parameters_text=parameters_vect, vect=countvect)
-    joblib.dump(best_mnb_countvect_tweets, 'pickled_algos/tweets_best_mnb_countvect.pkl')
-    # LogisticRegression
-    best_logreg_countvect_tweets = grid_vect(logreg, parameters_logreg, X_train=X_train_tweets, X_test=X_test_tweets, y_train=y_train_tweets, y_test=y_test_tweets, dataset='TWEETS', parameters_text=parameters_vect, vect=countvect)
-    joblib.dump(best_logreg_countvect_tweets, 'pickled_algos/tweets_best_logreg_countvect.pkl')
+    ### BEGIN THESE HAVE ALREADY BEEN DONE
+    # mnb = MultinomialNB()
+    # logreg = LogisticRegression(max_iter=4000)
     
-    countvect = CountVectorizer()
-    # MultinomialNB
-    best_mnb_countvect = grid_vect(mnb, parameters_mnb, X_train=X_train_dogs, X_test=X_test_dogs, y_train=y_train_dogs, y_test=y_test_dogs, dataset='DOGS',  parameters_text=parameters_vect, vect=countvect)
-    joblib.dump(best_mnb_countvect, 'pickled_algos/dogs_best_mnb_countvect.pkl')
-    # LogisticRegression
-    best_logreg_countvect = grid_vect(logreg, parameters_logreg, X_train=X_train_dogs, X_test=X_test_dogs, y_train=y_train_dogs, y_test=y_test_dogs, dataset='DOGS', parameters_text=parameters_vect, vect=countvect)
-    joblib.dump(best_logreg_countvect, 'pickled_algos/dogs_best_logreg_countvect.pkl')
+    # countvect = CountVectorizer()
+    # # MultinomialNB
+    # best_mnb_countvect_tweets = grid_vect(mnb, parameters_mnb, X_train=X_train_tweets, X_test=X_test_tweets, y_train=y_train_tweets, y_test=y_test_tweets, dataset='TWEETS',  parameters_text=parameters_vect, vect=countvect)
+    # joblib.dump(best_mnb_countvect_tweets, 'pickled_algos/tweets_best_mnb_countvect.pkl')
+    # # LogisticRegression
+    # best_logreg_countvect_tweets = grid_vect(logreg, parameters_logreg, X_train=X_train_tweets, X_test=X_test_tweets, y_train=y_train_tweets, y_test=y_test_tweets, dataset='TWEETS', parameters_text=parameters_vect, vect=countvect)
+    # joblib.dump(best_logreg_countvect_tweets, 'pickled_algos/tweets_best_logreg_countvect.pkl')
+    
+    # countvect = CountVectorizer()
+    # # MultinomialNB
+    # best_mnb_countvect = grid_vect(mnb, parameters_mnb, X_train=X_train_dogs, X_test=X_test_dogs, y_train=y_train_dogs, y_test=y_test_dogs, dataset='DOGS',  parameters_text=parameters_vect, vect=countvect)
+    # joblib.dump(best_mnb_countvect, 'pickled_algos/dogs_best_mnb_countvect.pkl')
+    # # LogisticRegression
+    # best_logreg_countvect = grid_vect(logreg, parameters_logreg, X_train=X_train_dogs, X_test=X_test_dogs, y_train=y_train_dogs, y_test=y_test_dogs, dataset='DOGS', parameters_text=parameters_vect, vect=countvect)
+    # joblib.dump(best_logreg_countvect, 'pickled_algos/dogs_best_logreg_countvect.pkl')
+    ### END THESE HAVE ALREADY BEEN DONE
+    filename = 'dogs_best_mnb_countvect.pkl'
+    model = joblib.load(os.path.join('pickled_algos/', filename))
+
+
+    print('\nPredicting!')
+    y_pred_dogs = model.predict(X_test_dogs)
+
+    print(f'\nPredicted classes: \n{y_pred_dogs}')
+
