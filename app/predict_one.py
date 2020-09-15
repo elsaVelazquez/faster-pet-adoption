@@ -20,34 +20,38 @@ from sklearn.metrics import f1_score
 
 class TextClassifier(object):
 
-    def __init__(self, model):
-        self._vectorizer = TfidfVectorizer()
-        self._classifier = MultinomialNB()
-        self.data = data
-        self.model = MultinomialNB()
-
-
-    def predict_one(self, data):
+    def __init__(self):
+        # self._vectorizer = TfidfVectorizer()
+        # self._classifier = MultinomialNB()
+        # self.data = data
+        # self.model = MultinomialNB()
+        
         with open('pickled_algos/pickled_nb.pickle', 'rb') as f:
-            model = pickle.load(f)
+            self.model = pickle.load(f)
 
         with open('pickled_algos/tfidf_transformer.pickle', 'rb') as f:
-            tfidf = pickle.load(f)
+            self.tfidf = pickle.load(f)
 
         with open('pickled_algos/count_vect.pickle', 'rb') as f:
-            cv = pickle.load(f)
-
-        cv_transformed = cv.transform(string_pred) #counts how many words
-        tfidf_transformed = tfidf.transform(cv_transformed)  #tf == cv . 
-        string_predicted = model.predict(tfidf_transformed) 
+            self.cv = pickle.load(f)
+   
+    def predict_one(self, data):
+        cv_transformed = self.cv.transform(data) #counts how many words
+        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
+        string_predicted = self.model.predict(tfidf_transformed) 
         res = str(string_predicted[0])
         if res == '0':
-            print('Negative Sentiment')
+            res = ('Negative Sentiment')
         else:
-            print("Positive Sentiment")
+            res = ("Positive Sentiment")
+        return res 
 
 if __name__ == '__main__':
 
-    # test_string_pred = ['this girl is a foster pit and has none of her teeth']
-    # TextClassifier.predict_one(test_string_pred)
+    my_classifier = TextClassifier()
+    test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    res = my_classifier.predict_one(test_string_pred)
+    print(res)
 
+
+    
