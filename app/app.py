@@ -35,9 +35,8 @@ def predict():
     data = str(request.form['article_body'])
 
     pred = str(clf.predict_one([data])) #[0])
-    # twit = str(model.predict_one_twitter([data]))#[0])
-    return render_template('predict.html', description=data, predicted=pred) 
-#, twitter=twit)
+    twit = str(clf.predict_one_twitter([data]))#[0])
+    return render_template('predict.html', description=data, predicted=pred, twitter=twit)
 
 
 @app.route('/about', methods=['GET'])
