@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Faster Pet Adoption- Strategic Marketing Solutions">
-    <meta name="author" content="Elsa Velazquez">
-    <link rel="icon" href="static/img/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Faster Pet Adoption</title>
 
@@ -134,7 +134,7 @@ ul li ul li:hover {background: black;}
   </div>
   <a href="#contact">Contact</a>
 </div>
-</nav>
+</nav>nav>
 
 
 
@@ -202,6 +202,60 @@ sankey_chart.draw();
   
   
   
+  
+  Pipelines:
+  ETL 
+  curl command to get api token 
+  curl command to scrape 1000  id's per 24 hour period at 50K download limit (very slow)
+  
+  sift out all unnecessary records (id's are assigned to any breed type)
+  
+  
+  imputed dog data with 'None' for 22 records with blank dog descriptions
+  imputed tweet data with 'None' for 64 records with blank descriptions
+  dropped any tweet data with "neutral" sentiment
+  
+  Dogs dataset -> 722 records
+  Tweets dataset -> 11541 records
+  
+  stop words -- removed english for both and customized for dog data since there was so much 
+  overlap between adopted and adoptable 
+  ['old', 'mix', 'dogs', '039', 'amp', 'sweet', 'year', 'years', 'website' , 'loves', 'adoption', 'application', 'shelter', 'rescue', 'rescued']
+  
+  using sklearn's model (I did use nltk's model but for performance reasons, went with sklearn)
+  put cleaned tokens through count_vect to count instances of words
+  put cleaned tokens through tfidf transformer to turn words into useable numbers
+  then the tfidf transformer calculated for us 
+  
+  TF-IDF is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. This is done by multiplying two metrics: how many times a word appears in a document, and the inverse document frequency of the word across a set of documents.
+ (https://monkeylearn.com/blog/what-is-tf-idf/)
+ 
+ 
+ then train test split the data 80% train, 20% test
+ tweets: 
+ (X_train.shape) =  (9232, 12503)
+ (y_train.shape) = (9232,)
+ (X_test.shape) = (2309, 12503)
+print(y_test.shape) = (2309,)
+
+
+dogs:
+(X_train.shape) = (577, 1806)
+(y_train.shape) = (577,)
+print(X_test.shape) = (145, 1806)
+print(y_test.shape) = (145,)
+
+fit the data to the Multinomial naive bayes in sklearn
+F1 scores:
+tweets: 0.37
+dogs: 0.85
+by raising 
+
+
+instead use pred_proba with normal threshold
+ both scored 78% f1 scores 
+ 
+ 
 <!-- begin section with carousel -->
 
   

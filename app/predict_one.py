@@ -32,17 +32,10 @@ class TextClassifier(object):
         with open('pickled_algos/count_vect.pickle', 'rb') as f:
             self.cv = pickle.load(f)
             
-        #import twitter data
-        with open('pickled_algos/pickled_nb_tweets.pickle', 'rb') as f:
-            self.model = pickle.load(f)
 
-        with open('pickled_algos/tfidf_transformer_tweets.pickle', 'rb') as f:
-            self.tfidf = pickle.load(f)
-
-        with open('pickled_algos/count_vect.pickle_tweets', 'rb') as f:
-            self.cv = pickle.load(f)
    
     def predict_one(self, data):
+
         cv_transformed = self.cv.transform(data) #counts how many words
         tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
         string_predicted = self.model.predict(tfidf_transformed) 
@@ -54,6 +47,15 @@ class TextClassifier(object):
         return res 
     
     def predict_one_twitter(self, data):
+        #import twitter data
+        with open('pickled_algos/pickled_nb_tweets.pickle', 'rb') as f:
+            self.model = pickle.load(f)
+
+        with open('pickled_algos/tfidf_transformer_tweets.pickle', 'rb') as f:
+            self.tfidf = pickle.load(f)
+
+        with open('pickled_algos/count_vect_tweets.pickle', 'rb') as f:
+            self.cv = pickle.load(f)
         cv_transformed = self.cv.transform(data) #counts how many words
         tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
         string_predicted = self.model.predict(tfidf_transformed) 
@@ -65,7 +67,11 @@ class TextClassifier(object):
         return res 
 
 if __name__ == '__main__':
-    #instantiate object
+    pass
+
+    #### BEGIN test the script 
+    
+    # instantiate object
     # my_classifier = TextClassifier()
     
     # #test negative sentiment
@@ -76,6 +82,5 @@ if __name__ == '__main__':
     
     # res = my_classifier.predict_one(test_string_pred)
     # print(res)
-
-
     
+    #### END test the script 

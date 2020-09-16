@@ -180,6 +180,9 @@ parameters: {'clf__C': (0.25, 0.5, 1.0), 'clf__penalty': ('l1', 'l2')}*~*~*~*~*~
 
 
 Conclusion:
+Precision: Of all rows we predicted to be a certain class, how many did we correctly predict?
+Recall: Of all rows of a certain class, how many did we correctly predict?
+F1 score: Harmonic mean of Precision and Recall.
                                     precision    recall  f1-score   support
 use logistic regression for TWEETS and MultinomialNB for DOGS
 
