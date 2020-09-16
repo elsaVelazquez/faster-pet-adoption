@@ -11,10 +11,10 @@
     <meta name="author" content="Elsa Velazquez">
     <link rel="icon" href="static/img/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png">
 
-    <title>Faster Pet Adoption</title>
+    <!-- <title>Faster Pet Adoption</title> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../static/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -41,8 +41,8 @@
 div a {
   text-decoration: none;
   color: #e9f5f2;
-  /* font-size: 20px;
-  padding: 15px; */
+  font-size: 16px;
+  /* padding: 15px;  */
   display:inline-block;
 }
 ul {
@@ -69,53 +69,84 @@ ul li ul li a {display:block !important;}
 ul li ul li:hover {background: black;}
     </style>
    
+
   <body>
+    <!--BEGIN logo -->
+    <table>
+      <tbody style='width:100%'>
+      <tr>
+      <td><img src="static/img/nichi-logo-ears-hanging.png" style="width:80%" align='left'></td>
+      </tr>
+      </tbody>
+    </table>
+    <!--END logo -->
+      
+    
+  
+      <!--BEGIN menu -->
+      <table style='width:100%'>
+        <tbody style='width:100%'>
+        <tr style='width:100%'>
+        <td bgcolor='black' >
+          <nav class="navbar navbar-inverse navbar-fixed-top" >    
+            <div class="container">
+              <div class="navbar-header">
+                  <!-- <a class="navbar-brand">Faster Pet Adoption</a> -->
+              </div>
+              <div id="navbar" class="collapse navbar-collapse" align='left'>
+                <ul class="nav navbar-nav" background-color='black'>
+                  <li >
+                    <a href="/">Home </a><img src="static/img/black_box.png" style="width:10%" align='left'>
+                </li> 
+                  <li >
+                      <a href="/">Input A Dog Description </a>
+                  </li>          
+                    <li>
+                      <li>
+                          <a href="/about">&nbsp;&nbsp;&nbsp;About</a>    
+                  </li>
+                  <li>
+                      <a href="/contact">&nbsp;&nbsp;&nbsp;Contact</a>
+                      
+                      <ul>
+                        <li><a href="#">Message</a></li>
+                        <li><a href="https://www.linkedin.com/in/elsa-data-sci/">LinkedIn</a></li>        
+                        <li><a href="https://github.com/elsaVelazquez">GitHub</a></li>   
+                      </ul> 
+                      <br>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+        
+        
+        
+        
+        </td>
+        </tr>
+        </tbody>
+      </table>
+      <!--END menu -->
+        
 
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">    
-      <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand">Faster Pet Adoption</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li>
-                <a href="/">Input A Dog</a>
-            </li>          
-              <li>
-                <li>
-                    <a href="/about">About</a>    
-            </li>
-            <li>
-                <a href="/contact">Contact</a>
-                
-                <ul>
-                  <li><a href="#">Message</a></li>
-                  <li><a href="https://www.linkedin.com/in/elsa-data-sci/">LinkedIn</a></li>        
-                  <li><a href="https://github.com/elsaVelazquez">GitHub</a></li>   
-                </ul> 
-                
-                
-                <br>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse
-      </div>
-    </nav> -->
-
-<div class="container">
-  <a href="#home">Home</a>
+<div class="container" align='left'>
+  <!-- <a href="#home">Home</a> -->
+  <br>
   <div class="subnav">
+
     <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      ~<a href="#why">&bull; Why</a>
-      <a href="#algorithms">&bull; Results </a> 
+      <a href="#who" style="color:darkslategrey;">&bull;Who</a>
+      <a href="#what"  style="color:darkslategrey;">&nbsp;&bull; What </a> 
       <!-- #naive bayes, logistic regression, f1 -->
-      <a href="#elsa">&bull; Elsa </a>
+      <a href="#why" style="color:darkslategrey;">&nbsp;&bull; Why </a>
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">Pipelines <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Data Pipelines <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a href="#scraping">&bull; Web Scraping</a>
       <a href="#text">&bull; ETL</a>
@@ -123,7 +154,7 @@ ul li ul li:hover {background: black;}
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">&bull; ML Tech<i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Machine Learning <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a href="#nltk">&bull; NLP</a>
       <a href="#classify">&bull; Img Classifier</a>
@@ -136,13 +167,6 @@ ul li ul li:hover {background: black;}
 </div>
 </nav>
 
-
-
-<br><br><br><br><br><br>
-<br><br><br>
-<br><br><br>
-
-
     <div class="container">
 
 
@@ -153,6 +177,12 @@ How can we get pets adopted faster?</p>
 <h2 id="purpose">Purpose</h2>
 
 <p>I seek a position as a Junior Data Scientist, specializing in ETL (Exttract, Transform, Load) pipelines.</p>
+
+<h2 id="purpose">Method</h2>
+
+<p>I evaluated the entire approach to displaying a rescue dog online and recommend that during this pandemic, shelters focus
+on writing solid text descriptions of the dog over pouring resources into photos, despite age, breed, color or dog size. 
+
 
 <h2 id="methods">ETL Pipeline</h2>
 
