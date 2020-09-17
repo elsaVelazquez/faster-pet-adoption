@@ -104,6 +104,9 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
     background-color: #white;
     border: none;
     }
+  h3{
+    color: slategray;
+  }
     </style>
     
     
@@ -125,7 +128,7 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
     <div class="container" align='center' style="width: 100%;">  <!--BEGIN DIV MENU -->
     <table style='width:80%'> <!-- BEGIN TABLE  -->
       <tbody style='width:100%'> <!-- BEGIN TBODY  -->
-        <tr style='width:80%'> <!-- BEGIN TR -->
+        <tr style='width:100%'> <!-- BEGIN TR -->
               <td bgcolor='black' > <!-- BEGIN TD  -->
                 <nav class="navbar navbar-inverse navbar-fixed-top" > <!-- BEGIN NAVBAR-NAV INVERSE  -->
                   <div class="container"> <!-- BEGIN CONTAINER  -->
@@ -144,9 +147,9 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
                             <img src="static/img/black_box.png" style="width:5%"><a href="/contact">Contact</a>
                                               <!-- BEGIN DROP DOWN MENU -->
                                               <ul>
-                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="#">Message</a></li>
-                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://www.linkedin.com/in/elsa-data-sci/">LinkedIn</a></li>        
-                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://github.com/elsaVelazquez">GitHub</a></li>   
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="/contact">Message</a></li>
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://www.linkedin.com/in/elsa-data-sci/" target="_blank">LinkedIn</a></li>        
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://github.com/elsaVelazquez" target="_blank">GitHub</a></li>   
                                               </ul> 
                                               <!-- END DROP DOWN MENU -->
                           </li> <!-- END CONTACT  -->
@@ -172,12 +175,12 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
 
 <div class="container" align='right' style="width: 100%"> <!-- BEGIN CLASS CONTAINER -->
   <div class="subnav">   <!-- BEGIN CLASS SUBNAV -->
-    <table style="width: 100%">
+    <table style="width: 80%">
       <tbody>
       <tr>
             <td >    
               <div class="subnav" style="justify-content: right" align='center' >
-                  <button class="subnavbtn" align='center'>About <i class="fa fa-caret-down"></i></button>
+                  <button class="subnavbtn" align='center' ><a href="#about"></a>About</a> <i class="fa fa-caret-down"></i></button>
                   <div class="subnav-content">
                     &bull;<a href="#who" style="color:darkslategrey;">Who</a>
                     &nbsp;&bull; <a href="#what"  style="color:darkslategrey;">What </a> 
@@ -218,7 +221,7 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
 <!-- </div > end CLASS CONTIANER FOR submenu -->
     <!-- </nav> -->
 
-<div class="container"> <!-- BEGIN CLASS CONTIANER FOR BODY -->
+<div class="container" align='center' style="width: 100%"> <!-- BEGIN CLASS CONTIANER FOR BODY -->
 <!-- <div id="body"> -->
 
 
@@ -234,8 +237,113 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
 <p>I evaluated the entire approach to displaying a rescue dog online and recommend that during this pandemic, shelters focus
 on writing solid text descriptions of the dog over pouring resources into photos, despite age, breed, color or dog size. 
 
+<id="about"><h1>About</h1></a>
+<h3 id="who">Who</h3>
+<p>I am Elsa Velazquez and you can find out more about me by clicking on my LinkedIn, my GitHub, or elsa-data-sci.tech/home.</p>
+<p>I invented this project because I love building data pipelines and because as a disabled veteran, 
+I have gotten a second chance in life thanks to my service dogs and feel I am fulfilling my life mission
+to bring dog-kind closer to human-kind.</p>
+<p>The animal shelter data is scraped from <a href="http://wwww.PetFinders.com">PetFinders.com</a> and full twitter dataset is from <a href="https://pythonprogramming.net/static/downloads/short_reviews/">https://pythonprogramming.net/static/downloads/short_reviews/</a> </p>
+<h3 id="what">What</h3>
+<p>This project is based on the MultiNomial Naive Bayes (MNB) algorithm, and on Natural Language Processing (NLP).</p>
+<p>I used math to check the impact of a dog's online presence and determined that during this pandemic (<a href="#time">from start date to stop date</a>), 
+the human-input description of the dog matters most, and the dog's picture does not matter <font style="italics">(<a href="#img">click here to find out more</a></font>).</p>
+<P>Illustrated below is the theory behind MNB as it applies to this classification project.</P>
+<h5>Multonimial Naive Bayes Representation</h5>
+<img src='static/img/mnb.png'>
+<p>The text portion of this project is based on the TF-IDf score, which is a part of NLP.</p>
+<p>Essentially, this is a mathematical way of putting words into numbers so we can extract meaningful
+information.<a href="#tfidf">Click here to read more.</a></p>
+<p>The combination of MNB and TF-IDF allowed me to see which words made the biggest impact on 
+the dog's online presence.</p>
+<p>Because we see that there is really a difference in the words used to create what I classified as a positive sentiment in dogs,
+which is distinct from words used to describe dogs that were not yet adopted, my theory that the text matters more than 
+the images still persists.</p>
+</p>
+<h3 id="why">Why</h3>
+<p>My predictions can't be based on accuracy scores because my dataset has many more adopted pets than adoptable pets.  I therefore 
+used an F1 score of 83%, which is 33% higher than a prediction based on chance.</p>
+<p>The prediction is our classification of the input text describing the dog.</p>
+<p>The following are examples of favorable descriptions:</p>
+<p>The following are examples of less favorable descriptions:</p>
+<p>An important disclaimer is that the global pandemic has meant dogs are flying off the shelves in 
+rescue shelters, which was not the case when I first thought up this project. </p>
+<p>To show a more likely scenario of the sentiment invoked by the dog descriptions, I am simultaneously
+classifying the input description against a well-known, vetted, Twitter Airlines sentiment analysis 
+dataset.</p>
+<p>Were it not for the pandemic, it is very likely that the input data would be classified in a sentimnet very much
+like the Twitter result. </p>
+<p>The following images are Exploratory Data Analysis (EDA) and can be useful in determining which words
+a shelter should favor over other words.</p>
 
-<h2 id="methods">ETL Pipeline</h2>
+<!-- </div>h2 -->
+
+<h1 id="methods">Data Pipelines</h1>
+<!-- BEGIN ETL TABLE -->
+<h3>Web Scraping</h3>
+<table>
+	<tbody>
+		<tr>
+			<td>Use an API key to run a curl command to scrape for data.<a href="&quot;link">code</a></td>
+			<td>curl command: example of curl command</td>
+			<td>video of the scraping</td>
+		</tr>
+		<tr>
+			<td>Clean the data</td>
+			<td>Run the dirty json through string processing functions.</td>
+			<td>Link of dirty json</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Extract, Transform, Load (ETL)</h3>
+<table>
+	<tbody>
+		<tr>
+			<td>Extract only valid data</td>
+			<td>Example showing json records of all kinds</td>
+			<td>Video showing getting rid of bad records</td>
+		</tr>
+		<tr>
+			<td>Transform data into pandas dataframes</td>
+			<td>Example showing dataframe output</td>
+			<td>Link to code</td>
+		</tr>
+		<tr>
+			<td>Load data into pickled models</td>
+			<td>table showing how long it takes to run models with / without using pickled models</td>
+			<td>Real time side-by-side video showing results of pickling</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Data Ingestion</h3>
+<table>
+	<tbody>
+		<tr>
+			<td>An HTML input form is used via a Flask app to ingest data. <a href="&quot;link">code</a></td>
+			<td>link to code</td>
+			<td>video of data ingestion</td>
+		</tr>
+		<tr>
+			<td>Data is processed and a classification is returned.</td>
+			<td>Link to code.</td>
+			<td>Example outputs.</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END ETL TABLE -->
+
+<h1>Machine Learning</h1>
+<h2>NLP</h2>
+<h5>TF-IDF Representation</h5>
+<img src='static/img/tfidf.png'>
+<h2>Img Classifier</h2>
+<h2>Time Series</h2>
+
+
+
+
 
 <!-- <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script> -->
