@@ -33,6 +33,8 @@
     <![endif]-->
 
   </head>
+  
+  
   <style>
     p:hover{
       background-color: #e9f5f2;
@@ -74,27 +76,34 @@ A:active { COLOR: green; TEXT-DECORATION: none }
 A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
    
 #hiddenmenu {
-  background-color: whitesmoke;
+  background-color: white;
 	position: fixed;
   top: 0;
-  z-index:0;
+  z-index:1;
 	width: 100%;
-  height: 0px;
+  height: 100px;
   }
-/* #header {
-  background-color: lightblue;
+#header {
+  background-color: white;
   width: 100%;
   top: 0;
   position:absolute;
   z-index:2;
-  } */
-/* #body {
+  }
+#body {
   padding-top: 0px;
   position:absolute;
-  background-color: yellow;
+  background-color: white;
 	width: 100%;
   z-index: auto;
-  }  */
+  }
+  hr{
+    margin-top: 0.35em !important;
+    margin-bottom: 0.35em !important;
+    border-width: 1px;
+    background-color: #white;
+    border: none;
+    }
     </style>
     
     
@@ -105,7 +114,7 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
        <table>
         <tbody style='width:80%'>
         <tr>
-        <td>&nbsp;<img src="static/img/nichi-logo-ears-hanging.png" style="width:100%"  align='left'></td>
+        <td>&nbsp;<img src="static/img/nichi-logo-ears-hanging.png" style="width:100%"  align='center'></td>
         </tr>
         </tbody>
       </table>
@@ -152,69 +161,65 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
     </div>  <!-- END DIV MENU-->
   </div> <!-- end sticky menu-->
         
-    <body>
+        
+  <div id="header">
+  <!-- THIS HEADER IS TO KEEP THE BACK ClEAR  -->
+   </div>
+   
+   <hr width="500px;" color="white" size="250">  
+  <div id="body" style="text-align:center;">
 
 
-<div class="container" align='center' style="width: 100%;">
-  <!-- <a href="#home">Home</a> -->
-  <br>
-  <div class="subnav">
-    <table style="width: 100%;">
+<div class="container" align='right' style="width: 100%"> <!-- BEGIN CLASS CONTAINER -->
+  <div class="subnav">   <!-- BEGIN CLASS SUBNAV -->
+    <table style="width: 100%">
       <tbody>
       <tr>
-      <td >    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-          &bull;<a href="#who" style="color:darkslategrey;">Who</a>
-          &nbsp;&bull; <a href="#what"  style="color:darkslategrey;">What </a> 
-          <!-- #naive bayes, logistic regression, f1 -->
-          <br>&bull; <a href="#why" style="color:darkslategrey;">Why </a>
-        </div></td>
-        
-        
-      <td >
-        <div class="subnav">
-          <!-- Custom styles for this template -->
-            <link href="../static/css/my-style-sheet.css" rel="stylesheet">
-            <!-- <hr width="500px;" color="white" size=".1">  -->
-            <button class="subnavbtn">Data Pipelines <i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-              &bull;<a href="#scraping" style="color:darkslategrey;">Web Scraping</a>
-              &nbsp;&bull; <a href="#etl"  style="color:darkslategrey;">ETL</a>
-              <br>&bull; <a href="#ingestion" style="color:darkslategrey;">Data Ingestion</a>
-            </div>
-      
-      </td>
-      
-      
-      
-      
-      
-      
-      
-      <td>
-        <div class="subnav">
-          <!-- <hr width="500px;" color="white" size=".1">  -->
-          <button class="subnavbtn">Machine Learning <i class="fa fa-caret-down"></i></button>
-          <div class="subnav-content">
-            &bull;<a href="#nlp" style="color:darkslategrey;">NLP</a>
-            &nbsp;&bull; <a href="#img" style="color:darkslategrey;">Img Classifier</a>
-            <br>&bull; <a href="#time" style="color:darkslategrey;">Time Series</a>
-            <!-- future section -->
-          </div>
-        </div></td>
+            <td >    
+              <div class="subnav" style="justify-content: right" align='center' >
+                  <button class="subnavbtn" align='center'>About <i class="fa fa-caret-down"></i></button>
+                  <div class="subnav-content">
+                    &bull;<a href="#who" style="color:darkslategrey;">Who</a>
+                    &nbsp;&bull; <a href="#what"  style="color:darkslategrey;">What </a> 
+                    <!-- #naive bayes, logistic regression, f1 -->
+                    <br>&bull; <a href="#why" style="color:darkslategrey;">Why </a>
+                  </div>
+              </div>
+            </td>
+              
+            <td >
+              <div class="subnav" style="justify-content: right" align='center'>
+                  <button class="subnavbtn">Data Pipelines <i class="fa fa-caret-down"></i></button>
+                  <div class="subnav-content">
+                    &bull;<a href="#scraping" style="color:darkslategrey;">Web Scraping</a>
+                    &nbsp;&bull; <a href="#etl"  style="color:darkslategrey;">ETL</a>
+                    <br>&bull; <a href="#ingestion" style="color:darkslategrey;">Data Ingestion</a>
+                  </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="subnav" style="justify-content: right" align='center'>
+                <!-- <hr width="500px;" color="white" size=".1">  -->
+                <button class="subnavbtn">Machine Learning <i class="fa fa-caret-down"></i></button>
+                <div class="subnav-content">
+                  &bull;<a href="#nlp" style="color:darkslategrey;">NLP</a>
+                  &nbsp;&bull; <a href="#img" style="color:darkslategrey;">Img Classifier</a>
+                  <br>&bull; <a href="#time" style="color:darkslategrey;">Time Series</a>
+                  <!-- future section -->
+                </div>
+              </div>
+            </td>
       </tr>
-
       </tbody>
-      </table>
+    </table>
+    </div> <!-- END CLASS SUBNAV -->
+  </div>  <!-- END CLASS CONTAINER --> 
+<!-- </div > end CLASS CONTIANER FOR submenu -->
+    <!-- </nav> -->
 
-  </div> 
-
-  </div>
-  <!-- <a href="#contact" &bull;<a href="#who" style="color:darkslategrey;">elsa-data-sci.tech</a> -->
-</div>
-</nav>
-
-    <div class="container">
+<div class="container"> <!-- BEGIN CLASS CONTIANER FOR BODY -->
+<!-- <div id="body"> -->
 
 
 <h2 id="purpose">Introduction</h2>    
@@ -234,7 +239,7 @@ on writing solid text descriptions of the dog over pouring resources into photos
 
 <!-- <script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script> -->
-</head>
+<!-- </head> -->
 <!-- <body> -->
 <!-- <div id="container"></div> 
 <script>
@@ -274,7 +279,6 @@ sankey_chart.draw();
 });
 </script> -->
 
-  <body style="text-align:center;">
   
   
   
@@ -306,11 +310,11 @@ sankey_chart.draw();
 
 data from:
 full twitter datasets from https://pythonprogramming.net/static/downloads/short_reviews/
-~5300 per line
-    </div>
+~5300 per line</p>
+<!--     </div> -->
+</body>
 
-
-    </div><!-- /.container -->
+ </div>
     
 <!-- Slide Show -->
 <section>
@@ -357,5 +361,5 @@ function carousel() {
     <script src="../static/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+  <!-- </body> -->
 </html>
