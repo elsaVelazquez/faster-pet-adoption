@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Faster Pet Adoption- Strategic Marketing Solutions">
     <meta name="author" content="Elsa Velazquez">
-    <link rel="icon" href="static/img/nichi-in-the-corner-black-and-white-background-fade-in-img-100x86.png">
+    <link rel="icon" href="static/img/favicon-nichi.png">
 
     <!-- <title>Faster Pet Adoption</title> -->
 
@@ -19,12 +19,12 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../static/css/my_own_template.css" rel="stylesheet">
-
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../static/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/my-style-sheet.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
 div a {
   text-decoration: none;
   color: #e9f5f2;
-  font-size: 16px;
+  font-size: 18px;
   /* padding: 15px;  */
   display:inline-block;
 }
@@ -62,108 +62,155 @@ ul li ul {
 ul li ul li { 
   background: black; 
   display: block; 
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 ul li ul li a {display:block !important;} 
 ul li ul li:hover {background: black;}
-    </style>
-   
 
-  <body>
-    <!--BEGIN logo -->
-    <table>
-      <tbody style='width:100%'>
-      <tr>
-      <td><img src="static/img/nichi-logo-ears-hanging.png" style="width:80%" align='left'></td>
-      </tr>
-      </tbody>
-    </table>
-    <!--END logo -->
-      
+/* A:link { COLOR: black; TEXT-DECORATION: none; font-weight: normal } */
+A:visited { COLOR: lightgrey; TEXT-DECORATION: none; font-weight: normal }
+A:active { COLOR: green; TEXT-DECORATION: none }
+A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
+   
+#hiddenmenu {
+  background-color: whitesmoke;
+	position: fixed;
+  top: 0;
+  z-index:0;
+	width: 100%;
+  height: 0px;
+  }
+/* #header {
+  background-color: lightblue;
+  width: 100%;
+  top: 0;
+  position:absolute;
+  z-index:2;
+  } */
+/* #body {
+  padding-top: 0px;
+  position:absolute;
+  background-color: yellow;
+	width: 100%;
+  z-index: auto;
+  }  */
+    </style>
     
-  
-      <!--BEGIN menu -->
-      <table style='width:100%'>
-        <tbody style='width:100%'>
-        <tr style='width:100%'>
-        <td bgcolor='black' >
-          <nav class="navbar navbar-inverse navbar-fixed-top" >    
-            <div class="container">
-              <div class="navbar-header">
-                  <!-- <a class="navbar-brand">Faster Pet Adoption</a> -->
-              </div>
-              <div id="navbar" class="collapse navbar-collapse" align='left'>
-                <ul class="nav navbar-nav" background-color='black'>
-                  <li >
-                    <a href="/">Home </a><img src="static/img/black_box.png" style="width:10%" align='left'>
-                </li> 
-                  <li >
-                      <a href="/">Input A Dog Description </a>
-                  </li>          
-                    <li>
-                      <li>
-                          <a href="/about">&nbsp;&nbsp;&nbsp;About</a>    
-                  </li>
-                  <li>
-                      <a href="/contact">&nbsp;&nbsp;&nbsp;Contact</a>
-                      
-                      <ul>
-                        <li><a href="#">Message</a></li>
-                        <li><a href="https://www.linkedin.com/in/elsa-data-sci/">LinkedIn</a></li>        
-                        <li><a href="https://github.com/elsaVelazquez">GitHub</a></li>   
-                      </ul> 
-                      <br>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        
-        
-        
-        
-        
-        </td>
+    
+    
+    <div id="hiddenmenu"> <!-- begin sticky menu-->
+
+       <!--BEGIN logo -->
+       <table>
+        <tbody style='width:80%'>
+        <tr>
+        <td>&nbsp;<img src="static/img/nichi-logo-ears-hanging.png" style="width:100%"  align='left'></td>
         </tr>
         </tbody>
       </table>
-      <!--END menu -->
+      <!--END logo -->
+
+      
+  <!--BEGIN MAIN MENU  -->
+    <div class="container" align='center' style="width: 100%;">  <!--BEGIN DIV MENU -->
+    <table style='width:80%'> <!-- BEGIN TABLE  -->
+      <tbody style='width:100%'> <!-- BEGIN TBODY  -->
+        <tr style='width:80%'> <!-- BEGIN TR -->
+              <td bgcolor='black' > <!-- BEGIN TD  -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" > <!-- BEGIN NAVBAR-NAV INVERSE  -->
+                  <div class="container"> <!-- BEGIN CONTAINER  -->
+                    <div id="navbar" class="collapse navbar-collapse" align='center'> <!-- BEGIN DIV NAVBAR-NAV  -->
+                      <ul class="nav navbar-nav" background-color='black'> <!-- BEGIN CLASS NAVBAR-NAV  -->
+                          <li > <!-- BEGIN HOME  -->
+                            <img src="static/img/black_box.png" style="width:20%" align='left'><a href="/">Home </a>
+                          </li> <!-- END HOME  -->
+                          <li > <!-- BEGIN INPUT  -->
+                            <img src="static/img/black_box.png" style="width:20%" ><a href="/">Input a Dog Description </a>
+                          </li> <!-- END INPUT  -->         
+                          <li> <!-- BEGIN ABOUT  -->
+                              <img src="static/img/black_box.png" style="width:5%"><a href="/about">About</a>    
+                          </li> <!-- END ABOUT  -->
+                          <li> <!-- BEGIN CONTACT  -->
+                            <img src="static/img/black_box.png" style="width:5%"><a href="/contact">Contact</a>
+                                              <!-- BEGIN DROP DOWN MENU -->
+                                              <ul>
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="#">Message</a></li>
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://www.linkedin.com/in/elsa-data-sci/">LinkedIn</a></li>        
+                                                <li><img src="static/img/black_box.png" style="width:5%"><a href="https://github.com/elsaVelazquez">GitHub</a></li>   
+                                              </ul> 
+                                              <!-- END DROP DOWN MENU -->
+                          </li> <!-- END CONTACT  -->
+                      </ul> <!-- END CLASS NAVBAR-NAV  -->
+                    </div> <!-- END DIV NAVBAR-NAV  -->
+                  </div><!-- END CONTAINER -->
+                </nav> <!-- END NAVBAR-NAV INVERSE -->
+              </td> <!-- END TD  -->
+        </tr> <!-- END TR  -->
+      </tbody> <!-- END TBODY  -->
+    </table> <!-- END TABLE  -->
+    </div>  <!-- END DIV MENU-->
+  </div> <!-- end sticky menu-->
         
+    <body>
 
 
-<div class="container" align='left'>
+<div class="container" align='center' style="width: 100%;">
   <!-- <a href="#home">Home</a> -->
   <br>
   <div class="subnav">
+    <table style="width: 100%;">
+      <tbody>
+      <tr>
+      <td >    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          &bull;<a href="#who" style="color:darkslategrey;">Who</a>
+          &nbsp;&bull; <a href="#what"  style="color:darkslategrey;">What </a> 
+          <!-- #naive bayes, logistic regression, f1 -->
+          <br>&bull; <a href="#why" style="color:darkslategrey;">Why </a>
+        </div></td>
+        
+        
+      <td >
+        <div class="subnav">
+          <!-- Custom styles for this template -->
+            <link href="../static/css/my-style-sheet.css" rel="stylesheet">
+            <!-- <hr width="500px;" color="white" size=".1">  -->
+            <button class="subnavbtn">Data Pipelines <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+              &bull;<a href="#scraping" style="color:darkslategrey;">Web Scraping</a>
+              &nbsp;&bull; <a href="#etl"  style="color:darkslategrey;">ETL</a>
+              <br>&bull; <a href="#ingestion" style="color:darkslategrey;">Data Ingestion</a>
+            </div>
+      
+      </td>
+      
+      
+      
+      
+      
+      
+      
+      <td>
+        <div class="subnav">
+          <!-- <hr width="500px;" color="white" size=".1">  -->
+          <button class="subnavbtn">Machine Learning <i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            &bull;<a href="#nlp" style="color:darkslategrey;">NLP</a>
+            &nbsp;&bull; <a href="#img" style="color:darkslategrey;">Img Classifier</a>
+            <br>&bull; <a href="#time" style="color:darkslategrey;">Time Series</a>
+            <!-- future section -->
+          </div>
+        </div></td>
+      </tr>
 
-    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#who" style="color:darkslategrey;">&bull;Who</a>
-      <a href="#what"  style="color:darkslategrey;">&nbsp;&bull; What </a> 
-      <!-- #naive bayes, logistic regression, f1 -->
-      <a href="#why" style="color:darkslategrey;">&nbsp;&bull; Why </a>
-    </div>
+      </tbody>
+      </table>
+
   </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Data Pipelines <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#scraping">&bull; Web Scraping</a>
-      <a href="#text">&bull; ETL</a>
-      <a href="#ingestion">&bull; Data Ingestion</a>
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Machine Learning <i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#nltk">&bull; NLP</a>
-      <a href="#classify">&bull; Img Classifier</a>
-      <a href="#tseries">&bull; Time Series</a>
-      <a href="#pytorch">&bull; PyTorch</a>
-      <!-- future section -->
-    </div>
+
   </div>
-  <a href="#contact">Contact</a>
+  <!-- <a href="#contact" &bull;<a href="#who" style="color:darkslategrey;">elsa-data-sci.tech</a> -->
 </div>
 </nav>
 
@@ -171,12 +218,11 @@ ul li ul li:hover {background: black;}
 
 
 <h2 id="purpose">Introduction</h2>    
-<p> 
-How can we get pets adopted faster?</p>
+<p>How can we get pets adopted faster?</p>
 
 <h2 id="purpose">Purpose</h2>
 
-<p>I seek a position as a Junior Data Scientist, specializing in ETL (Exttract, Transform, Load) pipelines.</p>
+<p>I seek a position as a Junior Data Scientist, specializing in ETL (Extract, Transform, Load) pipelines.</p>
 
 <h2 id="purpose">Method</h2>
 
