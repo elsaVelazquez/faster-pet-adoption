@@ -39,11 +39,13 @@ class TextClassifier(object):
         cv_transformed = self.cv.transform(data) #counts how many words
         tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
         string_predicted = self.model.predict(tfidf_transformed) 
+        length = len(data)-1
+        print("size of string:", len(data))
         res = str(string_predicted[0])
-        if res == '0':
-            res = ('Negative Sentiment')
+        if res == '0' :
+            res = ('Less Likely to be Adopted')
         else:
-            res = ("Positive Sentiment")
+            res = ("More Likely to be Adopted")
         return res 
     
     def predict_one_twitter(self, data):
@@ -69,18 +71,19 @@ class TextClassifier(object):
 if __name__ == '__main__':
     pass
 
-    #### BEGIN test the script 
+    ### BEGIN test the script 
     
-    # instantiate object
+    # # instantiate object
     # my_classifier = TextClassifier()
     
     # #test negative sentiment
-    # test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    # # test_string_pred = ['this girl is a foster pit and has none of her teeth']
     
-    # #test negative sentimnet
+    # # #test negative sentimnet
     # test_string_pred = ['fill out an online form to find this male puppy a forever home']
     
     # res = my_classifier.predict_one(test_string_pred)
-    # print(res)
+    # print("sentiment: ", res)
+
     
     #### END test the script 

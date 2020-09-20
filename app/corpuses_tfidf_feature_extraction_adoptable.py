@@ -1,3 +1,6 @@
+#!/usr/bin/env python2.7
+
+
 # importing libraries 
 from sklearn.feature_extraction.text import TfidfVectorizer 
 from sklearn.metrics.pairwise import cosine_similarity 
@@ -8,6 +11,7 @@ import pandas as pd
 import numpy as np 
 
 '''heavily inspired by https://www.geeksforgeeks.org/sklearn-feature-extraction-with-tf-idf/'''
+
 
 ## Converting 3D array of array into 1D array 
 def arr_convert_1d(arr): 

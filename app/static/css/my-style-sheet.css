@@ -1,4 +1,4 @@
-.dropdown {
+/* .dropdown {
   position: relative;
   display: inline-block;
 }
@@ -17,8 +17,17 @@
     color: red !important;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.29);
     -webkit-font-smoothing: antialiased;
-  }
+  } */
   
-  .btn-custom:hover{
+  /* .btn-custom:hover{
     background-color: rgb(247, 0, 255) !important;
+  } */
+  hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 100px;
   }

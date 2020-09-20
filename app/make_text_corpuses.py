@@ -10,7 +10,7 @@ df = df_adoptable.fillna("None")  #impute empty records
 df_str_adoptable = df[["description"]].copy()
 document_adoptable = ' '.join(df_str_adoptable['description'].tolist())
 str_adoptable = str(document_adoptable )
-text_file = open("adoptable_corpus.txt", "w")
+text_file = open("../app/data/adoptable_corpus.txt", "w")
 n = text_file.write(str_adoptable)
 text_file.close()
 
@@ -22,6 +22,6 @@ df = df_adopted.fillna("None")  #impute empty records
 df_str_adopted = df[["description"]].copy()
 document_adopted = ' '.join(df_str_adopted['description'].tolist())
 str_adopted = str(document_adopted )
-text_file = open("adopted_corpus.txt", "w")
+text_file = open("../app/data/adopted_corpus.txt", "w")
 n = text_file.write(str_adopted)
 text_file.close()
