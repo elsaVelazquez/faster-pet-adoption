@@ -40,11 +40,13 @@
       <h1>Faster Pet Adoption</h1>
       <h2>Dog's Online Presence</h2>
 
-      <span style="color: rgb(132, 0, 255); font-weight: bold;">You input:</span>
+      <span style="color: rgb(132, 0, 255); font-weight: bold;">Your input:</span>
       <p>{{ description }}</p>
       <span style="color: green; font-weight: bold;">Faster Pet Adoption classifies the likelihood of adoption as: </span>
       <p>{{ predicted }}</p>
-      <!-- <p>{{ sentiment }}</p> -->
+      <span style="color: pink; font-weight: bold;">TF-IDF Results</span>
+      <span style="color: lightgreen; font-weight: bold;">How Close Is Your Description to Dogs that Have Already Been Adopted</span>
+      <p>{{ cosim }}</p>
       <!-- <span style="color: red; font-weight: bold;">Twitter classifies the description is categorized as: </span> -->
 
       <!-- <p>{{ twitter }}</p> -->

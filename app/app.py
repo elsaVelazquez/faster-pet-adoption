@@ -7,7 +7,6 @@ from predict_one import TextClassifier
 #instantiate the class
 clf = TextClassifier()
 
-
 app = Flask(__name__)
 
 
@@ -37,7 +36,8 @@ def predict():
 
     pred = str(clf.predict_one([data])) #[0])
     # twit = str(clf.predict_one_twitter([data]))#[0])
-    return render_template('predict.html', description=data, predicted=pred) #, twitter=twit)
+    tf = (clf.tfidf_([data]))#[0] #.any()
+    return render_template('predict.html', description=data, predicted=pred, cosim=tf) #, twitter=twit)
 
 
 @app.route('/about', methods=['GET'])
