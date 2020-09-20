@@ -67,6 +67,8 @@ def convert():
 	lis2 = arr_convert_1d(cos) 
 	dataf['cos_sim'] = lis2 
 	lis2 = (arr_convert_1d(euclidean) ) - 1
+	if lis2 < 0.005:
+		lis2 = 0
 	dataf['euclidean'] = lis2 
 	return dataf 
 
@@ -75,6 +77,6 @@ if __name__ == "__main__":
 
 	str1 = open('../app/data/adoptable_corpus.txt', 'r').read()
 
-	str2 = "None"
+	str2 = "mable"
 	newData = tfidf(str1,str2); 
 	print(newData); 

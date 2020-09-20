@@ -66,7 +66,9 @@ def convert():
 	dataf['manhatten'] = lis2 
 	lis2 = arr_convert_1d(cos) 
 	dataf['cos_sim'] = lis2 
-	lis2 = arr_convert_1d(euclidean) 
+	lis2 = (arr_convert_1d(euclidean) ) - 1
+	if lis2 < 0.005:
+		lis2 = 0
 	dataf['euclidean'] = lis2 
 	return dataf 
 
