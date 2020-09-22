@@ -28,7 +28,8 @@ def predict():
     data = str(request.form['article_body']) #user input
     pred = str(clf.predict_one([data])) 
     tf_adopted = (clf.tfidf_adopted([data])) 
-    tf_adoptable = (clf.tfidf_adoptable([data])) 
+    tf_adoptable_ = (clf.tfidf_adoptable([data])) 
+    tf_adoptable = tf_adoptable_['euclidean'][1:]
     sentim = (my_sentim.sentiment_([data])) 
     return render_template('predict.html', description=data, predicted=pred, cosim_adopted=tf_adopted, cosim_adoptable=tf_adoptable, sentiment=sentim)
 
