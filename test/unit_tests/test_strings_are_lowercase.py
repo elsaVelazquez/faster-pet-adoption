@@ -1,15 +1,12 @@
-# importing unittest module
 import unittest
 class TestingStringMethods(unittest.TestCase):
 
 
    def test_is_string_lower(self):
       '''makes sure a string is all lowercase''' 
-    #   TODO elsa how to pass in the text vs put it here
       corpus = '../../data/txt/corpus.txt'
       self.assertTrue(corpus.islower())
       self.assertFalse(corpus.islower())
-# running the tests
 
 
 def main():
